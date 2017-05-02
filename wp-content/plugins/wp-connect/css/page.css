@@ -1,0 +1,13 @@
+#tform {font-size: 12px;}
+#tform fieldset p{margin-top:5px}
+#tform p { margin-bottom: 12px; }
+#tform #say, #tform #message{width:580px; overflow:hidden}
+/*#tform #say {text-indent:-9999px;height:40px; background:url(../images/page.png) no-repeat}*/
+#tform #wordage{text-align:right}
+#tform #wordage span{font:24px Georgia; color:#690}
+#tform #wordage{float:right; width:200px}
+#tform #publish{color:#EEF1EE; font-size:14px; font-weight:700; height:28px; line-height:28px; outline:none; text-align:center; width:89px; background:url("../images/submit.png") 0 0 no-repeat; width:89px; height:28px; border:none; cursor:pointer;}
+#tform #publish:hover{background-position:0px -28px}
+#tform #publish:active{background-position:0px -56px}
+#tform #v1,#tform #v2,#tform #v3 {position: relative; width: 580px;}
+#tform #v3 span, #tform .loading, #tform .success, #tform .error {display:none; color:#690;}
