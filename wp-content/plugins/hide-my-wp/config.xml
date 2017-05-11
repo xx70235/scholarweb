@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+    <block>
+        <name>HMW_Controllers_Settings</name>
+        <actions>
+            <action>hmw_settings</action>
+            <action>hmw_abort</action>
+            <action>hmw_manualrewrite</action>
+            <action>hmw_support</action>
+        </actions>
+        <admin>1</admin>
+        <active>1</active>
+    </block>
+
+    <block>
+        <name>HMW_Controllers_Settings</name>
+        <actions>
+            <action>hmw_logout</action>
+        </actions>
+        <admin>0</admin>
+        <active>1</active>
+    </block>
+
+</blocks>
