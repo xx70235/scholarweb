@@ -3,8 +3,8 @@ Contributors: webzunft
 Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RRRCEBGN3UT2
 Tags: ads, ad, ad inserter, ad injection, ad manager, ads manager, ad widget, adrotate, adsense, advertise, advertisements, advertising, adverts, advert, amazon, banner, banners, buysellads, chitika, clickbank, dfp, doubleclick, geotarget, geolocation, geo location, google dfp, monetization, widget
 Requires at least: WP 4.2, PHP 5.3
-Tested up to: 4.7.4
-Stable tag: 1.7.24
+Tested up to: 4.8
+Stable tag: 1.7.25
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -210,6 +210,15 @@ There is no revenue share. Advanced Ads doesn’t alter your ad codes in a way t
 
 == Changelog ==
 
+= 1.7.25 =
+
+* added explicit "link ads" AdSense type with normal and responsive format
+* included link to AdSense types manual
+* optimized bot check
+* removed TinyMCE security features from links added to the rich media ad type to not break affiliate links
+* fixed error appearing when image of an image ad does not exist anymore
+* fixed wizard not going to ad parameters box automatically after selecting ad type
+
 = 1.7.24 =
 
 * fixed issue with shortcode button that caused some page builders and scripts to break
@@ -230,6 +239,7 @@ There is no revenue share. Advanced Ads doesn’t alter your ad codes in a way t
 * reapplied user capabilities to create or edit ads to make sure they are never wrong
 * added warning about left and right position not working with responsive AdSense units
 * edited feedback form
+* add ad/group wrapper, if needed
 
 = 1.7.21 =
 

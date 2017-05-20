@@ -66,7 +66,7 @@ if( isset( $_GET['message'] ) && 6 === $_GET['message'] ) : ?>
 <script>
     // move wizard button to head
     jQuery('#advads-start-wizard').appendTo('h1');
-    jQuery('.advads-stop-wizard').insertBefore('h1');
+    jQuery('.advads-stop-wizard').insertAfter('h1');
 </script>
 <?php // show wizard welcome message
 if( $this->show_wizard_welcome() ) : ?>

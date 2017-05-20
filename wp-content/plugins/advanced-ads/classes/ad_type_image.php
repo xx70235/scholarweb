@@ -126,12 +126,13 @@ class Advanced_Ads_Ad_Type_Image extends Advanced_Ads_Ad_Type_Abstract{
 			    $height = 100;
 			}
 			
-			$hwstring = image_hwstring($width, $height);
+			$hwstring = trim( image_hwstring($width, $height) );
 			$attachment = get_post($attachment_id);
 			$alt = trim(strip_tags( get_post_meta($attachment_id, '_wp_attachment_image_alt', true) ));
-			$title = trim(strip_tags( $attachment->post_title )); // Finally, use the title
 			
-			echo rtrim("<img $hwstring") . " src='$src' alt='$alt' title='$title'/>";
+			$title = ( $attachment instanceof WP_Post ) ? trim(strip_tags( $attachment->post_title )) : ''; // Finally, use the title
+			
+			echo "<img $hwstring src='$src' alt='$alt' title='$title'/>";
 		}
 	}
 

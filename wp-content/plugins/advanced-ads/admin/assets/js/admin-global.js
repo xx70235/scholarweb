@@ -68,6 +68,11 @@ jQuery( document ).ready(function () {
 		// show text field if there is one
 		jQuery(this).parents('li').next('li').children('input[type="text"], textarea').show();
 	});
+	// handle technical issue feedback in particular
+	jQuery('#advanced-ads-feedback-content .advanced_ads_disable_technical_issue input[type="radio"]').click(function () {
+		// show text field if there is one
+		jQuery(this).parents('li').siblings('.advanced_ads_disable_reply').show();
+	});
 	// send form or close it
 	jQuery('#advanced-ads-feedback-content .button').click(function ( e ) {
 		e.preventDefault();

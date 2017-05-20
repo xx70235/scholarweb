@@ -76,6 +76,9 @@ class Advanced_Ads_Ajax {
 			$arguments = stripslashes($arguments);
 			$arguments = json_decode($arguments, true);
 		}
+		if ( ! empty( $request['elementId'] ) ) {
+			$arguments['cache_busting_elementid'] = $request['elementId'];
+		}
 
 		$response = array();
 		if ( isset( $methods[ $method ] ) && isset( $id ) ) {

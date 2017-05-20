@@ -216,9 +216,8 @@ class Advanced_Ads_AdSense_Admin {
 
                 ?><label><input type="checkbox" name="<?php echo GADSENSE_OPT_NAME; ?>[page-level-enabled]" value="1" <?php checked( $page_level ); ?> />
 		<?php _e( 'Insert Page-Level ads code on all pages.', 'advanced-ads' ); ?></label>
-                <p class="description">
-		<?php _e( 'You still need to enable Page-Level ads in your AdSense account. See <a href="https://support.google.com/adsense/answer/6245304" target="_blank">AdSense Help</a> (requires AdSense-login) for more information', 'advanced-ads' ); ?>
-		</p><?php
+                <p class="description"><?php _e( 'You still need to enable Page-Level ads in your AdSense account. See <a href="https://support.google.com/adsense/answer/6245304" target="_blank">AdSense Help</a> (requires AdSense-login) for more information.', 'advanced-ads' ); ?></p>
+                <p class="description"><?php _e( 'Please notice that this code might also activate QuickStart ads. Please read <a href="https://support.google.com/adsense/answer/7171740" target="_blank">QuickStart</a> and remove this option <strong>when ads appear in random places</strong>.', 'advanced-ads' ); ?></p><?php
 	}
 
         /**
@@ -314,12 +313,13 @@ class Advanced_Ads_AdSense_Admin {
 				'class' => 'advads-ad-notice-responsive-position error hidden',
 			);
 			// show hint about Content ad, Link unit or Matched content being defined in AdSense account
-			if( 'adsense' === $ad->type ){
+			// disabled since it might no longer be needed with the new ad types
+			/* if( 'adsense' === $ad->type ){
 			    $notices[] = array(
 				    'text' => sprintf( __( 'The type of your AdSense ad unit (content unit, link unit or matched content) needs to be defined in <a href="%s" target="_blank">your AdSense account</a>.', 'advanced-ads' ), 'https://www.google.com/adsense' ),
 				    'class' => 'advads-ad-notice-adsense-ad-unit-type',
 			    );
-			}
+			}*/
 		    break;
 	    }
 	    

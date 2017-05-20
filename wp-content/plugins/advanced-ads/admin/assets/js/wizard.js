@@ -33,6 +33,7 @@ var advads_wizard = {
     },
     start: function(){ // do stuff when wizard is started
 	// show page in 1-column stype
+	var _this = this;
 	if( jQuery( '#post-body').hasClass('columns-1') ){
 	    this.one_column = true;
 	} else {
@@ -51,6 +52,7 @@ var advads_wizard = {
 	jQuery( '#advads-ad-info').addClass('advads-hide'); // shortcode and php function info
 	// hide all elements with 'advads-hide-for-wizard' class
 	jQuery( '.advads-hide-in-wizard').hide();
+	jQuery( '#advads-start-wizard' ).hide();
 	// remove close-class from ad type box
 	jQuery( '#ad-main-box' ).removeClass('closed');
 	this.save_hide_wizard( false );
@@ -68,6 +70,7 @@ var advads_wizard = {
 	jQuery('#advads-wizard-welcome').remove();// close wizard welcome message
 	// show all elements with 'advads-hide-for-wizard' class
 	jQuery( '.advads-hide-in-wizard').show();
+	jQuery( '#advads-start-wizard' ).show();
 	this.save_hide_wizard( true );
     },
     update_nav: function(){ // update navigation, display only valid buttons

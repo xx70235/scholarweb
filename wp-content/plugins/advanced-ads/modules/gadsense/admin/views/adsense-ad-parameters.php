@@ -3,9 +3,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die();
 }
 $is_responsive = ('responsive' == $unit_type) ? true : false;
+$is_link_responsive_unit = ('link-responsive' == $unit_type) ? true : false;
 $is_matched_content = ('matched-content' == $unit_type) ? true : false;
 $use_manual_css = ('manual' == $unit_resize) ? true : false;
-if ( $is_responsive || $is_matched_content ) {
+if ( $is_responsive || $is_link_responsive_unit || $is_matched_content ) {
     echo '<style type="text/css"> #advanced-ads-ad-parameters-size {display: none;}	</style>';
 }
 
@@ -51,7 +52,10 @@ if( $pub_id_errors ) : ?>
 	    <option value="normal" <?php selected( $unit_type, 'normal' ); ?>><?php _e( 'Normal', 'advanced-ads' ); ?></option>
 	    <option value="responsive" <?php selected( $unit_type, 'responsive' ); ?>><?php _e( 'Responsive', 'advanced-ads' ); ?></option>
 	    <option value="matched-content" <?php selected( $unit_type, 'matched-content' ); ?>><?php _e( 'Responsive (Matched Content)', 'advanced-ads' ); ?></option>
+	    <option value="link" <?php selected( $unit_type, 'link' ); ?>><?php _e( 'Link ads', 'advanced-ads' ); ?></option>
+	    <option value="link-responsive" <?php selected( $unit_type, 'link-responsive' ); ?>><?php _e( 'Link ads (Responsive)', 'advanced-ads' ); ?></option>
 	</select>
+	<a href="<?php echo ADVADS_URL . 'manual/adsense-ads/#adsense-ad-types'; ?>" target="_blank"><?php _e( 'manual', 'advanced-ads' ); ?></a>
     </div>
     <hr/>
 <?php if ( ! defined( 'AAR_SLUG' ) ) : ?>

@@ -292,7 +292,8 @@ tr:hover .on-hover { display: block; }
     overflow-y: scroll;
 }
 #advanced-ads-feedback-content textarea,
-#advanced-ads-feedback-content input[type="text"] { display:none; }
+#advanced-ads-feedback-content input[type="text"] { display:none; width: 100%; }
+#advanced-ads-feedback-content .advanced_ads_disable_reply { display:none; }
 .advanced-ads-feedback-not-deactivate { display: block; text-align: right; }
 
 /**

@@ -111,6 +111,9 @@ class Advanced_Ads_Admin {
 		add_filter( 'admin_footer', array( $this, 'add_deactivation_logic' ) );
 		// add_filter( 'after_plugin_row_' . ADVADS_BASE, array( $this, 'display_deactivation_message' ) );
 		
+		// disable adding rel="noopener noreferrer" to link added through TinyMCE for rich content ads
+		add_filter( 'tiny_mce_before_init', array( $this, 'tinymce_allow_unsafe_link_target' ) );
+		
 		Advanced_Ads_Admin_Meta_Boxes::get_instance();
 		Advanced_Ads_Admin_Menu::get_instance();
 		Advanced_Ads_Admin_Ad_Type::get_instance();
@@ -361,8 +364,10 @@ class Advanced_Ads_Admin {
 		$current_user = wp_get_current_user();
 		if ( !($current_user instanceof WP_User) ){
 		    $from = '';
+		    $email = '';
 		} else {
 		    $from = $current_user->user_nicename . ' <' . trim( $current_user->user_email ) . '>';
+		    $email = $current_user->user_email;
 		}
 		
 		include ADVADS_BASE_PATH . 'admin/views/feedback-disable.php';		
@@ -393,9 +398,15 @@ class Advanced_Ads_Admin {
 		$headers = array();
 		
 		$from = isset( $form['advanced_ads_disable_from'] ) ? $form['advanced_ads_disable_from'] : '';
+		// if an address is given in the form then use that one
+		if( isset( $form['advanced_ads_disable_reason'] ) && 'technical issue' === $form['advanced_ads_disable_reason'] 
+			&& isset( $form[ 'advanced_ads_disable_reply' ] ) && !empty( $form[ 'advanced_ads_disable_reply_email' ] ) ){
+			$from = $current_user->user_nicename . ' <' . trim( $form[ 'advanced_ads_disable_reply_email' ] ) . '>';
+			$text .= "\n\n REPLY ALLOWED";
+		}
 		if( $from ){
-		    $headers[] = "From: $from";
-		    $headers[] = "Reply-To: $from";
+			$headers[] = "From: $from";
+			$headers[] = "Reply-To: $from";
 		}
 		
 		$subject = isset( $form['advanced_ads_disable_reason'] ) ? $form['advanced_ads_disable_reason'] : '(no reason given)';
@@ -404,5 +415,21 @@ class Advanced_Ads_Admin {
 		
 		die();
 	    
-	}	
+	}
+	
+	public function tinymce_allow_unsafe_link_target( $mceInit ) {
+	    
+		// check if we are on the ad edit screen
+		if( ! function_exists( 'get_current_screen' ) ){
+		    return $mceInit;
+		}
+		
+		$screen = get_current_screen();
+		if( isset( $screen->id ) && $screen->id === 'advanced_ads' ) {
+			$mceInit['allow_unsafe_link_target'] = true;
+		}
+		
+		return $mceInit;
+	}   
+
 }

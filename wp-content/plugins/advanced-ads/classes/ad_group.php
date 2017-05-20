@@ -95,6 +95,14 @@ class Advanced_Ads_Group {
 	private $ads = array();
 
 	/**
+	 * Multidimensional array contains information about the wrapper
+	 *  each possible html attribute is an array with possible multiple elements.
+	 *
+	 * @since untagged
+	 */
+	public $wrapper = array();
+
+	/**
 	 * init ad group object
 	 *
 	 * @since 1.0.0
@@ -162,6 +170,8 @@ class Advanced_Ads_Group {
 		if ( isset( $group_data['options'] ) ) {
 			$this->options = isset( $group_data['options'] ) ? $group_data['options'] : array();
 		}
+
+		$this->create_wrapper();
 	}
 
 	/**
@@ -215,8 +225,16 @@ class Advanced_Ads_Group {
 		$advads = Advanced_Ads::get_instance();
 		$advads->current_ads[] = array('type' => 'group', 'id' => $this->id, 'title' => $this->name);
 
+		if ( ! $output ) { return ''; }
+
 		// filter grouped ads output
 		$output_string = implode( '', apply_filters( 'advanced-ads-group-output-array', $output, $this ) );
+
+		if ( $this->wrapper !== array() ) {
+			$output_string = '<div' . Advanced_Ads_Utils::build_html_attributes( $this->wrapper ) . '>'
+			. $output_string
+			. '</div>';
+		}
 
 		// filter final group output
 		return apply_filters( 'advanced-ads-group-output', $output_string, $this );
@@ -506,6 +524,25 @@ class Advanced_Ads_Group {
 		}
 
 		return $sanitized_weights;
+	}
+
+	/**
+	 * Create a wrapper to place around the group.
+	 */
+	private function create_wrapper() {
+		$this->wrapper = array();
+
+		// Add placement class.
+		if ( isset( $this->ad_args['output']['class'] ) && is_array( $this->ad_args['output']['class'] ) ) {
+			$this->wrapper['class'] = $this->ad_args['output']['class'];
+		}
+
+		$this->wrapper = (array) apply_filters( 'advanced-ads-output-wrapper-options-group', $this->wrapper, $this );
+
+		if ( $this->wrapper !== array() && ! isset( $this->wrapper['id'] ) ) {
+			$prefix = Advanced_Ads_Plugin::get_instance()->get_frontend_prefix();
+			$this->wrapper['id'] = $prefix . mt_rand();
+		}
 	}
 
 }

@@ -41,5 +41,37 @@ class Advanced_Ads_Utils {
 		}
 		return $result;
 	}
+
+	/**
+	 * Convert array of html attributes to string.
+	 *
+	 * @param array $data
+	 * @return string
+	 * @since untagged
+	 */
+	public static function build_html_attributes( $data ) {
+		$result = '';
+		foreach ( $data as $_html_attr => $_values ){
+			if ( $_html_attr == 'style' ){
+				$_style_values_string = '';
+				foreach ( $_values as $_style_attr => $_style_values ){
+					if ( is_array( $_style_values ) ) {
+						$_style_values_string .= $_style_attr . ': ' .implode( ' ', $_style_values ). '; '; }
+					else {
+						$_style_values_string .= $_style_attr . ': ' .$_style_values. '; '; }
+				}
+				$result .= " style=\"$_style_values_string\"";
+			} else {
+				if ( is_array( $_values ) ) {
+					$_values_string = implode( ' ', $_values ); }
+				else {
+					$_values_string = sanitize_title( $_values ); }
+				$result .= " $_html_attr=\"$_values_string\"";
+			}
+		}
+		return $result;
+	}
+
+
 }
 ?>

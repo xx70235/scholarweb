@@ -80,6 +80,22 @@
 					return theAd;
 				}
 				
+				
+				/* older link unit format; for new ads the format type is no longer needed; link units are created through the AdSense panel */
+				if ('undefined' != typeof(theAd.format) && 'link' == theAd.format) {
+					
+					if( -1 != theAd.style.indexOf( 'width' ) ){
+					// is fixed size
+					    theAd.width = adByGoogle.css( 'width' ).replace( 'px', '' );
+					    theAd.height = adByGoogle.css( 'height' ).replace( 'px', '' );
+					    theAd.type = 'link';
+					} else {
+					// is responsive
+					    theAd.type = 'link-responsive';
+					}
+					return theAd;
+				}
+				
 				if ('undefined' != typeof(theAd.format) && 'autorelaxed' == theAd.format) {
 					/* Responsive Matched Content */
 					theAd.type = 'matched-content';
@@ -102,6 +118,17 @@
 			}
 			if ('responsive' == theAd.type) {
 				$( '#unit-type' ).val( 'responsive' );
+				$( '#ad-resize-type' ).val( 'auto' );
+				$( '#advanced-ads-ad-parameters-size input[name="advanced_ad[width]"]' ).val( '' );
+				$( '#advanced-ads-ad-parameters-size input[name="advanced_ad[height]"]' ).val( '' );
+			}
+			if ('link' == theAd.type) {
+				$( '#unit-type' ).val( 'link' );
+				$( '#advanced-ads-ad-parameters-size input[name="advanced_ad[width]"]' ).val( theAd.width );
+				$( '#advanced-ads-ad-parameters-size input[name="advanced_ad[height]"]' ).val( theAd.height );
+			}
+			if ('link-responsive' == theAd.type) {
+				$( '#unit-type' ).val( 'link-responsive' );
 				$( '#ad-resize-type' ).val( 'auto' );
 				$( '#advanced-ads-ad-parameters-size input[name="advanced_ad[width]"]' ).val( '' );
 				$( '#advanced-ads-ad-parameters-size input[name="advanced_ad[height]"]' ).val( '' );
@@ -151,11 +178,11 @@
 		
 		function advads_update_adsense_type(){
 		    var type = $( '#unit-type' ).val();
-			if ('responsive' == type || 'matched-content' == type) {
+			if ( 'responsive' == type || 'link-responsive' == type || 'matched-content' == type ) {
 				$( '#advanced-ads-ad-parameters-size' ).css( 'display', 'none' );
 				$( '#advanced-ads-ad-parameters-size' ).prev('.label').css( 'display', 'none' );
 				$( '#advanced-ads-ad-parameters-size' ).next('.hr').css( 'display', 'none' );
-			} else if ('normal' == type) {
+			} else if ( 'normal' == type || 'link' == type ) {
 				$( '#advanced-ads-ad-parameters-size' ).css( 'display', 'block' );
 				$( '#advanced-ads-ad-parameters-size' ).prev('.label').css( 'display', 'block' );
 				$( '#advanced-ads-ad-parameters-size' ).next('.hr').css( 'display', 'block' );
