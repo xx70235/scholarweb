@@ -1,0 +1,384 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-03-29 14:49+0530\n"
+"PO-Revision-Date: 2016-03-29 14:51+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;"
+"esc_html__;esc_html_e;esc_html_x\n"
+"X-Poedit-SearchPath-0: 404.php\n"
+"X-Poedit-SearchPath-1: archive.php\n"
+"X-Poedit-SearchPath-2: comments.php\n"
+"X-Poedit-SearchPath-3: footer.php\n"
+"X-Poedit-SearchPath-4: functions.php\n"
+"X-Poedit-SearchPath-5: header.php\n"
+"X-Poedit-SearchPath-6: index.php\n"
+"X-Poedit-SearchPath-7: page.php\n"
+"X-Poedit-SearchPath-8: search.php\n"
+"X-Poedit-SearchPath-9: sidebar.php\n"
+"X-Poedit-SearchPath-10: single.php\n"
+"X-Poedit-SearchPath-11: template-parts/content.php\n"
+"X-Poedit-SearchPath-12: template-parts/content-none.php\n"
+"X-Poedit-SearchPath-13: template-parts/content-page.php\n"
+"X-Poedit-SearchPath-14: template-parts/content-single.php\n"
+"X-Poedit-SearchPath-15: inc/template-tags.php\n"
+"X-Poedit-SearchPath-16: inc/howlfunction/functions2.php\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: comments.php:29
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:38 comments.php:59
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41 comments.php:62
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:42 comments.php:63
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:46
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:81
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:185
+msgid "Footer"
+msgstr ""
+
+#: functions.php:210
+msgid "&laquo; Previous"
+msgstr ""
+
+#: functions.php:211
+msgid "Next &raquo;"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:17
+msgid "Designed By"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:17
+msgid "HowlThemes"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:20
+msgid "Back To Top"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:36 inc/howlfunction/functions2.php:45
+msgid "Logo"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:38
+msgid ""
+"Upload a logo to replace the default site name and description in the header"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:50
+msgid "Styling"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:54 inc/howlfunction/functions2.php:72
+msgid "Header Background"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:82
+msgid "Global Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:99
+msgid "Primary Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:119 inc/howlfunction/functions2.php:167
+#: inc/howlfunction/functions2.php:268
+msgid "Background Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:139
+msgid "Link Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:150
+msgid "Post Box Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:185 inc/howlfunction/functions2.php:287
+msgid "Title Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:203
+msgid "Font Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:222
+msgid "Meta Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:240
+msgid "Meta Link Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:251
+msgid "Sidebar Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:305
+msgid "Widget Text Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:316
+msgid "Typography"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:336
+msgid "Font size"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:360
+msgid "Font Family"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:375
+msgid "Primary Font"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:408
+msgid "Secondary Font"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:442
+msgid "Social"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:443
+msgid "Add URLs"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:456
+msgid "Facebook"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:470
+msgid "Twitter"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:483
+msgid "Google+"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:496
+msgid "Pinterest"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:509
+msgid "Instagram"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:522
+msgid "Linkedin"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:535
+msgid "Youtube"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:548
+msgid "RSS"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:561
+msgid "Tumblr"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:574
+msgid "Soundcloud"
+msgstr ""
+
+#: inc/template-tags.php:28
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:33
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid " "
+msgstr ""
+
+#: inc/template-tags.php:52 inc/template-tags.php:58
+#, php-format
+msgid " %1$s"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:68 template-parts/content-page.php:25
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:85
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:87
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:89
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:91
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:91
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:93
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:93
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:95
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:95
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:98
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:100
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:102
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:104
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:106
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:108
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:110
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:112
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:114
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:117
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:121
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:123
+msgid "Archives"
+msgstr ""
+
+#: search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:18 template-parts/content-single.php:20
+msgid "Pages:"
+msgstr ""
