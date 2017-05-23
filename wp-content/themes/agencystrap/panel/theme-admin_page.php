@@ -202,7 +202,7 @@ a {
 add_action('admin_head', 'custom_admin_colors');
 
 
-add_action('admin_menu', 'agencystrap_setup_menu');
+//add_action('admin_menu', 'agencystrap_setup_menu');
 
     function agencystrap_setup_menu(){
             add_menu_page( 'Agencystrap', 'Agencystrap', 'manage_options', 'agencystrap-setup', 'agencystrap_init' );
