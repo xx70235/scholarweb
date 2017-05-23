@@ -242,12 +242,12 @@ add_action('admin_head', 'custom_admin_colors');
         echo "</h2>";
 
 		echo '<p>';
-		printf(__('ThemingPress is a online store of WordPress themes. Its maintain by <a href="https://themingstrap.com">ThemingStrap</a> Team', 'agencystrap' ));
+		//printf(__('ThemingPress is a online store of WordPress themes. Its maintain by <a href="https://themingstrap.com">ThemingStrap</a> Team', 'agencystrap' ));
 		echo "</p>";
 
-		echo '<a href="https://themingpress.com/about-themingpress/" target="_blank"><button>';
-		printf(esc_html__('About Us', 'agencystrap' ));
-		echo "</button></a></div></div>";
+		//echo '<a href="https://themingpress.com/about-themingpress/" target="_blank"><button>';
+		//printf(esc_html__('About Us', 'agencystrap' ));
+		//echo "</button></a></div></div>";
 
 
 		echo '<div class="grid grid-pad senswp"><div class="col-1-1"><h1 style="padding-bottom: 30px; text-align: center;">';
@@ -287,9 +287,9 @@ add_action('admin_head', 'custom_admin_colors');
 		echo '</p></div>';
 
 
-		echo '<div class="grid grid-pad" style="border-bottom: 1px solid #ccc; padding-bottom: 50px; margin-bottom: 30px;"><div class="col-1-1"><a href="https://themingstrap.com/quote/" target="_blank"><button class="pro">';
-		printf( esc_html__( 'GET A QUOTE', 'agencystrap' ));
-		echo '</button></a></div></div>';
+		//echo '<div class="grid grid-pad" style="border-bottom: 1px solid #ccc; padding-bottom: 50px; margin-bottom: 30px;"><div class="col-1-1"><a href="https://themingstrap.com/quote/" target="_blank"><button class="pro">';
+		//printf( esc_html__( 'GET A QUOTE', 'agencystrap' ));
+		//echo '</button></a></div></div>';
 
 
     }
