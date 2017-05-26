@@ -1,5 +1,6 @@
 <?php
 /*
+ * template name: single portfolio 
 Page displays single portfolio Items
 */
 ?>

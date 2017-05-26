@@ -1,5 +1,7 @@
 <?php
 /**
+ * template name: home 
+ *
  * The blog template file.
  *
  * This is the most generic template file in a WordPress theme
