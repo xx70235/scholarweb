@@ -24,7 +24,7 @@ echo '</a></div>';
 	</header><!-- .entry-header -->
 
 	<div class="entry-content" itemprop="text">
-
+<?php //the_excerpt(); ?>
         <div id="keywords">
             <span class="keywords" >关键字：
 	            <?php //the_excerpt();
@@ -51,11 +51,6 @@ echo '</a></div>';
 
 	            }
 	            ?>
-<!--	            --><?php //$terms = wp_get_post_terms( $post->ID, array( 'keywords') ); ?>
-<!--	            --><?php //foreach ( $terms as $term ) : ?>
-<!---->
-<!--		            --><?php //echo $term->name.'  '; ?>
-<!--	            --><?php //endforeach; ?>
             </span></div>
         <a href="<?php the_permalink(); ?> " class="btn read-more">Read More</a>
 	</div><!-- .entry-content -->
