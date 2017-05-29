@@ -6,8 +6,8 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area content-area-full">
+<div class="archive-content">
+	<div id="primary" class="content-area ">
 		<main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -25,4 +25,6 @@ get_header(); ?>
            <?php agencystrap_postnav();?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
+<?php get_sidebar('2'); ?>
+</div>
 <?php get_footer(); ?>
