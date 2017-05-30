@@ -16,7 +16,14 @@ body
 {
 	list-style: none;
 	display:inline-block;
+    vertical-align:middle;
 	padding-right:10px;
+    line-height:18px;
+    overflow:hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    zoom: 1;
 }
 
 /* If in a widget area make a single column by adding display block  */
@@ -37,4 +44,42 @@ body
 .searchandfilter ul > li > ul:not(.children)
 {
 	margin-left:0;
+}
+
+
+.searchandfilter label {
+    float:left;
+    margin:4px;
+    background-color:#F9F9F9;
+    border-radius:4px;
+    overflow:auto;
+}
+
+.searchandfilter li span {
+    font-family: PingFangSC-Regular;
+    text-align:center;
+    vertical-align:middle;
+    font-size: 16px;
+    color: #989DAC;
+}
+
+.searchandfilter label span {
+    font-family: PingFangSC-Regular;
+    text-align:center;
+    font-size: 14px;
+    padding:13px 0px;
+    display:block;
+    color: #989DAC;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.searchandfilter label input {
+    position:absolute;
+    top:-20px;
+}
+
+.searchandfilter input:checked + span {
+    background-color:#eee;
+    /*color:#F7F7F7;*/
 }
