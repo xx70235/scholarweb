@@ -76,7 +76,7 @@ function wpua_after_avatar() {
  * @uses wpuf_has_shortcode()
  */
 function wpua_do_before_avatar() {
-  $wpua_profile_title = '<h3>'.__('Avatar','wp-user-avatar').'</h3>';
+//  $wpua_profile_title = '<h3>'.__('Avatar','wp-user-avatar').'</h3>';
   /**
    * Filter profile title
    * @since 1.9.4
@@ -149,7 +149,7 @@ function wpua_after_avatar_admin() {
  */
 function wpua_do_before_avatar_admin() {
 ?>
-  <h3><?php _e('Avatar') ?></h3>
+<!--  <h3>--><?php //_e('Avatar') ?><!--</h3>-->
   <table class="form-table">
     <tr>
       <th><label for="wp_user_avatar"><?php _e('Image','wp-user-avatar'); ?></label></th>

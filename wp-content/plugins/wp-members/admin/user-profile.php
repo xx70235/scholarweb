@@ -34,15 +34,15 @@ function wpmem_admin_fields() {
 	global $current_screen, $user_ID, $wpmem;
 	$user_id = ( $current_screen->id == 'profile' ) ? $user_ID : $_REQUEST['user_id']; ?>
 
-	<h3><?php
-	/**
-	 * Filter the heading for additional profile fields.
-	 *
-	 * @since 2.8.2
-	 *
-	 * @param string The default additional fields heading.
-	 */
-	echo apply_filters( 'wpmem_admin_profile_heading', __( 'WP-Members Additional Fields', 'wp-members' ) ); ?></h3>   
+<!--	<h3>--><?php
+//	/**
+//	 * Filter the heading for additional profile fields.
+//	 *
+//	 * @since 2.8.2
+//	 *
+//	 * @param string The default additional fields heading.
+//	 */
+//	echo apply_filters( 'wpmem_admin_profile_heading', __( 'WP-Members Additional Fields', 'wp-members' ) ); ?><!--</h3>   -->
  	<table class="form-table">
 		<?php
 		// Get fields.
@@ -103,7 +103,7 @@ function wpmem_admin_fields() {
 						$input = $wpmem->forms->create_form_field( array( 'name'=>$meta, 'type'=>$field['type'], 'value'=>$values, 'compare'=>$valtochk, 'delimiter'=>$field['delimiter'] ) );
 					} else {
 						$field['type'] = ( 'hidden' == $field['type'] ) ? 'text' : $field['type'];
-						$input = wpmem_create_formfield( $meta, $field['type'], $val, $valtochk );
+						$input = wpmem_create_formfield( $meta, $field['type'], $val, $valtochk ,"regular-text ltr");
 					}
 				}
 				
@@ -156,7 +156,7 @@ function wpmem_admin_fields() {
 		// Handle form rows display from array.
 		foreach ( $rows as $row ) {
 			$show_field = '
-				<tr>
+				<tr class="user-email-wrap">
 					<th>' . $row['label'] . '</th>
 					<td>' . $row['field'] . '</td>
 				</tr>';
