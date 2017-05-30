@@ -52,7 +52,7 @@ echo '</a></div>';
 	            }
 	            ?>
             </span></div>
-        <a href="<?php the_permalink(); ?> " class="btn read-more">Read More</a>
+        <a href="<?php the_permalink(); ?> " class="btn read-more">阅读全文</a>
 	</div><!-- .entry-content -->
         <div class="entry-meta">
         <div class="image-author">

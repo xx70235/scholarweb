@@ -2,14 +2,17 @@
 # This file is distributed under the same license as the WordPress - 4.7.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-01-26 15:54:45+0000\n"
+"PO-Revision-Date: 2017-05-30 18:25+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: Poedit 2.0.2\n"
 "Language: zh_CN\n"
 "Project-Id-Version: WordPress - 4.7.x\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
 #. translators: Translate this to the correct language tag for your locale, see
 #. https://www.w3.org/International/articles/language-tags/ for reference. Do
@@ -2102,7 +2105,7 @@ msgstr "抱歉，您不能编辑此用户。"
 #: wp-includes/class-wp-xmlrpc-server.php:2552
 #: wp-includes/class-wp-xmlrpc-server.php:2598
 msgid "Sorry, you are not allowed to edit your profile."
-msgstr "抱歉，您不能编辑您的个人资料。"
+msgstr "抱歉，您不能编辑您的用户资料。"
 
 #: wp-includes/class-wp-xmlrpc-server.php:2709
 #: wp-includes/class-wp-xmlrpc-server.php:2911
@@ -2388,7 +2391,7 @@ msgstr "<a href=\"%1$s\" aria-label=\"%2$s\">已登入为%3$s</a>。<a href=\"%4
 #. translators: %s: user name
 #: wp-includes/comment-template.php:2229
 msgid "Logged in as %s. Edit your profile."
-msgstr "已登入为%s。编辑您的个人资料。"
+msgstr "已登入为%s。编辑您的用户资料。"
 
 #. translators: 1: VHOST, 2: SUBDOMAIN_INSTALL, 3: wp-config.php, 4:
 #. is_subdomain_install()
@@ -7453,7 +7456,7 @@ msgstr "管理评论"
 
 #: wp-includes/admin-bar.php:278
 msgid "Edit My Profile"
-msgstr "编辑我的个人资料"
+msgstr "编辑我的用户资料"
 
 #: wp-includes/post-formats.php:68
 msgid "Invalid post."

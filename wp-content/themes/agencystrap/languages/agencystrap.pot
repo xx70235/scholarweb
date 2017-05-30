@@ -34,7 +34,7 @@ msgstr ""
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "未找到该页面"
 
 #: 404.php:19
 msgid ""
@@ -93,7 +93,7 @@ msgstr ""
 
 #: inc/howlfunction/functions2.php:20
 msgid "Back To Top"
-msgstr ""
+msgstr "回到顶部"
 
 #: inc/howlfunction/functions2.php:36 inc/howlfunction/functions2.php:45
 msgid "Logo"

@@ -2,14 +2,17 @@
 # This file is distributed under the same license as the WordPress - 4.7.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-12-08 04:30:37+0000\n"
+"PO-Revision-Date: 2017-05-30 18:26+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: Poedit 2.0.2\n"
 "Language: zh_CN\n"
 "Project-Id-Version: WordPress - 4.7.x - Administration\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
 #. translators: default GMT offset or timezone string. Must be either a valid
 #. offset (-12 to 14) 	   or a valid timezone string (America/New_York). See
@@ -5701,7 +5704,7 @@ msgstr "自定义您的站点"
 
 #: wp-admin/user-edit.php:180
 msgid "Profile updated."
-msgstr "个人资料已更新。"
+msgstr "用户资料已更新。"
 
 #. translators: 1: Site name, 2: site URL, 3: role, 4: activation URL
 #: wp-admin/user-new.php:93
@@ -7294,7 +7297,7 @@ msgstr "您设定的密码。"
 
 #: wp-admin/includes/user.php:480
 msgid "Yes, take me to my profile page"
-msgstr "希望，请带我到个人资料编辑页面"
+msgstr "希望，请带我到用户资料编辑页面"
 
 #: wp-admin/edit.php:144 wp-admin/edit.php:147 wp-admin/post.php:260
 #: wp-admin/post.php:263 wp-admin/upload.php:162
@@ -7742,7 +7745,7 @@ msgstr "更新用户"
 
 #: wp-admin/user-edit.php:679
 msgid "Update Profile"
-msgstr "更新个人资料"
+msgstr "更新用户资料"
 
 #: wp-admin/user-edit.php:655
 msgid "Additional Capabilities"
@@ -8599,11 +8602,11 @@ msgstr "工具"
 
 #: wp-admin/menu.php:228 wp-admin/menu.php:231
 msgid "Your Profile"
-msgstr "我的个人资料"
+msgstr "我的用户资料"
 
 #: wp-admin/menu.php:217 wp-admin/user/menu.php:14 wp-admin/user-edit.php:28
 msgid "Profile"
-msgstr "个人资料"
+msgstr "用户资料"
 
 #. translators: add new plugin
 #: wp-admin/menu.php:208 wp-admin/plugins.php:504

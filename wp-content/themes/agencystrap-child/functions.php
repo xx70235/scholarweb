@@ -849,7 +849,6 @@ function agencystrap_home_hero() { ?>
         <div class="page-hero hero-area">
            <div class="hero-inner">
                <h1>
-                   Posted Under :
                 <?php echo  wp_title('', true); ?>
                </h1>
                 <?php if (function_exists('get_the_subtitle')) {?>

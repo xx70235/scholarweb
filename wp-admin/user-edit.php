@@ -241,80 +241,80 @@ if ( ! IS_PROFILE_PAGE ) {
 <h2><?php _e( 'Personal Options' ); ?></h2>
 
 <table class="form-table">
-<?php if ( ! ( IS_PROFILE_PAGE && ! $user_can_edit ) ) : ?>
-	<tr class="user-rich-editing-wrap">
-		<th scope="row"><?php _e( 'Visual Editor' ); ?></th>
-		<td><label for="rich_editing"><input name="rich_editing" type="checkbox" id="rich_editing" value="false" <?php if ( ! empty( $profileuser->rich_editing ) ) checked( 'false', $profileuser->rich_editing ); ?> /> <?php _e( 'Disable the visual editor when writing' ); ?></label></td>
-	</tr>
-<?php endif; ?>
-<?php if ( count($_wp_admin_css_colors) > 1 && has_action('admin_color_scheme_picker') ) : ?>
-<tr class="user-admin-color-wrap">
-<th scope="row"><?php _e('Admin Color Scheme')?></th>
-<td><?php
-	/**
-	 * Fires in the 'Admin Color Scheme' section of the user editing screen.
-	 *
-	 * The section is only enabled if a callback is hooked to the action,
-	 * and if there is more than one defined color scheme for the admin.
-	 *
-	 * @since 3.0.0
-	 * @since 3.8.1 Added `$user_id` parameter.
-	 *
-	 * @param int $user_id The user ID.
-	 */
-	do_action( 'admin_color_scheme_picker', $user_id );
-?></td>
-</tr>
+<?php //if ( ! ( IS_PROFILE_PAGE && ! $user_can_edit ) ) : ?>
+<!--	<tr class="user-rich-editing-wrap">-->
+<!--		<th scope="row">--><?php //_e( 'Visual Editor' ); ?><!--</th>-->
+<!--		<td><label for="rich_editing"><input name="rich_editing" type="checkbox" id="rich_editing" value="false" --><?php //if ( ! empty( $profileuser->rich_editing ) ) checked( 'false', $profileuser->rich_editing ); ?><!-- /> --><?php //_e( 'Disable the visual editor when writing' ); ?><!--</label></td>-->
+<!--	</tr>-->
+<?php //endif; ?>
+<?php //if ( count($_wp_admin_css_colors) > 1 && has_action('admin_color_scheme_picker') ) : ?>
+<!--<tr class="user-admin-color-wrap">-->
+<!--<th scope="row">--><?php //_e('Admin Color Scheme')?><!--</th>-->
+<!--<td>--><?php
+//	/**
+//	 * Fires in the 'Admin Color Scheme' section of the user editing screen.
+//	 *
+//	 * The section is only enabled if a callback is hooked to the action,
+//	 * and if there is more than one defined color scheme for the admin.
+//	 *
+//	 * @since 3.0.0
+//	 * @since 3.8.1 Added `$user_id` parameter.
+//	 *
+//	 * @param int $user_id The user ID.
+//	 */
+//	do_action( 'admin_color_scheme_picker', $user_id );
+//?><!--</td>-->
+<!--</tr>-->
 <?php
-endif; // $_wp_admin_css_colors
-if ( !( IS_PROFILE_PAGE && !$user_can_edit ) ) : ?>
-<tr class="user-comment-shortcuts-wrap">
-<th scope="row"><?php _e( 'Keyboard Shortcuts' ); ?></th>
-<td><label for="comment_shortcuts"><input type="checkbox" name="comment_shortcuts" id="comment_shortcuts" value="true" <?php if ( ! empty( $profileuser->comment_shortcuts ) ) checked( 'true', $profileuser->comment_shortcuts ); ?> /> <?php _e('Enable keyboard shortcuts for comment moderation.'); ?></label> <?php _e('<a href="https://codex.wordpress.org/Keyboard_Shortcuts" target="_blank">More information</a>'); ?></td>
-</tr>
-<?php endif; ?>
-<tr class="show-admin-bar user-admin-bar-front-wrap">
-<th scope="row"><?php _e( 'Toolbar' ); ?></th>
-<td><fieldset><legend class="screen-reader-text"><span><?php _e('Toolbar') ?></span></legend>
-<label for="admin_bar_front">
-<input name="admin_bar_front" type="checkbox" id="admin_bar_front" value="1"<?php checked( _get_admin_bar_pref( 'front', $profileuser->ID ) ); ?> />
-<?php _e( 'Show Toolbar when viewing site' ); ?></label><br />
-</fieldset>
-</td>
-</tr>
+//endif; // $_wp_admin_css_colors
+//if ( !( IS_PROFILE_PAGE && !$user_can_edit ) ) : ?>
+<!--<tr class="user-comment-shortcuts-wrap">-->
+<!--<th scope="row">--><?php //_e( 'Keyboard Shortcuts' ); ?><!--</th>-->
+<!--<td><label for="comment_shortcuts"><input type="checkbox" name="comment_shortcuts" id="comment_shortcuts" value="true" --><?php //if ( ! empty( $profileuser->comment_shortcuts ) ) checked( 'true', $profileuser->comment_shortcuts ); ?><!-- /> --><?php //_e('Enable keyboard shortcuts for comment moderation.'); ?><!--</label> --><?php //_e('<a href="https://codex.wordpress.org/Keyboard_Shortcuts" target="_blank">More information</a>'); ?><!--</td>-->
+<!--</tr>-->
+<?php //endif; ?>
+<!--<tr class="show-admin-bar user-admin-bar-front-wrap">-->
+<!--<th scope="row">--><?php //_e( 'Toolbar' ); ?><!--</th>-->
+<!--<td><fieldset><legend class="screen-reader-text"><span>--><?php //_e('Toolbar') ?><!--</span></legend>-->
+<!--<label for="admin_bar_front">-->
+<!--<input name="admin_bar_front" type="checkbox" id="admin_bar_front" value="1"--><?php //checked( _get_admin_bar_pref( 'front', $profileuser->ID ) ); ?><!-- />-->
+<?php //_e( 'Show Toolbar when viewing site' ); ?><!--</label><br />-->
+<!--</fieldset>-->
+<!--</td>-->
+<!--</tr>-->
 
 <?php
-$languages = get_available_languages();
-if ( $languages ) : ?>
-<tr class="user-language-wrap">
-	<th scope="row">
-		<?php /* translators: The user language selection field label */ ?>
-		<label for="locale"><?php _e( 'Language' ); ?></label>
-	</th>
-	<td>
-		<?php
-		$user_locale = $profileuser->locale;
-
-		if ( 'en_US' === $user_locale ) {
-			$user_locale = '';
-		} elseif ( '' === $user_locale || ! in_array( $user_locale, $languages, true ) ) {
-			$user_locale = 'site-default';
-		}
-
-		wp_dropdown_languages( array(
-			'name'                        => 'locale',
-			'id'                          => 'locale',
-			'selected'                    => $user_locale,
-			'languages'                   => $languages,
-			'show_available_translations' => false,
-			'show_option_site_default'    => true
-		) );
-		?>
-	</td>
-</tr>
+//$languages = get_available_languages();
+//if ( $languages ) : ?>
+<!--<tr class="user-language-wrap">-->
+<!--	<th scope="row">-->
+<!--		--><?php ///* translators: The user language selection field label */ ?>
+<!--		<label for="locale">--><?php //_e( 'Language' ); ?><!--</label>-->
+<!--	</th>-->
+<!--	<td>-->
+<!--		--><?php
+//		$user_locale = $profileuser->locale;
+//
+//		if ( 'en_US' === $user_locale ) {
+//			$user_locale = '';
+//		} elseif ( '' === $user_locale || ! in_array( $user_locale, $languages, true ) ) {
+//			$user_locale = 'site-default';
+//		}
+//
+//		wp_dropdown_languages( array(
+//			'name'                        => 'locale',
+//			'id'                          => 'locale',
+//			'selected'                    => $user_locale,
+//			'languages'                   => $languages,
+//			'show_available_translations' => false,
+//			'show_option_site_default'    => true
+//		) );
+//		?>
+<!--	</td>-->
+<!--</tr>-->
 <?php
-endif;
-?>
+//endif;
+//?>
 
 <?php
 /**
@@ -343,7 +343,7 @@ do_action( 'personal_options', $profileuser );
 	}
 ?>
 
-<h2><?php _e( 'Name' ); ?></h2>
+<!--<h2>--><?php //_e( 'Name' ); ?><!--</h2>-->
 
 <table class="form-table">
 	<tr class="user-user-login-wrap">
@@ -382,15 +382,15 @@ if ( is_multisite() && is_network_admin() && ! IS_PROFILE_PAGE && current_user_c
 </td></tr>
 <?php } ?>
 
-<tr class="user-first-name-wrap">
-	<th><label for="first_name"><?php _e('First Name') ?></label></th>
-	<td><input type="text" name="first_name" id="first_name" value="<?php echo esc_attr($profileuser->first_name) ?>" class="regular-text" /></td>
-</tr>
-
-<tr class="user-last-name-wrap">
-	<th><label for="last_name"><?php _e('Last Name') ?></label></th>
-	<td><input type="text" name="last_name" id="last_name" value="<?php echo esc_attr($profileuser->last_name) ?>" class="regular-text" /></td>
-</tr>
+<!--<tr class="user-first-name-wrap">-->
+<!--	<th><label for="first_name">--><?php //_e('First Name') ?><!--</label></th>-->
+<!--	<td><input type="text" name="first_name" id="first_name" value="--><?php //echo esc_attr($profileuser->first_name) ?><!--" class="regular-text" /></td>-->
+<!--</tr>-->
+<!---->
+<!--<tr class="user-last-name-wrap">-->
+<!--	<th><label for="last_name">--><?php //_e('Last Name') ?><!--</label></th>-->
+<!--	<td><input type="text" name="last_name" id="last_name" value="--><?php //echo esc_attr($profileuser->last_name) ?><!--" class="regular-text" /></td>-->
+<!--</tr>-->
 
 <tr class="user-nickname-wrap">
 	<th><label for="nickname"><?php _e('Nickname'); ?> <span class="description"><?php _e('(required)'); ?></span></label></th>
@@ -461,10 +461,10 @@ if ( is_multisite() && is_network_admin() && ! IS_PROFILE_PAGE && current_user_c
 	</td>
 </tr>
 
-<tr class="user-url-wrap">
-	<th><label for="url"><?php _e('Website') ?></label></th>
-	<td><input type="url" name="url" id="url" value="<?php echo esc_attr( $profileuser->user_url ) ?>" class="regular-text code" /></td>
-</tr>
+<!--<tr class="user-url-wrap">-->
+<!--	<th><label for="url">--><?php //_e('Website') ?><!--</label></th>-->
+<!--	<td><input type="url" name="url" id="url" value="--><?php //echo esc_attr( $profileuser->user_url ) ?><!--" class="regular-text code" /></td>-->
+<!--</tr>-->
 
 <?php
 	foreach ( wp_get_user_contact_methods( $profileuser ) as $name => $desc ) {
@@ -492,44 +492,44 @@ if ( is_multisite() && is_network_admin() && ! IS_PROFILE_PAGE && current_user_c
 ?>
 </table>
 
-<h2><?php IS_PROFILE_PAGE ? _e( 'About Yourself' ) : _e( 'About the user' ); ?></h2>
+<!--<h2>--><?php //IS_PROFILE_PAGE ? _e( 'About Yourself' ) : _e( 'About the user' ); ?><!--</h2>-->
 
 <table class="form-table">
-<tr class="user-description-wrap">
-	<th><label for="description"><?php _e('Biographical Info'); ?></label></th>
-	<td><textarea name="description" id="description" rows="5" cols="30"><?php echo $profileuser->description; // textarea_escaped ?></textarea>
-	<p class="description"><?php _e('Share a little biographical information to fill out your profile. This may be shown publicly.'); ?></p></td>
-</tr>
+<!--<tr class="user-description-wrap">-->
+<!--	<th><label for="description">--><?php //_e('Biographical Info'); ?><!--</label></th>-->
+<!--	<td><textarea name="description" id="description" rows="5" cols="30">--><?php //echo $profileuser->description; // textarea_escaped ?><!--</textarea>-->
+<!--	<p class="description">--><?php //_e('Share a little biographical information to fill out your profile. This may be shown publicly.'); ?><!--</p></td>-->
+<!--</tr>-->
 
-<?php if ( get_option( 'show_avatars' ) ) : ?>
-<tr class="user-profile-picture">
-	<th><?php _e( 'Profile Picture' ); ?></th>
-	<td>
-		<?php echo get_avatar( $user_id ); ?>
-		<p class="description"><?php
-			if ( IS_PROFILE_PAGE ) {
-				/* translators: %s: Gravatar URL */
-				$description = sprintf( __( 'You can change your profile picture on <a href="%s">Gravatar</a>.' ),
-					__( 'https://en.gravatar.com/' )
-				);
-			} else {
-				$description = '';
-			}
-
-			/**
-			 * Filters the user profile picture description displayed under the Gravatar.
-			 *
-			 * @since 4.4.0
-			 * @since 4.7.0 Added the `$profileuser` parameter.
-			 *
-			 * @param string  $description The description that will be printed.
-			 * @param WP_User $profileuser The current WP_User object.
-			 */
-			echo apply_filters( 'user_profile_picture_description', $description, $profileuser );
-		?></p>
-	</td>
-</tr>
-<?php endif; ?>
+<?php //if ( get_option( 'show_avatars' ) ) : ?>
+<!--<tr class="user-profile-picture">-->
+<!--	<th>--><?php //_e( 'Profile Picture' ); ?><!--</th>-->
+<!--	<td>-->
+<!--		--><?php //echo get_avatar( $user_id ); ?>
+<!--		<p class="description">--><?php
+//			if ( IS_PROFILE_PAGE ) {
+//				/* translators: %s: Gravatar URL */
+//				$description = sprintf( __( 'You can change your profile picture on <a href="%s">Gravatar</a>.' ),
+//					__( 'https://en.gravatar.com/' )
+//				);
+//			} else {
+//				$description = '';
+//			}
+//
+//			/**
+//			 * Filters the user profile picture description displayed under the Gravatar.
+//			 *
+//			 * @since 4.4.0
+//			 * @since 4.7.0 Added the `$profileuser` parameter.
+//			 *
+//			 * @param string  $description The description that will be printed.
+//			 * @param WP_User $profileuser The current WP_User object.
+//			 */
+//			echo apply_filters( 'user_profile_picture_description', $description, $profileuser );
+//		?><!--</p>-->
+<!--	</td>-->
+<!--</tr>-->
+<?php //endif; ?>
 
 <?php
 /**

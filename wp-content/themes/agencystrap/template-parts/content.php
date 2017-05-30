@@ -32,7 +32,7 @@ echo '</a></div>';
 	            $tax = 'keywords';
 
 	            // get the terms of taxonomy
-	            $terms = wp_get_post_terms($post->ID, $tax, [
+	            $terms = get_terms( $tax, [
 		            'hide_empty' => false, // do not hide empty terms
 	            ]);
 
@@ -57,7 +57,7 @@ echo '</a></div>';
 <!--		            --><?php //echo $term->name.'  '; ?>
 <!--	            --><?php //endforeach; ?>
             </span></div>
-        <a href="<?php the_permalink(); ?> " class="btn read-more">Read More</a>
+        <a href="<?php the_permalink(); ?> " class="btn read-more">阅读全文</a>
 	</div><!-- .entry-content -->
         <div class="entry-meta">
         <div class="image-author">

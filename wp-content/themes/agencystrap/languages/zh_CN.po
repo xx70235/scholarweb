@@ -1,0 +1,365 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-05-30 15:08+0800\n"
+"PO-Revision-Date: 2017-05-30 15:13+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "未找到该页面"
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: comments.php:29
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:38 comments.php:59
+msgid "Comment navigation"
+msgstr "评论导航"
+
+#: comments.php:41 comments.php:62
+msgid "Older Comments"
+msgstr "以前的评论"
+
+#: comments.php:42 comments.php:63
+msgid "Newer Comments"
+msgstr "新的评论"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "评论已关闭"
+
+#: functions.php:46
+msgid "Primary Menu"
+msgstr "主菜单"
+
+#: functions.php:81
+msgid "Sidebar"
+msgstr "侧边栏"
+
+#: functions.php:185
+msgid "Footer"
+msgstr "底栏"
+
+#: functions.php:210
+msgid "&laquo; Previous"
+msgstr ""
+
+#: functions.php:211
+msgid "Next &raquo;"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:17
+msgid "Designed By"
+msgstr "设计来自："
+
+#: inc/howlfunction/functions2.php:17
+msgid "HowlThemes"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:20
+msgid "Back To Top"
+msgstr "回到顶部"
+
+#: inc/howlfunction/functions2.php:36 inc/howlfunction/functions2.php:45
+msgid "Logo"
+msgstr "Logo"
+
+#: inc/howlfunction/functions2.php:38
+msgid ""
+"Upload a logo to replace the default site name and description in the header"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:50
+msgid "Styling"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:54 inc/howlfunction/functions2.php:72
+msgid "Header Background"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:82
+msgid "Global Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:99
+msgid "Primary Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:119 inc/howlfunction/functions2.php:167
+#: inc/howlfunction/functions2.php:268
+msgid "Background Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:139
+msgid "Link Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:150
+msgid "Post Box Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:185 inc/howlfunction/functions2.php:287
+msgid "Title Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:203
+msgid "Font Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:222
+msgid "Meta Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:240
+msgid "Meta Link Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:251
+msgid "Sidebar Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:305
+msgid "Widget Text Color"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:316
+msgid "Typography"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:336
+msgid "Font size"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:360
+msgid "Font Family"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:375
+msgid "Primary Font"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:408
+msgid "Secondary Font"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:442
+msgid "Social"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:443
+msgid "Add URLs"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:456
+msgid "Facebook"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:470
+msgid "Twitter"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:483
+msgid "Google+"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:496
+msgid "Pinterest"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:509
+msgid "Instagram"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:522
+msgid "Linkedin"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:535
+msgid "Youtube"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:548
+msgid "RSS"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:561
+msgid "Tumblr"
+msgstr ""
+
+#: inc/howlfunction/functions2.php:574
+msgid "Soundcloud"
+msgstr ""
+
+#: inc/template-tags.php:28
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:33
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid " "
+msgstr ""
+
+#: inc/template-tags.php:52 inc/template-tags.php:58
+#, php-format
+msgid " %1$s"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr "留下评论"
+
+#: inc/template-tags.php:64
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:68 template-parts/content-page.php:25
+msgid "Edit"
+msgstr "修改"
+
+#: inc/template-tags.php:85
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:87
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:89
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:91
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:91
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:93
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:93
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:95
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:95
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:98
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:100
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:102
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:104
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:106
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:108
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:110
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:112
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:114
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:117
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:121
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:123
+msgid "Archives"
+msgstr "存档"
+
+#: search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr "搜索结果：%s"
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr "未找到内容"
+
+#: template-parts/content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr "未找到该关键词的搜索结果，请更换关键词再试"
+
+#: template-parts/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:18 template-parts/content-single.php:20
+msgid "Pages:"
+msgstr "页面："
