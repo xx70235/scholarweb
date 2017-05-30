@@ -255,6 +255,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			}
 			
 			//init `all_items_labels`
+
 			$all_items_labels = explode(",",$all_items_labels);
 			
 			if(!is_array($all_items_labels))
@@ -548,7 +549,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 
 			//grab search term for prefilling search input
 			if(isset($wp_query->query['s']))
-			{//!"�$%^&*()
+			{//!"�$%^&*()
 				$this->searchterm = trim(get_search_query());
 			}
 
@@ -1320,6 +1321,8 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			{
 				$returnvar .= $this->generate_radio($taxonomychildren, $field, $this->tagid, $post_type_labels, $defaultval);
 			}
+
+
 			$returnvar .= "</li>";
 			
 			return $returnvar;
@@ -1331,7 +1334,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			$returnvar = "";
 			
 			$taxonomydata = get_taxonomy($taxonomy);
-
+			$taxonomydata->labels->all_items=str_replace('All ','所有',$taxonomydata->labels->all_items);
 			if($taxonomydata)
 			{
 				$returnvar .= "<li>";
@@ -1384,6 +1387,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 				if($all_items_labels[$i]!="")
 				{
 					$args['show_option_all_sf'] = $all_items_labels[$i];
+//					$args['show_option_all_sf'] = '123';
 				}
 				
 				
@@ -1513,11 +1517,12 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			
 			if($args['show_option_all_sf']=="")
 			{
-				$show_option_all = $labels->all_items != "" ? $labels->all_items : 'All ' . $labels->name;
+				$show_option_all = $labels->all_items != "" ? $labels->all_items : 'ALL '. $labels->name;
 			}
 			else
 			{
 				$show_option_all = $args['show_option_all_sf'];
+//				$show_option_all = 'all';
 			}
 			
 			$checked = ($defaultval=="0") ? " checked='checked'" : "";
@@ -1654,10 +1659,11 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 				if($labels->all_items!="")
 				{//check to see if all items has been registered in field then use this label
 					$all_items_name = $labels->all_items;
+//					$all_items_name = '所有';
 				}
 				else
 				{//check to see if all items has been registered in field then use this label with prefix of "All"
-					$all_items_name = "All ".$labels->name;
+					$all_items_name = "所有".$labels->name;
 				}
 				
 				$returnvar .= '<li class="cat-item"><label><input class="postform" type="radio" name="'.SF_FPRE.$name.'[]" value="'.$defaultval.'"'.$checked.'> '.$all_items_name.'</label></li>';
@@ -1693,6 +1699,8 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			
 			return $returnvar;
 		}
+
+
 		
 		public function generate_date($dropdata, $name, $currentid = 0, $labels = null, $defaultval = "0")
 		{

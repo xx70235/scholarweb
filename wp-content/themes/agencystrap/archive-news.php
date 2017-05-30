@@ -10,6 +10,8 @@
 
 get_header(); ?>
 <div class="archive-content">
+	<?php echo do_shortcode( '[searchandfilter fields="keywords" submit_label="筛选" types="radio" headings="关键词"]' );?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
