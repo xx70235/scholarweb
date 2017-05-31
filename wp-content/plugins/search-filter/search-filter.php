@@ -1323,27 +1323,26 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			}
 
 
-        $returnvar .= "</li>";
-        
-        return $returnvar;
-    }
-    
-    //gets all the data for the taxonomy then display as form element
-    function build_taxonomy_element($types, $labels, $taxonomy, $hierarchical, $hide_empty, $show_count, $order_by, $order_dir, $operators, $all_items_labels, $i)
-    {
-        $returnvar = "";
-        
-        $taxonomydata = get_taxonomy($taxonomy);
-        $taxonomydata->labels->all_items=str_replace('All ','所有',$taxonomydata->labels->all_items);
-        $taxonomydata->labels->all_items= '<span>'.$taxonomydata->labels->all_items.'</span>';
-        if($taxonomydata)
-        {
-            $returnvar .= "<li style='vertical-align:middle;'>";
-            
-            if($labels[$i]!="")
-            {
-                $returnvar .= "<span style='width:100px;padding-right:20px;text-align:left;display:inline-block;vertical-align:middle;'>".$labels[$i]."</span><span style='width:1px;border-left:1px #ccc solid'></span>";
-            }
+			$returnvar .= "</li>";
+			
+			return $returnvar;
+		}
+		
+		//gets all the data for the taxonomy then display as form element
+		function build_taxonomy_element($types, $labels, $taxonomy, $hierarchical, $hide_empty, $show_count, $order_by, $order_dir, $operators, $all_items_labels, $i)
+		{
+			$returnvar = "";
+			
+			$taxonomydata = get_taxonomy($taxonomy);
+			$taxonomydata->labels->all_items=str_replace('All ','所有',$taxonomydata->labels->all_items);
+			if($taxonomydata)
+			{
+				$returnvar .= "<li>";
+				
+				if($labels[$i]!="")
+				{
+					$returnvar .= "<h4>".$labels[$i]."</h4>";
+				}
 
 				$args = array(
 					'sf_name' => SF_FPRE . $taxonomy,
