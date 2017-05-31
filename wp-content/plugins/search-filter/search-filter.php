@@ -1248,7 +1248,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			$taxonomydata->labels->all_items= '<span>'.$taxonomydata->labels->all_items.'</span>';
 			if($taxonomydata)
 			{
-				$returnvar .= "<li style='vertical-align:middle;'>";
+                $returnvar .= "<li style='display:inline-block;word-break:break-all;word-wrap:break-word;vertical-align:middle;'>";
 
 				if($labels[$i]!="")
 				{
