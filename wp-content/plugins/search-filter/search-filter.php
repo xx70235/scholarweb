@@ -1248,7 +1248,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			$taxonomydata->labels->all_items= '<span>'.$taxonomydata->labels->all_items.'</span>';
 			if($taxonomydata)
 			{
-                $returnvar .= "<li style='display:inline-block;word-break:break-all;word-wrap:break-word;vertical-align:middle;'>";
+                $returnvar .= "<li style='width:100%;list-style:none;display:inline-block;word-break:break-all;word-wrap:break-word;vertical-align:middle;'>";
 
 				if($labels[$i]!="")
 				{
@@ -1432,7 +1432,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 			}
 
 			$checked = ($defaultval=="0") ? " checked='checked'" : "";
-			$returnvar = '<ul>';
+			$returnvar = '<ul style="display:inline;list-style-type:none;white-space:normal;">';
 			$returnvar .= '<li>'."<label><input type='radio' name='".$args['sf_name']."[]' value='0'$checked /> ".$show_option_all."</label>".'</li>';
 			$returnvar .= walk_taxonomy('radio', $args);
 			$returnvar .= "</ul>";
