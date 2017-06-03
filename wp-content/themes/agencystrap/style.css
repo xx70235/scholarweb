@@ -1206,8 +1206,9 @@ ul.sub-menu li a {
 font-weight:300;
 }
 .entry-content p {
+	font-size: 16px;
     margin-top: 0px;
-    line-height: 1.6em;
+    line-height: 2em;
 }
 .entry-content p a{
    border-bottom:1px solid;
@@ -1231,6 +1232,7 @@ font-weight:300;
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
   border: 1px solid rgba(0,0,0,.09);
   border-radius: 3px;
+	/*height: auto;*/
 }
 .entry-header .entry-meta {
   margin-bottom: 14px;
@@ -1289,7 +1291,7 @@ padding: 0px;
 margin: 0px;
 }
 .three-column-footer aside {
-width: 33.33%;
+width: 50%;
 float: left;
 padding: 30px;
 }

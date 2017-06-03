@@ -3,7 +3,7 @@
  * @package agencystrap
  */
 ?>
-
+<!--<div class="article-block">-->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
 <?php
@@ -13,11 +13,11 @@ $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thu
 echo '<img src="';
 echo $source_image_url;
 echo '" alt="';the_title();
-echo '" />';
+echo '" width="150px" height="150px" />';
 echo '</a></div>';
 }
 ?>
-
+    <div class="article-info">
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -52,7 +52,7 @@ echo '</a></div>';
 	            }
 	            ?>
             </span></div>
-        <a href="<?php the_permalink(); ?> " class="btn read-more">阅读全文</a>
+<!--        <a href="--><?php //the_permalink(); ?><!-- " class="btn read-more">阅读全文</a>-->
 	</div><!-- .entry-content -->
         <div class="entry-meta">
         <div class="image-author">
@@ -70,5 +70,7 @@ echo '</a></div>';
 	<?php agencystrap_posted_on(); ?>
 	</div>
 	</div>
-	
-</article><!-- #post-## -->
+    </div>
+    <div class="clear"></div>
+</article>
+<!-- #post-## -->

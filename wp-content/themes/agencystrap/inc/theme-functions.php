@@ -708,7 +708,7 @@
     }
     <?php } else{?>
       .entry-content p{
-    font-size: 18px;
+    font-size: 16px;
     }
     <?php }if(get_theme_mod("headerbg") == 'light') { ?>
 

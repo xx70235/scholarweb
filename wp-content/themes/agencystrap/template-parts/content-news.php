@@ -8,12 +8,12 @@
 
 <?php
 if ( get_the_post_thumbnail() != '' ) {
-echo '<div class="image-container" itemprop="image"><a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
+echo '<div class="image-container-news" itemprop="image"><a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
 $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
 echo '<img src="';
 echo $source_image_url;
 echo '" alt="';the_title();
-echo '" />';
+echo '" width="700px" />';
 echo '</a></div>';
 }
 ?>
@@ -25,7 +25,7 @@ echo '</a></div>';
 
 	<div class="entry-content" itemprop="text">
 <?php //the_excerpt(); ?>
-        <div id="keywords">
+        <div class="news-keywords" id="keywords">
             <span class="keywords" >关键字：
 	            <?php //the_excerpt();
 	            // your taxonomy name

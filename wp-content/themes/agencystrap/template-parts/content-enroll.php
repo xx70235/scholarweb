@@ -17,7 +17,7 @@ echo '" />';
 echo '</a></div>';
 }
 ?>
-
+    <div class="article-info">
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -52,7 +52,7 @@ echo '</a></div>';
 	            }
 	            ?>
             </span></div>
-        <a href="<?php the_permalink(); ?> " class="btn read-more">阅读全文</a>
+<!--        <a href="--><?php //the_permalink(); ?><!-- " class="btn read-more">阅读全文</a>-->
 	</div><!-- .entry-content -->
         <div class="entry-meta">
         <div class="image-author">
@@ -70,5 +70,6 @@ echo '</a></div>';
 	<?php agencystrap_posted_on(); ?>
 	</div>
 	</div>
-	
+    </div>
+    <div class="clear"></div>
 </article><!-- #post-## -->
