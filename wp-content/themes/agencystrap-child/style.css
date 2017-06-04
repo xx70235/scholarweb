@@ -425,8 +425,8 @@ section hr {
 
 }
 article .image-container {
-    float: left;
-    width: 25%;
+float: left;
+width: 25%;
 }
 
 
@@ -862,6 +862,16 @@ aside li {
   max-width: 100%;
 }
 
+    article .image-container {
+        float: none;
+        width: 100%;
+    }
+
+    article .article-info{
+        float: none;
+        width: 100%;
+    }
+
 }
 @media only screen and (max-width: 768px){
 
@@ -901,6 +911,16 @@ aside li {
     h2.site-title {
       padding-left: 20PX;
     }
+    article .image-container {
+        float: none;
+        width: 100%;
+    }
+
+    article .article-info{
+        float: none;
+        width: 100%;
+    }
+
 }
 @media only screen and (max-width: 1120px){
     #primary {
@@ -916,4 +936,8 @@ aside li {
     width: 100%;
     float: none;
 }
+    /*article .image-container {*/
+        /*float: left;*/
+        /*width: 25%;*/
+    /*}*/
 }
