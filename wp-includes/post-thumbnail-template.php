@@ -62,6 +62,33 @@ function the_post_thumbnail( $size = 'post-thumbnail', $attr = '' ) {
 	echo get_the_post_thumbnail( null, $size, $attr );
 }
 
+function the_type_thumbnail( $post = null,$size = 'post-thumbnail', $attr = ''){
+	$post = get_post( $post );
+	$post_type = get_post_type($post);
+
+	if(!strcmp($post_type ,'recruit'))
+	{
+
+		$tmp = get_template_directory_uri()."/img/img5.png";
+		$link ='<img src="'.$tmp.'" class="attachment-single-page-thumb size-single-page-thumb wp-post-image" />';
+		echo $link;
+	}
+	else if(!strcmp($post_type ,'enroll'))
+	{
+		$tmp = get_template_directory_uri()."/img/img6.png";
+		$link ='<img src="'.$tmp.'" class="attachment-single-page-thumb size-single-page-thumb wp-post-image" />';
+		echo $link;
+	}
+	else if(!strcmp($post_type , 'news'))
+	{
+		$tmp = get_template_directory_uri()."/img/img3.png";
+		$link ='<img src="'.$tmp.'" class="attachment-single-page-thumb size-single-page-thumb wp-post-image" />';
+		echo $link;
+	}
+
+
+}
+
 /**
  * Update cache for thumbnails in the current loop.
  *

@@ -847,6 +847,7 @@ function agencystrap_home_hero() { ?>
        </div>
     <?php } elseif (is_archive() ) { ?>
         <div class="page-hero hero-area">
+<!--            <div class="post-thumb">--><?php //the_post_thumbnail('single-page-thumb'); ?><!--</div>-->
            <div class="hero-inner">
                <h1>
                 <?php echo  wp_title('', true); ?>
@@ -870,7 +871,8 @@ function agencystrap_home_hero() { ?>
         <?php } elseif (is_single() ) { ?>
          <div class="single-hero">
                     <?php while ( have_posts() ) : the_post(); ?>
-                <div class="post-thumb"><?php the_post_thumbnail('single-page-thumb'); ?></div>
+                <div class="post-thumb"><?php the_type_thumbnail(null,'single-page-thumb'); ?></div>
+<!--                <div class="post-thumb">--><?php //the_post_thumbnail('single-page-thumb'); ?><!--</div>-->
                 <div class="content-hero-single">
                 <?php the_title( '<h1>', '</h1>' ); ?>
                 <?php if (function_exists('get_the_subtitle')) {?>
