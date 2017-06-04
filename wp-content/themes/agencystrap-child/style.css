@@ -27,7 +27,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6, p {
     font-family: 'Lato', sans-serif;
-    font-weight: 300;
+    /*font-weight: 300;*/
 }
 a {
      -webkit-transition: 0.5s; /* Safari */
@@ -802,6 +802,13 @@ article .entry-content{
 
 .clear {
     clear:both;
+}
+
+aside li {
+    /*padding-left: 10px;*/
+    /*border-left-color: #0A1331;*/
+    /*border-left-width: 3px;*/
+    /*border-left-style: solid;*/
 }
 
 /* media query */

@@ -1203,7 +1203,7 @@ ul.sub-menu li a {
 }
 .entry-content {
 	margin-top: 0px !important;
-font-weight:300;
+/*font-weight:300;*/
 }
 .entry-content p {
 	font-size: 16px;
@@ -1277,6 +1277,18 @@ font-weight:300;
 }
 .cat-links, .tags-links {
   margin-bottom: 20px;
+}
+
+.entry-content  h3{
+	padding-left: 10px;
+	border-left-color: #57ad68;
+	border-left-width: 3px;
+	border-left-style: solid;
+}
+
+.entry-content  #details{
+	font-weight: normal;
+	line-height: 2.0;
 }
 /*--------------------------------------------
 Footer
