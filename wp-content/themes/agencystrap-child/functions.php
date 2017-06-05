@@ -814,6 +814,9 @@ add_action( 'widgets_init', 'agencystrap_theme_slug_widgets_init' );
 function agencystrap_home_hero() { ?>
 
         <?php if ( is_front_page()) { ?>
+		<?php
+		echo do_shortcode("[metaslider id=91]");
+		?>
     <div class="home-hero hero-area">
            <div class="hero-inner">
                 <?php the_title( '<h1>', '</h1>' ); ?>
