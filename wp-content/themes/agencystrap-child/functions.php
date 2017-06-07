@@ -817,28 +817,32 @@ function agencystrap_home_hero() { ?>
 		<?php
 		echo do_shortcode("[metaslider id=91]");
 		?>
-    <div class="home-hero hero-area">
-           <div class="hero-inner">
-                <?php the_title( '<h1>', '</h1>' ); ?>
-                <?php if (function_exists('get_the_subtitle')) {?>
-               <h2 class="subtitle"><?php get_the_subtitle(); ?></h2>
-               <?php } ?>
-               <?php if( get_theme_mod( 'headercta' ) == '1') { ?>
-                    <div class="home-cta">
-                        <?php if( get_theme_mod( 'headerctabtnone' )) { ?>
-                            <a href="<?php echo get_the_permalink(get_theme_mod('headerctabtnpage')); ?>" class="btn btn-solid"><?php echo get_theme_mod('headerctabtnone'); ?></a>
-                        <?php }?>
-                         <?php if( get_theme_mod( 'headerctabtntwo' )) { ?>
-                            <a href="<?php echo esc_url(get_theme_mod('headerctabtntwolink')); ?>" class="btn btn-light"><?php echo get_theme_mod('headerctabtntwo'); ?></a>
-                        <?php }?>
-                    </div>
-
-                <?php }?>
-
-           </div>
-       </div>
+<!--    <div class="home-hero hero-area">-->
+<!--           <div class="hero-inner">-->
+<!--	           --><?php
+//	           echo do_shortcode("[metaslider id=91]");
+//	           ?>
+<!--                --><?php //the_title( '<h1>', '</h1>' ); ?>
+<!--                --><?php //if (function_exists('get_the_subtitle')) {?>
+<!--               <h2 class="subtitle">--><?php //get_the_subtitle(); ?><!--</h2>-->
+<!--               --><?php //} ?>
+<!--               --><?php //if( get_theme_mod( 'headercta' ) == '1') { ?>
+<!--                    <div class="home-cta">-->
+<!--                        --><?php //if( get_theme_mod( 'headerctabtnone' )) { ?>
+<!--                            <a href="--><?php //echo get_the_permalink(get_theme_mod('headerctabtnpage')); ?><!--" class="btn btn-solid">--><?php //echo get_theme_mod('headerctabtnone'); ?><!--</a>-->
+<!--                        --><?php //}?>
+<!--                         --><?php //if( get_theme_mod( 'headerctabtntwo' )) { ?>
+<!--                            <a href="--><?php //echo esc_url(get_theme_mod('headerctabtntwolink')); ?><!--" class="btn btn-light">--><?php //echo get_theme_mod('headerctabtntwo'); ?><!--</a>-->
+<!--                        --><?php //}?>
+<!--                    </div>-->
+<!---->
+<!--                --><?php //}?>
+<!---->
+<!--           </div>-->
+<!--       </div>-->
         <?php } elseif ( is_home() ) { ?>
         <div class="page-hero hero-area">
+	        <?php echo  'is home' ?>
            <div class="hero-inner">
                <h1>
                 <?php echo  wp_title('', true); ?>

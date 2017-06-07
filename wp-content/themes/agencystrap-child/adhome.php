@@ -13,9 +13,9 @@
 get_header(); ?>
 <div class="blog-content">
 <div style='padding-top:30px;'>
-<?php 
-echo do_shortcode("[metaslider id=131]"); 
-?>
+	<?php
+	echo do_shortcode("[metaslider id=187]");
+	?>
 </div>
 <div style='padding-top:30px;'>
 <?php 

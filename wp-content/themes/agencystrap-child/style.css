@@ -268,9 +268,9 @@ section hr {
 }
 .home-icon-content .icon-wedget li {
     background: none;
-    max-width: 30%;
+    /*max-width: 30%;*/
     display: inline-block;
-    padding: 3%;
+    /*padding: 3%;*/
     border: 0px;
     vertical-align: top;
 }

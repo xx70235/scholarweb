@@ -17,6 +17,7 @@ echo '" />';
 echo '</a></div>';
 }
 ?>
+    <div class="article-info">
 
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -32,7 +33,7 @@ echo '</a></div>';
 	            $tax = 'keywords';
 
 	            // get the terms of taxonomy
-	            $terms = get_terms( $tax, [
+	            $terms = wp_get_post_terms($post->ID, $tax, [
 		            'hide_empty' => false, // do not hide empty terms
 	            ]);
 
@@ -75,5 +76,6 @@ echo '</a></div>';
 	<?php agencystrap_posted_on(); ?>
 	</div>
 	</div>
-	
+    </div>
+    <div class="clear"></div>
 </article><!-- #post-## -->
