@@ -39,11 +39,22 @@ if($jiathis_feed == ''){
 	update_option('jiathis_feed','yes');
 }
 add_filter('the_content', 'jiathis');
+//add_filter('acf/load_field/name=deadline', 'jiathis');
+add_filter('acf/load_value/name=deadline', 'my_acf_format_value');
+
+
+function my_acf_format_value( $value) {
+    $value = apply_filters('the_content',$value);
+    // return
+    return $value;
+}
+
 
 function jiathis($content) {
 	$jiathis_code = get_option('jiathis_code');
 	$jiathis_dir = 'float:'.get_option('jiathis_dir');
 	$jiathis_clear = '<div style="clear:both; margin-top:5px; margin-bottom:5px;"></div>';
+
     if(is_single() || is_page() && get_option('jiathis_feed') == 'yes') {
 		if(get_option('jiathis_pos') == 'down') {
 			$content = $content.$jiathis_clear."<div style=\"".$jiathis_dir."\">".$jiathis_code.'</div>'.$jiathis_clear;
