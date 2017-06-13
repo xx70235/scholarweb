@@ -1,0 +1,890 @@
+# Loco Gettext template
+msgid ""
+msgstr ""
+"Project-Id-Version: real-media-library\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-26 17:12+0800\n"
+"PO-Revision-Date: 2017-05-26 17:13+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Revision-Date: Fri Apr 07 2017 16:47:52 GMT+0200 (CEST)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../assets/js/realmedialibrary.min.js:6 ../assets/js/rml.99-main.js:6
+msgid "./utils"
+msgstr "./utils"
+
+#: ../assets/js/realmedialibrary.min.js:6 ../assets/js/rml.99-main.js:6
+msgid "./handle-swal-dom"
+msgstr "./handle-swal-dom"
+
+#: ../assets/js/realmedialibrary.min.js:6 ../assets/js/rml.99-main.js:6
+msgid "./handle-dom"
+msgstr "./handle-dom"
+
+#: ../assets/js/realmedialibrary.min.js:6 ../assets/js/rml.99-main.js:20
+msgid "<div>"
+msgstr "<div>"
+
+#: ../assets/js/realmedialibrary.min.js:6 ../assets/js/rml.99-main.js:20
+msgid "head"
+msgstr "head"
+
+#: ../assets/js/realmedialibrary.min.js:6 ../assets/js/rml.99-main.js:20
+msgid "<style id=\"hcsticky-iefix\">."
+msgstr "<style id=\"hcsticky-iefix\">."
+
+#: ../inc/admin_footer/sidebar.dummy.php:41
+msgid "Folders"
+msgstr "文件夹"
+
+#: ../inc/admin_footer/sidebar.dummy.php:49
+msgid "Restrictions"
+msgstr "限制"
+
+#: ../inc/admin_footer/sidebar.dummy.php:58
+msgid "Remaining time"
+msgstr "剩余时间"
+
+#: ../inc/admin_footer/sidebar.dummy.php:72
+msgid "All Files"
+msgstr "全部文件"
+
+#: ../inc/admin_footer/sidebar.dummy.php:75 ../inc/folder/Root.class.php:21
+msgid "Unorganized"
+msgstr "无组织"
+
+#: ../inc/admin_footer/sidebar.dummy.php:86
+msgid "You have no folders."
+msgstr "您没有文件夹。"
+
+#: ../inc/admin_footer/sidebar.dummy.php:87
+msgid ""
+"Simply create a folder by clicking the above button. You can also create a "
+"collection-gallery relation."
+msgstr "只需点击上面的按钮创建一个文件夹。 您还可以创建集合库关系。"
+
+#: ../inc/admin_footer/sidebar.dummy.php:97
+msgid "Tip: Make your photos shine with Justified&nbsp;Image&nbsp;Grid"
+msgstr "提示：请您的照片对齐&nbsp;图片&nbsp;网格"
+
+#: ../inc/api/attachment.php:109 ../inc/api/attachment.php:132
+#: ../inc/api/attachment.php:148 ../inc/general/REST.class.php:71
+#: ../inc/general/REST.class.php:82
+msgid "The given folder was not found."
+msgstr "找不到指定的文件夹。"
+
+#: ../inc/attachment/CustomField.class.php:36
+msgid ""
+"When you move this shortcut, the folder location of the source/main file "
+"will not be changed."
+msgstr "当您移动此快捷方式时，源/主文件的文件夹位置将不会更改。"
+
+#: ../inc/attachment/CustomField.class.php:37
+msgid ""
+"When you move this attachment, the folder location of the associated "
+"shortcuts of this attachment will not be changed."
+msgstr "移动此附件时，此附件的关联快捷方式的文件夹位置将不会更改。"
+
+#: ../inc/attachment/CustomField.class.php:41
+#: ../inc/general/Backend.class.php:131 ../inc/general/View.class.php:194
+msgid "Folder"
+msgstr "文件夹"
+
+#: ../inc/attachment/CustomField.class.php:70
+msgid "Shortcut infos"
+msgstr "快捷信息"
+
+#: ../inc/attachment/CustomField.class.php:75
+#: ../inc/general/Backend.class.php:35
+msgid ""
+"This is a shortcut of a media library file. Shortcuts doesn't need any "
+"physical storage <strong>(0kb)</strong>. If you want to change the file "
+"itself, you must do this in the original file (for example replace media "
+"file through a plugin).<br/>Note also that the fields in the shortcuts can "
+"be different to the original file, for example \"Title\", \"Description\" or "
+"\"Caption\"."
+msgstr ""
+"这是媒体库文件的快捷方式。 快捷方式不需要任何物理存储<strong>（0kb）</"
+"strong>。 如果要更改文件本身，您必须在原始文件中执行此操作（例如，通过插件替"
+"换媒体文件）。请注意，快捷方式中的字段可能与原始文件不同，例如 “标题”，“说"
+"明”或“标题”。"
+
+#: ../inc/attachment/CustomField.class.php:82
+#, php-format
+msgid "For this file is one shortcut available in the following folder:"
+msgid_plural ""
+"For this file are %s shortcuts available in the following folders:"
+msgstr[0] "对于此文件，以下文件夹中提供%s快捷方式："
+
+#: ../inc/attachment/CustomField.class.php:90
+msgid ""
+"This file has no associated shortcuts. You can create shortcuts by moving "
+"files per mouse and hold any key."
+msgstr ""
+"此文件没有关联的快捷方式。 您可以通过移动每个鼠标的文件并按住任何键来创建快捷"
+"方式。"
+
+#: ../inc/attachment/Permissions.class.php:39
+msgid "You are not allowed to insert files here."
+msgstr "您不能在此处插入文件。"
+
+#: ../inc/attachment/Permissions.class.php:48
+msgid "You are not allowed to move the file."
+msgstr "您不能移动文件。"
+
+#: ../inc/attachment/Permissions.class.php:64
+msgid "You are not allowed to create a subfolder here."
+msgstr "您不能在此处创建子文件夹。"
+
+#: ../inc/attachment/Permissions.class.php:77
+msgid "You are not allowed to delete this folder."
+msgstr "您不能删除此文件夹。"
+
+#: ../inc/attachment/Permissions.class.php:90
+msgid "You are not allowed to rename this folder."
+msgstr "您不能重命名此文件夹。"
+
+#: ../inc/attachment/Structure.class.php:271
+msgid "The given folder does not exist or you can not rename this folder."
+msgstr "指定的文件夹不存在，或者您不能重命名此文件夹。"
+
+#: ../inc/attachment/Structure.class.php:315
+msgid "The given folder does not exist."
+msgstr "给出的文件夹不存在。"
+
+#: ../inc/attachment/Upload.class.php:47
+msgid ""
+"You can simply upload files directly to a folder. Select a folder and upload "
+"files."
+msgstr "您可以直接将文件上传到文件夹。 选择一个文件夹并上传文件。"
+
+#: ../inc/attachment/Upload.class.php:50
+msgid "Loading..."
+msgstr "正在加载..."
+
+#: ../inc/attachment/Upload.class.php:51
+msgid "upload to folder"
+msgstr "上传到文件夹"
+
+#: ../inc/comp/PolyLang.class.php:47
+msgid "PolyLang: Automatically move translations"
+msgstr "PolyLang：自动移动翻译"
+
+#: ../inc/comp/PolyLang.class.php:58 ../inc/comp/WPML.class.php:59
+msgid "If you move a file also move the associated translation files."
+msgstr "如果移动文件也移动相关的翻译文件。"
+
+#: ../inc/comp/WPML.class.php:48
+msgid "WPML: Automatically move translations"
+msgstr "WPML：自动移动翻译"
+
+#: ../inc/folder/Collection.class.php:26
+msgid "A collection can contain no files."
+msgstr "集合不能包含任何文件。"
+
+#: ../inc/folder/Creatable.class.php:229 ../inc/general/Util.class.php:68
+#: ../inc/order/Sortable.class.php:92
+msgid "Something went wrong."
+msgstr "出了些问题。"
+
+#: ../inc/folder/Creatable.class.php:330
+msgid "You need to provide a set of files."
+msgstr "您需要提供一组文件。"
+
+#: ../inc/folder/Creatable.class.php:409
+msgid "The folder could not be created in the database."
+msgstr "无法在数据库中创建该文件夹。"
+
+#: ../inc/folder/Creatable.class.php:412
+msgid "The folder could not be created because it already exists."
+msgstr "无法创建文件夹，因为它已经存在。"
+
+#: ../inc/folder/Creatable.class.php:680
+msgid "The given parent does not exist to set the parent for this folder."
+msgstr "给定的父对象不存在为这个文件夹设置父。"
+
+#: ../inc/folder/Creatable.class.php:685
+msgid "You are not allowed to change the parent for this folder."
+msgstr "您不能更改此文件夹的父级。"
+
+#: ../inc/folder/Creatable.class.php:690
+msgid "The given parent does not allow the folder type."
+msgstr "给定的父级不允许文件夹类型。"
+
+#: ../inc/folder/Creatable.class.php:743
+#, php-format
+msgid "'%s' is not a valid folder name."
+msgstr "'%s'不是有效的文件夹名称。"
+
+#: ../inc/folder/Gallery.class.php:25
+msgid "You can only move images to a gallery."
+msgstr "您只能将图像移动到图库。"
+
+#: ../inc/general/Backend.class.php:29
+msgid "<strong>Note: </strong> The files will be uploaded to selected folder."
+msgstr "<strong>注意: </strong>文件将被上传到所选文件夹。"
+
+#: ../inc/general/Backend.class.php:30
+msgid "Save"
+msgstr "保存"
+
+#: ../inc/general/Backend.class.php:31
+msgid "Close"
+msgstr "关闭"
+
+#: ../inc/general/Backend.class.php:32 ../inc/general/Backend.class.php:52
+msgid "Cancel"
+msgstr "取消"
+
+#: ../inc/general/Backend.class.php:33
+msgid "Remove shortcut"
+msgstr "删除快捷方式"
+
+#: ../inc/general/Backend.class.php:34
+msgid "Shortcut"
+msgstr "快捷方式"
+
+#: ../inc/general/Backend.class.php:36
+msgid "Done"
+msgstr "完成"
+
+#: ../inc/general/Backend.class.php:37
+msgid "Failed"
+msgstr "失败"
+
+#: ../inc/general/Backend.class.php:38
+msgid "No media files found."
+msgstr "未找到媒体文件。"
+
+#: ../inc/general/Backend.class.php:41
+msgid ""
+"Move {0} file<br/><span>Hold any key to create a file shortcut.<br /><strong "
+"class=\"rml-move-original-files\">(Moves the shortcut, not original file)</"
+"strong></span>"
+msgstr ""
+"移动{0}文件<span>按住任意键创建文件快捷方式。<br /> <strong class =“rml-move-"
+"original-files”>（移动快捷方式，而不是原始文件）</strong></span>"
+
+#: ../inc/general/Backend.class.php:42
+msgid ""
+"Move {0} files<br/><span>Hold any key to create a file shortcut.<br /"
+"><strong class=\"rml-move-original-files\">(Moves the shortcut, not original "
+"file)</strong></span>"
+msgstr ""
+"移动{0}文件<span>按住任意键创建文件快捷方式。<br /> <strong class =“rml-move-"
+"original-files”>（移动快捷方式，而不是原始文件）</strong></span>"
+
+#: ../inc/general/Backend.class.php:43
+msgid "Link {0} file<br/><span>Release key to move.</span>"
+msgstr "链接{0}文件<span>释放键移动。</span>"
+
+#: ../inc/general/Backend.class.php:44
+msgid "Link {0} files<br/><span>Release key to move.</span>"
+msgstr "链接{0}文件<span>释放键移动。</span>"
+
+#: ../inc/general/Backend.class.php:45
+msgid "A collection can not contain files. Upload moved to Uncategorized..."
+msgstr "集合不能包含文件。 上传已移至未分类..."
+
+#: ../inc/general/Backend.class.php:46
+msgid "A gallery can contain only images. Upload moved to Uncategorized..."
+msgstr "图库只能包含图片。 上传已移至未分类..."
+
+#: ../inc/general/Backend.class.php:47
+msgid "In this folder are sub directories, please delete them first!"
+msgstr "在这个文件夹是子目录，请先删除它们！"
+
+#: ../inc/general/Backend.class.php:48
+msgid "Do not delete root. :("
+msgstr "不要删除根目录。 :("
+
+#: ../inc/general/Backend.class.php:49
+msgid ""
+"Would you like to delete this folder? Note: All files in this folder will be "
+"moved to the unorganized folder."
+msgstr ""
+"要删除此文件夹吗？ 注意：此文件夹中的所有文件将被移动到无组织的文件夹。"
+
+#: ../inc/general/Backend.class.php:50 ../inc/general/Backend.class.php:63
+msgid "Are you sure?"
+msgstr "你确定？"
+
+#: ../inc/general/Backend.class.php:51
+msgid "Yes, delete it!"
+msgstr "是的，删除它！"
+
+#: ../inc/general/Backend.class.php:53
+msgid "Sort files"
+msgstr "排序文件"
+
+#: ../inc/general/Backend.class.php:54
+msgid ""
+"You want to order the files in this folder. If you confirm, you can "
+"<strong>drag&drop</strong> the files. If you want to reset the order, select "
+"the folder again and go to folder details (see image above)."
+msgstr ""
+"您要订购此文件夹中的文件。 如果您确认，您可以<strong>拖放</strong>文件。 如果"
+"要重置订单，请再次选择该文件夹，并转到文件夹的详细信息（请参见上图）。"
+
+#: ../inc/general/Backend.class.php:55
+msgid "Move it!"
+msgstr "移动它！"
+
+#: ../inc/general/Backend.class.php:56
+msgid ""
+"You want to move one or more files from different folder sources because you "
+"are in the \"All Files\" view."
+msgstr "您要移动一个或多个文件从不同的文件夹源，因为你是在“所有文件”视图。"
+
+#: ../inc/general/Backend.class.php:57
+msgid "Do not rename root. :("
+msgstr "不要重命名根目录。 :("
+
+#: ../inc/general/Backend.class.php:58
+msgid "Tell me the new name"
+msgstr "告诉我新的名称"
+
+#: ../inc/general/Backend.class.php:59
+msgid "Rename folder"
+msgstr "重命名文件夹"
+
+#: ../inc/general/Backend.class.php:60
+msgid ""
+"In the current view of uploads are filters active. Please reset these and "
+"refresh the view."
+msgstr "在当前视图的上传是过滤器活动。 请重置这些并刷新视图。"
+
+#: ../inc/general/Backend.class.php:61
+msgid ""
+"Please got to your media library \"Media > Library\" to open the details "
+"window for the selected folder."
+msgstr "请到你的媒体库 \"媒体>图库\" 以打开所选文件夹的详细信息窗口。"
+
+#: ../inc/general/Backend.class.php:62
+msgid "A folder details window is already opened."
+msgstr "文件夹详细信息窗口已打开。"
+
+#: ../inc/general/Backend.class.php:66
+msgid "Set cover image"
+msgstr "设置封面图片"
+
+#: ../inc/general/Backend.class.php:67
+msgid "Select another cover image"
+msgstr "选择其他封面图片"
+
+#: ../inc/general/Backend.class.php:68
+msgid "No cover image"
+msgstr "没有封面图片"
+
+#: ../inc/general/Backend.class.php:69
+msgid "Select cover image"
+msgstr "选择封面图片"
+
+#: ../inc/general/Backend.class.php:70
+msgid "Set as cover image"
+msgstr "设置为封面图片"
+
+#: ../inc/general/Backend.class.php:76
+msgid "Click this to create a <strong>new folder</strong>"
+msgstr "点击此图标可创建<strong>新文件夹</strong>"
+
+#: ../inc/general/Backend.class.php:77
+msgid ""
+"A folder can contain every type of file and collections, but no galleries. "
+"If you want to create a subfolder simply select a folder from the list and "
+"click this button."
+msgstr ""
+"文件夹可以包含每种类型的文件和集合，但不包含图库。 如果要创建子文件夹，只需从"
+"列表中选择一个文件夹，然后单击此按钮。"
+
+#: ../inc/general/Backend.class.php:80
+msgid "Click this to create a <strong>new collection</strong>"
+msgstr "点击此图标可创建<strong>新合集</strong>"
+
+#: ../inc/general/Backend.class.php:81
+msgid ""
+"A collection can contain no files. But you can create there other "
+"collections and <strong>galleries</strong>. The mentioned above gallery is "
+"only a <i>gallery data folder</i>, that means they are not automatically in "
+"your frontend (your website).<br/><br/>You can create a <strong>visual "
+"gallery</strong> from this <i>gallery data folder</i> via the Visual Editor "
+"in your page/post."
+msgstr ""
+"集合可以不包含任何文件。 但你可以创建其他集合和 <strong>图库</strong>.上面提"
+"到的图库只是一个<i>图库数据文件夹</i>, 这意味着它们不会自动在您的前端（您的网"
+"站）。<br/><br/>您可以创建一个 <strong>视觉图库</strong> 由此 <i>图库数据文件"
+"夹</i>通过您的页面/文章中的可视化编辑器。"
+
+#: ../inc/general/Backend.class.php:84
+msgid "Click this to create a <strong>new gallery data folder</strong>"
+msgstr "单击此按钮创建一个 <strong>新图库数据文件夹</strong>"
+
+#: ../inc/general/Backend.class.php:85
+msgid ""
+"A <i>gallery data folder</i> can only contain images. It is simplier for you "
+"to distinguish where your visual galleries are.<br/><br/>You can also order "
+"the images into <strong>a custom image order</strong> per drag&drop."
+msgstr ""
+"一个<i>图库数据文件夹</i>只能包含图像。 它更容易让你区分你的视觉图库的位置。"
+"<br/><br/>您还可以排序图像<strong>自定义图像顺序</strong> 每次拖放。"
+
+#: ../inc/general/Backend.class.php:90
+msgid "Reorder files in this folder"
+msgstr "重新排序此文件夹中的文件"
+
+#: ../inc/general/Backend.class.php:91
+msgid ""
+"Start to reorder the files / images in the current folder. The order of a "
+"folder can be reset in the media options.<br />Go to the folder details to "
+"order a folder by <strong>title, filename, ID, ...</strong>"
+msgstr ""
+"开始重新排列当前文件夹中的文件/图像。 文件夹的顺序可以在媒体选项进行复位。"
+"<br />转至文件夹细节由订购的文件夹的<strong>标题，文件名，ID，... </strong>"
+
+#: ../inc/general/Backend.class.php:92
+msgid ""
+"The selected folder <strong>does not allow</strong> to reorder the files / "
+"images."
+msgstr "所选文件夹<strong>不允许</strong>重新排序文件/图像。"
+
+#: ../inc/general/Backend.class.php:95
+msgid "Refresh"
+msgstr "刷新"
+
+#: ../inc/general/Backend.class.php:96
+msgid "Refreshes the current folder view."
+msgstr "刷新当前文件夹视图。"
+
+#: ../inc/general/Backend.class.php:99
+msgid "Rename"
+msgstr "重命名"
+
+#: ../inc/general/Backend.class.php:100
+msgid "Rename the current selected folder."
+msgstr "重命名当前选定的文件夹。"
+
+#: ../inc/general/Backend.class.php:101
+msgid ""
+"The selected folder can not be renamed. Please select a user-created folder."
+msgstr "无法重命名所选文件夹。 请选择用户创建的文件夹。"
+
+#: ../inc/general/Backend.class.php:104
+msgid "Delete"
+msgstr "删除"
+
+#: ../inc/general/Backend.class.php:105
+msgid "Delete the current selected folder."
+msgstr "删除当前选定的文件夹。"
+
+#: ../inc/general/Backend.class.php:106
+msgid ""
+"The selected folder can not be deleted. Please select a user-created folder."
+msgstr "无法删除所选文件夹。 请选择用户创建的文件夹。"
+
+#: ../inc/general/Backend.class.php:109
+msgid "Rearrange"
+msgstr "改编"
+
+#: ../inc/general/Backend.class.php:110
+msgid "Change the hierarchical order of the folders."
+msgstr "更改文件夹的层次顺序。"
+
+#: ../inc/general/Backend.class.php:113
+msgid "Folder details"
+msgstr "文件夹详细信息"
+
+#: ../inc/general/Backend.class.php:114
+msgid "Select a folder and view more details about it."
+msgstr "选择文件夹并查看其详细信息。"
+
+#: ../inc/general/Backend.class.php:115
+msgid "Please select a folder to make this button enabled."
+msgstr "请选择一个文件夹以启用此按钮。"
+
+#: ../inc/general/Backend.class.php:117
+msgid "New folders inherit this restriction"
+msgstr "新文件夹继承此限制"
+
+#: ../inc/general/Backend.class.php:118
+msgid "The current selected folder has some restrictions:"
+msgstr "当前选定的文件夹有一些限制："
+
+#: ../inc/general/Backend.class.php:120
+msgid "You can not change <b>parent</b> folder"
+msgstr "您不能更改<b>父级</ b>文件夹"
+
+#: ../inc/general/Backend.class.php:121
+msgid "You can not <b>rearrange</b> subfolders"
+msgstr "您不能<b>重新排列</b>子文件夹"
+
+#: ../inc/general/Backend.class.php:122
+msgid "You can not <b>create</b> subfolders"
+msgstr "您不能<b>创建</b>子文件夹"
+
+#: ../inc/general/Backend.class.php:123
+msgid ""
+"You can not <b>insert</b> new files. New files will be moved to "
+"Uncategorized..."
+msgstr "您不能<b>插入</b>新文件。 新文件将被移至未分类..."
+
+#: ../inc/general/Backend.class.php:124
+msgid "You can not <b>rename</b> the folder"
+msgstr "您无法<b>重命名</b>该文件夹"
+
+#: ../inc/general/Backend.class.php:125
+msgid "You can not <b>delete</b> the folder"
+msgstr "您无法<b>删除</b>该文件夹"
+
+#: ../inc/general/Backend.class.php:126
+msgid "You can not <b>move</b> files outside the folder"
+msgstr "您不能将<b>移动</b>文件移出该文件夹"
+
+#: ../inc/general/Backend.class.php:129
+msgid "Gallery from Media Folder"
+msgstr "媒体文件夹的图库"
+
+#: ../inc/general/Backend.class.php:130
+msgid ""
+"Note: You can only select galleries. Folders and collections are grayed."
+msgstr "注意：您只能选择图库。 文件夹和集合为灰色。"
+
+#: ../inc/general/Backend.class.php:132
+msgid "Link to"
+msgstr "链接到"
+
+#: ../inc/general/Backend.class.php:133
+msgid "Columns"
+msgstr "列"
+
+#: ../inc/general/Backend.class.php:134
+msgid "Random Order"
+msgstr "随机顺序"
+
+#: ../inc/general/Backend.class.php:135
+msgid "Size"
+msgstr "尺寸"
+
+#: ../inc/general/Backend.class.php:137
+msgid "Attachment File"
+msgstr "附件文件"
+
+#: ../inc/general/Backend.class.php:138
+msgid "Media File"
+msgstr "媒体文件"
+
+#: ../inc/general/Backend.class.php:139
+msgid "None"
+msgstr "无"
+
+#: ../inc/general/Backend.class.php:142
+msgid "Thumbnail"
+msgstr "缩略图"
+
+#: ../inc/general/Backend.class.php:143
+msgid "Medium"
+msgstr "中"
+
+#: ../inc/general/Backend.class.php:144
+msgid "Large"
+msgstr "大"
+
+#: ../inc/general/Backend.class.php:145
+msgid "Full Size"
+msgstr "全尺寸"
+
+#: ../inc/general/Backend.class.php:161
+msgid ""
+"\n"
+"\n"
+"Note: If you want to delete a shortcut file, the source file will NOT bet "
+"deleted.\n"
+"If you want to delete a non-shortcut file, all associated shortcuts are "
+"deleted, too."
+msgstr ""
+"\n"
+"\n"
+"注意：如果要删除快捷方式文件，源文件不会被删除。\n"
+"如果要删除非快捷方式文件，所有关联的快捷方式也将被删除。"
+
+#: ../inc/general/Exceptions.collection.php:23
+#, php-format
+msgid "'%s' already exists in this folder."
+msgstr "'%s' 已经存在于此文件夹中。"
+
+#: ../inc/general/FolderShortcode.class.php:70
+msgid "Select"
+msgstr "选择"
+
+#: ../inc/general/Migration.class.php:94
+msgid "Migration <= 2.7.2"
+msgstr "迁移<= 2.7.2"
+
+#: ../inc/general/Migration.class.php:103
+msgid "Import gallery order"
+msgstr "导入图库订单"
+
+#: ../inc/general/Migration.class.php:104
+msgid ""
+"You have used an old version (<= 2.7.2) of RML and the new version (>= 2.8) "
+"has changed the place where the image gallery order is stored."
+msgstr ""
+"您已使用RML的旧版本（<= 2.7.2），并且新版本（> = 2.8）已更改存储图像库订单的"
+"位置。"
+
+#: ../inc/general/Migration.class.php:178
+msgid "Migration <= 2.6.3"
+msgstr "迁移<= 2.6.3"
+
+#: ../inc/general/Migration.class.php:187
+msgid "Import image relationships"
+msgstr "导入图像关系"
+
+#: ../inc/general/Migration.class.php:188
+msgid ""
+"You have used an old version (<= 2.6.3) of RML and the new version (>= "
+"2.6.4) has changed the place where the image relationships are stored."
+msgstr ""
+"您已经使用了RML的旧版本（<= 2.6.3），并且新版本（> = 2.6.4）已更改存储映像关"
+"系的位置。"
+
+#: ../inc/general/Options.class.php:26
+msgid "RealMediaLibrary:基础设置"
+msgstr "RealMediaLibrary:基础设置"
+
+#: ../inc/general/Options.class.php:34
+msgid "Hide upload preview"
+msgstr "隐藏上传预览"
+
+#: ../inc/general/Options.class.php:43
+msgid "Allow all folders for folder gallery"
+msgstr "允许文件夹库的所有文件夹"
+
+#: ../inc/general/Options.class.php:52
+msgid "Load RML functionality in frontend"
+msgstr "在前端加载RML功能"
+
+#: ../inc/general/Options.class.php:61
+msgid "Hide info links"
+msgstr "隐藏信息链接"
+
+#: ../inc/general/Options.class.php:82
+msgid "RealMediaLibrary:重置"
+msgstr "RealMediaLibrary:重置"
+
+#: ../inc/general/Options.class.php:89
+msgid "Wipe all settings (folders, attachment relations)"
+msgstr "擦除所有设置（文件夹，附件关系）"
+
+#: ../inc/general/Options.class.php:97
+msgid "Reset folder count cache"
+msgstr "重置文件夹计数缓存"
+
+#: ../inc/general/Options.class.php:106
+msgid "RealMediaLibrary:迁移"
+msgstr "RealMediaLibrary:迁移"
+
+#: ../inc/general/Options.class.php:132
+msgid "Wipe attachment relations"
+msgstr "擦除附件关系"
+
+#: ../inc/general/Options.class.php:133
+msgid "Wipe all"
+msgstr "擦除所有"
+
+#: ../inc/general/Options.class.php:140
+msgid "Reset count"
+msgstr "重置计数"
+
+#: ../inc/general/Options.class.php:153
+msgid "Check this if your uploader does not work properly."
+msgstr "如果您的上传器无法正常工作，请选中此项。"
+
+#: ../inc/general/Options.class.php:160
+msgid "Links on the sidebar (Version, Tips, ...)"
+msgstr "侧边栏上的链接（版本，提示，...）"
+
+#: ../inc/general/Options.class.php:167
+msgid "If you are using a front end page builder, for example Visual Composer"
+msgstr "如果您使用前端页面构建器，例如Visual Composer"
+
+#: ../inc/general/View.class.php:35
+msgid "All"
+msgstr "全部"
+
+#: ../inc/general/View.class.php:40 ../inc/general/View.class.php:305
+#: ../inc/general/View.class.php:336
+msgid "Unorganized pictures"
+msgstr "无组织图片"
+
+#: ../inc/general/View.class.php:187
+msgid "Collection"
+msgstr "合集"
+
+#: ../inc/general/View.class.php:189
+msgid "Gallery"
+msgstr "图片墙"
+
+#: ../inc/general/View.class.php:191
+msgid "Uncategorized"
+msgstr "Uncategorized"
+
+#: ../inc/general/View.class.php:234
+msgid ""
+"A collection can contain no files. But you can create there other "
+"collections and <strong>galleries</strong>."
+msgstr "集合可以不包含任何文件。 但您可以创建其他集合和<strong>图库</strong>。"
+
+#: ../inc/general/View.class.php:236
+msgid ""
+"A gallery can contain only images. If you want to display a gallery go to a "
+"post and have a look at the visual editor buttons."
+msgstr ""
+"图库只能包含图片。 如果你想显示一个图库转到一个帖子，看看可视化编辑器按钮。"
+
+#: ../inc/general/View.class.php:238
+msgid ""
+"Uncategorized is the same as a root folder. Here you can find all files "
+"which are not assigned to a folder."
+msgstr "未分类与根文件夹相同。 在这里您可以找到所有未分配到文件夹的文件。"
+
+#: ../inc/general/View.class.php:241
+msgid ""
+"A folder can contain every type of file or a collection, but no gallery."
+msgstr "文件夹可以包含每种类型的文件或集合，但不包含库。"
+
+#: ../inc/metadata/Actions.class.php:31
+msgid "Actions"
+msgstr "操作"
+
+#: ../inc/metadata/CoverImage.class.php:45
+msgid "Cover image"
+msgstr "封面图片"
+
+#: ../inc/metadata/Description.class.php:28
+msgid "Description"
+msgstr "深度:"
+
+#: ../inc/metadata/Meta.class.php:44
+msgid "Name"
+msgstr "名称"
+
+#: ../inc/metadata/Meta.class.php:50
+msgid "Path"
+msgstr "路径"
+
+#: ../inc/metadata/Meta.class.php:64
+msgid "Folder type"
+msgstr "文件夹类型"
+
+#: ../inc/metadata/Meta.class.php:66
+msgid "What does this mean?"
+msgstr "这是什么意思？"
+
+#: ../inc/order/GalleryOrder.class.php:73
+msgid "Order by title ascending"
+msgstr "按标题升序排序"
+
+#: ../inc/order/GalleryOrder.class.php:77
+msgid "Order by title descending"
+msgstr "按标题降序排序"
+
+#: ../inc/order/GalleryOrder.class.php:81
+msgid "Order by filename ascending"
+msgstr "按文件名升序排序"
+
+#: ../inc/order/GalleryOrder.class.php:85
+msgid "Order by filename descending"
+msgstr "按照文件名降序排序"
+
+#: ../inc/order/GalleryOrder.class.php:89
+msgid "Natural order by filename ascending"
+msgstr "自然顺序按文件名升序"
+
+#: ../inc/order/GalleryOrder.class.php:93
+msgid "Natural order by filename descending"
+msgstr "自然顺序按文件名降序"
+
+#: ../inc/order/GalleryOrder.class.php:97
+msgid "Order by ID ascending"
+msgstr "按ID升序排序"
+
+#: ../inc/order/GalleryOrder.class.php:101
+msgid "Order by ID descending"
+msgstr "按ID降序排序"
+
+#: ../inc/order/GalleryOrder.class.php:118
+msgid "Order"
+msgstr "订单"
+
+#: ../inc/order/GalleryOrder.class.php:130
+msgid "Apply"
+msgstr "应用"
+
+#: ../inc/order/Options.class.php:27
+msgid "RealMediaLibrary:图库顺序"
+msgstr "RealMediaLibrary:图库顺序"
+
+#: ../inc/order/Options.class.php:34
+msgid "Reset the order of all galleries"
+msgstr "重置所有图库的顺序"
+
+#: ../inc/order/Options.class.php:45
+msgid "重置"
+msgstr "重置"
+
+#: ../inc/order/Options.class.php:61 ../inc/order/Options.class.php:81
+msgid "Reset order"
+msgstr "置订单"
+
+#: ../inc/order/Options.class.php:66
+msgid "Reindex order"
+msgstr "重建索引顺序"
+
+#: ../inc/order/Options.class.php:86
+msgid "Reset to last custom order"
+msgstr "重置为最后一个自定义订单"
+
+#: ../inc/order/Sortable.class.php:51
+msgid "The given folder does not allow to reorder the files."
+msgstr "给定的文件夹不允许重新排序文件。"
+
+#~ msgid "RealMediaLibrary:General"
+#~ msgstr "RealMediaLibrary:一般"
+
+#~ msgid "RealMediaLibrary:Reset"
+#~ msgstr "RealMediaLibrary:重置"
+
+#~ msgid "RealMediaLibrary:Migration"
+#~ msgstr "RealMediaLibrary:迁移"
+
+#~ msgid "RealMediaLibrary:Gallery order"
+#~ msgstr "RealMediaLibrary:图库顺序"
+
+#~ msgid "Reset"
+#~ msgstr "重设"
+
+#~ msgid "WP Real Media Library"
+#~ msgstr "WP Real Media Library"
+
+#~ msgid "https://matthias-web.com"
+#~ msgstr "https://matthias-web.com"
+
+#~ msgid "Organize your wordpress media library in a nice way."
+#~ msgstr "以一种很好的方式组织您的wordpress媒体库。"
+
+#~ msgid "Matthias Günter"
+#~ msgstr "Matthias Günter"

@@ -853,28 +853,42 @@ function agencystrap_home_hero() { ?>
            </div>
        </div>
     <?php } elseif (is_archive() ) { ?>
-        <div class="page-hero hero-area">
-<!--            <div class="post-thumb">--><?php //the_post_thumbnail('single-page-thumb'); ?><!--</div>-->
-           <div class="hero-inner">
-               <h1>
-                <?php echo  wp_title('', true); ?>
-               </h1>
-                <?php if (function_exists('get_the_subtitle')) {?>
-               <h2 class="subtitle"><?php get_the_subtitle(); ?></h2>
-               <?php } ?>
-           </div>
-       </div>
+<!--        <div class="page-hero hero-area">-->
+<!--<!--            <div class="post-thumb">-->--><?php ////the_post_thumbnail('single-page-thumb'); ?><!--<!--</div>-->-->
+<!--           <div class="hero-inner">-->
+<!--               <h1>-->
+<!--                --><?php //echo  wp_title('', true); ?>
+<!--               </h1>-->
+<!--                --><?php //if (function_exists('get_the_subtitle')) {?>
+<!--               <h2 class="subtitle">--><?php //get_the_subtitle(); ?><!--</h2>-->
+<!--               --><?php //} ?>
+<!--           </div>-->
+<!--       </div>-->
+		<?php
+		echo do_shortcode("[metaslider id=91]");
+		?>
+                     <div class="main_title">  <h1>
+                        <?php echo  wp_title('', true); ?>
+                       </h1>
+                     </div>
        <?php } elseif (is_search() ) { ?>
-           <div class="page-hero hero-area">
-              <div class="hero-inner">
-                  <h1>
-                   <?php echo  wp_title('', true); ?>
-                  </h1>
-                   <?php if (function_exists('get_the_subtitle')) {?>
-                  <h2 class="subtitle"><?php get_the_subtitle(); ?></h2>
-                  <?php } ?>
-              </div>
-          </div>
+<!--           <div class="page-hero hero-area">-->
+<!--              <div class="hero-inner">-->
+<!--                  <h1>-->
+<!--                   --><?php //echo  wp_title('', true); ?>
+<!--                  </h1>-->
+<!--                   --><?php //if (function_exists('get_the_subtitle')) {?>
+<!--                  <h2 class="subtitle">--><?php //get_the_subtitle(); ?><!--</h2>-->
+<!--                  --><?php //} ?>
+<!--              </div>-->
+<!--          </div>-->
+        <?php
+		echo do_shortcode("[metaslider id=91]");
+		?>
+                     <div class="main_title">  <h1>
+                        <?php echo  wp_title('', true); ?>
+                       </h1>
+                     </div>
         <?php } elseif (is_single() ) { ?>
          <div class="single-hero">
                     <?php while ( have_posts() ) : the_post(); ?>
@@ -892,11 +906,11 @@ function agencystrap_home_hero() { ?>
                         </div>
                         <div class="detail-author-date">
                         <span class="author-word" itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
-                       <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" rel="author">
+<!--                       <a href="--><?php //echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?><!--" rel="author">-->
                         <span class="author vcard" itemprop="name">
                         <?php echo get_the_author() ?>
                         </span>
-                        </a>
+<!--                        </a>-->
                         </span>
                         <span class="anything-devider">|</span>
                     <?php agencystrap_posted_on(); ?>
@@ -908,15 +922,22 @@ function agencystrap_home_hero() { ?>
 
        </div>
      <?php } else  { ?>
-            <div class="page-hero hero-area">
-           <div class="hero-inner">
-                <?php the_title( '<h1>', '</h1>' ); ?>
-                <?php if (function_exists('get_the_subtitle')) {?>
-               <h2 class="subtitle"><?php get_the_subtitle(); ?></h2>
-               <?php } ?>
-
-           </div>
-       </div>
+		<?php
+		echo do_shortcode("[metaslider id=91]");
+		?>
+        <div class="main_title">  <h1>
+				<?php echo  wp_title('', true); ?>
+            </h1>
+        </div>
+<!--            <div class="page-hero hero-area">-->
+<!--           <div class="hero-inner">-->
+<!--                --><?php //the_title( '<h1>', '</h1>' ); ?>
+<!--                --><?php //if (function_exists('get_the_subtitle')) {?>
+<!--               <h2 class="subtitle">--><?php //get_the_subtitle(); ?><!--</h2>-->
+<!--               --><?php //} ?>
+<!---->
+<!--           </div>-->
+<!--       </div>-->
      <?php   } ?>
 <?php }
 

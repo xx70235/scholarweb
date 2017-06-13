@@ -113,6 +113,11 @@ strong {
 .main-navigation ul li.current-menu-item a {
     color: #57ad68;
 }
+.main_title {
+margin: 0px auto 10px auto;
+    padding-top: 20px;
+    text-align: center;
+}
 
 
 .main-navigation ul li:hover > a {

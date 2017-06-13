@@ -60,11 +60,11 @@ echo '</a></div>';
         </div>
         <div class="detail-author-date">
         <span class="author-word" itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
-       <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" rel="author">
+<!--       <a href="--><?php //echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?><!--" rel="author">-->
         <span class="author vcard" itemprop="name">
         <?php echo get_the_author() ?>
         </span>
-        </a>
+<!--        </a>-->
         </span>
         <span class="anything-devider">|</span>
 	<?php agencystrap_posted_on(); ?>
