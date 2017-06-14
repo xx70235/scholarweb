@@ -815,12 +815,12 @@ function agencystrap_home_hero() { ?>
 
         <?php if ( is_front_page()) { ?>
 		<?php
-		echo do_shortcode("[metaslider id=91]");
+		echo do_shortcode("[metaslider id=331]");
 		?>
 <!--    <div class="home-hero hero-area">-->
 <!--           <div class="hero-inner">-->
 <!--	           --><?php
-//	           echo do_shortcode("[metaslider id=91]");
+//	           echo do_shortcode("[metaslider id=331]");
 //	           ?>
 <!--                --><?php //the_title( '<h1>', '</h1>' ); ?>
 <!--                --><?php //if (function_exists('get_the_subtitle')) {?>
@@ -865,7 +865,7 @@ function agencystrap_home_hero() { ?>
 <!--           </div>-->
 <!--       </div>-->
 		<?php
-		echo do_shortcode("[metaslider id=91]");
+		echo do_shortcode("[metaslider id=331]");
 		?>
                      <div class="main_title">  <h1>
                         <?php echo  wp_title('', true); ?>
@@ -883,7 +883,7 @@ function agencystrap_home_hero() { ?>
 <!--              </div>-->
 <!--          </div>-->
         <?php
-		echo do_shortcode("[metaslider id=91]");
+		echo do_shortcode("[metaslider id=331]");
 		?>
                      <div class="main_title">  <h1>
                         <?php echo  wp_title('', true); ?>
@@ -923,7 +923,7 @@ function agencystrap_home_hero() { ?>
        </div>
      <?php } else  { ?>
 		<?php
-		echo do_shortcode("[metaslider id=91]");
+		echo do_shortcode("[metaslider id=331]");
 		?>
         <div class="main_title">  <h1>
 				<?php echo  wp_title('', true); ?>
