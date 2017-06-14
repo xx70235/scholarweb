@@ -829,30 +829,56 @@ function cptui_get_preserved_keys( $type = '' ) {
 function cptui_get_preserved_label( $type = '', $key = '', $plural = '', $singular = '' ) {
 
 	$preserved_labels = array(
-		'post_types' => array(
-			'add_new_item'       => sprintf( __( 'Add new %s', 'custom-post-type-ui' ), $singular ),
-			'edit_item'          => sprintf( __( 'Edit %s', 'custom-post-type-ui' ), $singular ),
-			'new_item'           => sprintf( __( 'New %s', 'custom-post-type-ui' ), $singular ),
-			'view_item'          => sprintf( __( 'View %s', 'custom-post-type-ui' ), $singular ),
-			'all_items'          => sprintf( __( 'All %s', 'custom-post-type-ui' ), $plural ),
-			'search_items'       => sprintf( __( 'Search %s', 'custom-post-type-ui' ), $plural ),
-			'not_found'          => sprintf( __( 'No %s found.', 'custom-post-type-ui' ), $plural ),
+//		'post_types' => array(
+//			'add_new_item'       => sprintf( __( 'Add new %s', 'custom-post-type-ui' ), $singular ),
+//			'edit_item'          => sprintf( __( 'Edit %s', 'custom-post-type-ui' ), $singular ),
+//			'new_item'           => sprintf( __( 'New %s', 'custom-post-type-ui' ), $singular ),
+//			'view_item'          => sprintf( __( 'View %s', 'custom-post-type-ui' ), $singular ),
+//			'all_items'          => sprintf( __( 'All %s', 'custom-post-type-ui' ), $plural ),
+//			'search_items'       => sprintf( __( 'Search %s', 'custom-post-type-ui' ), $plural ),
+//			'not_found'          => sprintf( __( 'No %s found.', 'custom-post-type-ui' ), $plural ),
+//			'not_found_in_trash' => sprintf( __( 'No %s found in trash.', 'custom-post-type-ui' ), $plural ),
+//		),
+//		'taxonomies' => array(
+//			'search_items'               => sprintf( __( 'Search %s', 'custom-post-type-ui' ), $plural ),
+//			'popular_items'              => sprintf( __( 'Popular %s', 'custom-post-type-ui' ), $plural ),
+//			'all_items'                  => sprintf( __( 'All %s', 'custom-post-type-ui' ), $plural ),
+//			'parent_item'                => sprintf( __( 'Parent %s', 'custom-post-type-ui' ), $singular ),
+//			'parent_item_colon'          => sprintf( __( 'Parent %s:', 'custom-post-type-ui' ), $singular ),
+//			'edit_item'                  => sprintf( __( 'Edit %s', 'custom-post-type-ui' ), $singular ),
+//			'update_item'                => sprintf( __( 'Update %s', 'custom-post-type-ui' ), $singular ),
+//			'add_new_item'               => sprintf( __( 'Add new %s', 'custom-post-type-ui' ), $singular ),
+//			'new_item_name'              => sprintf( __( 'New %s name', 'custom-post-type-ui' ), $singular ),
+//			'separate_items_with_commas' => sprintf( __( 'Separate %s with commas', 'custom-post-type-ui' ), $plural ),
+//			'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'custom-post-type-ui' ), $plural ),
+//			'choose_from_most_used'      => sprintf( __( 'Choose from the most used %s', 'custom-post-type-ui' ), $plural ),
+//		),
+
+        'post_types' => array(
+			'add_new_item'       => sprintf( __( '添加[%s]', 'custom-post-type-ui' ), $singular ),
+			'edit_item'          => sprintf( __( '编辑[%s]', 'custom-post-type-ui' ), $singular ),
+			'new_item'           => sprintf( __( '新建[%s]', 'custom-post-type-ui' ), $singular ),
+			'view_item'          => sprintf( __( '查看[%s]', 'custom-post-type-ui' ), $singular ),
+			'all_items'          => sprintf( __( '全部[%s]', 'custom-post-type-ui' ), $plural ),
+			'search_items'       => sprintf( __( '查找[%s]', 'custom-post-type-ui' ), $plural ),
+			'not_found'          => sprintf( __( '未找到[%s].', 'custom-post-type-ui' ), $plural ),
 			'not_found_in_trash' => sprintf( __( 'No %s found in trash.', 'custom-post-type-ui' ), $plural ),
 		),
-		'taxonomies' => array(
-			'search_items'               => sprintf( __( 'Search %s', 'custom-post-type-ui' ), $plural ),
-			'popular_items'              => sprintf( __( 'Popular %s', 'custom-post-type-ui' ), $plural ),
-			'all_items'                  => sprintf( __( 'All %s', 'custom-post-type-ui' ), $plural ),
-			'parent_item'                => sprintf( __( 'Parent %s', 'custom-post-type-ui' ), $singular ),
-			'parent_item_colon'          => sprintf( __( 'Parent %s:', 'custom-post-type-ui' ), $singular ),
-			'edit_item'                  => sprintf( __( 'Edit %s', 'custom-post-type-ui' ), $singular ),
-			'update_item'                => sprintf( __( 'Update %s', 'custom-post-type-ui' ), $singular ),
-			'add_new_item'               => sprintf( __( 'Add new %s', 'custom-post-type-ui' ), $singular ),
-			'new_item_name'              => sprintf( __( 'New %s name', 'custom-post-type-ui' ), $singular ),
-			'separate_items_with_commas' => sprintf( __( 'Separate %s with commas', 'custom-post-type-ui' ), $plural ),
-			'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'custom-post-type-ui' ), $plural ),
-			'choose_from_most_used'      => sprintf( __( 'Choose from the most used %s', 'custom-post-type-ui' ), $plural ),
-		),
+
+        'taxonomies' => array(
+            'search_items'               => sprintf( __( '搜索[%s]', 'custom-post-type-ui' ), $plural ),
+            'popular_items'              => sprintf( __( 'Popular %s', 'custom-post-type-ui' ), $plural ),
+            'all_items'                  => sprintf( __( 'All %s', 'custom-post-type-ui' ), $plural ),
+            'parent_item'                => sprintf( __( 'Parent %s', 'custom-post-type-ui' ), $singular ),
+            'parent_item_colon'          => sprintf( __( 'Parent %s:', 'custom-post-type-ui' ), $singular ),
+            'edit_item'                  => sprintf( __( '编辑[%s]', 'custom-post-type-ui' ), $singular ),
+            'update_item'                => sprintf( __( '更新[%s]', 'custom-post-type-ui' ), $singular ),
+            'add_new_item'               => sprintf( __( 'Add new %s', 'custom-post-type-ui' ), $singular ),
+            'new_item_name'              => sprintf( __( 'New %s name', 'custom-post-type-ui' ), $singular ),
+            'separate_items_with_commas' => sprintf( __( '英文逗号分隔多个[%s]', 'custom-post-type-ui' ), $plural ),
+            'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'custom-post-type-ui' ), $plural ),
+            'choose_from_most_used'      => sprintf( __( '选择最常用的[%s]', 'custom-post-type-ui' ), $plural ),
+        ),
 	);
 
 	return $preserved_labels[ $type ][ $key ];
