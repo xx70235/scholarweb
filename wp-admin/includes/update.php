@@ -263,7 +263,7 @@ function update_nag() {
 			$cur->current
 		);
 	}
-	echo "<div class='update-nag'>$msg</div>";
+//	echo "<div class='update-nag'>$msg</div>";
 }
 
 // Called directly from dashboard

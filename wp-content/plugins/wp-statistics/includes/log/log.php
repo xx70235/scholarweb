@@ -14,7 +14,7 @@
 	}
 
 	// Add the about box here as metaboxes added on the actual page load cannot be closed.
-	add_meta_box( 'wps_about_postbox', sprintf(__('About WP Statistics Version %s', 'wp_statistics'), WP_STATISTICS_VERSION), 'wp_statistics_generate_overview_postbox_contents', $WP_Statistics->menu_slugs['overview'], 'side', null, array( 'widget' =>'about' ) );
+//	add_meta_box( 'wps_about_postbox', sprintf(__('About WP Statistics Version %s', 'wp_statistics'), WP_STATISTICS_VERSION), 'wp_statistics_generate_overview_postbox_contents', $WP_Statistics->menu_slugs['overview'], 'side', null, array( 'widget' =>'about' ) );
 	
 	function wp_statistics_generate_overview_postbox_contents( $post, $args ) {
 		$loading_img = '<div style="width: 100%; text-align: center;"><img src=" ' .  plugins_url('wp-statistics/assets/images/')  . 'ajax-loading.gif" alt="' .  __( 'Loading...', 'wp_statistics' ) . '"></div>';
@@ -26,7 +26,7 @@
 	}
 ?>
 <div class="wrap">
-	<?php echo $nag_html; ?>
+<!--	--><?php //echo $nag_html; ?>
 	<?php screen_icon('options-general'); ?>
 	<h2><?php echo get_admin_page_title(); ?></h2>
 	<?php wp_nonce_field('closedpostboxes', 'closedpostboxesnonce', false ); ?>

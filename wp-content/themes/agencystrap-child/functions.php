@@ -1423,3 +1423,13 @@ function agencystrap_theme_details() { ?>
    <p style="text-align:center;"><img src="http://demos.themingpress.com/agencystrap/wp-content/uploads/sites/3/2016/06/Macbook_Mockup.png" width="700"></p>
 <?php }
 add_action( 'agencystrap_theme_name', 'agencystrap_theme_details' );
+?>
+
+<?php //移除Wordpress后台顶部左上角的W图标
+function annointed_admin_bar_remove() {
+	global $wp_admin_bar;
+	/* Remove their stuff */
+	$wp_admin_bar->remove_menu('wp-logo');
+}
+add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
+?>
