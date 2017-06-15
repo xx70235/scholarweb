@@ -104,7 +104,9 @@ class UM_Admin_Access {
 				$current_screen = get_current_screen();
 
 	    		if( ! in_array( $current_screen->id, array("upload","media","attachment") )  ) {
-					add_meta_box('um-admin-access-settings', __('Ultimate Member'), array(&$this, 'load_metabox_form'), $post_type, 'side', 'default');
+                    add_meta_box('um-admin-access-settings', '详情管理', array(&$this, 'load_metabox_form'), $post_type, 'side', 'default');
+
+//					add_meta_box('um-admin-access-settings', __('Ultimate Member'), array(&$this, 'load_metabox_form'), $post_type, 'side', 'default');
 				}
 
 			}

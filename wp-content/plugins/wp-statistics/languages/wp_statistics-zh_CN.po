@@ -1337,7 +1337,7 @@ msgstr "为此插件评分"
 
 #: wp-statistics.php:394
 msgid "WP Statistics - Hits"
-msgstr "WP Statistics - 点击"
+msgstr "统计详情：点击"
 
 #: wp-statistics.php:433 wp-statistics.php:513 wp-statistics.php:551
 msgid "Overview"

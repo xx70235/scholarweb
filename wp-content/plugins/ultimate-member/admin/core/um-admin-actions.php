@@ -79,7 +79,7 @@
 		echo '<label><input type="radio" name="_um_accessible" value="0" checked /> '. __('Content accessible to Everyone','ultimatemember') . '</label>
 			<label><input type="radio" name="_um_accessible" value="1" /> ' . __('Content accessible to Logged Out Users','ultimatemember') . '</label>
 			<label><input type="radio" name="_um_accessible" value="2" /> ' . __('Content accessible to Logged In Users','ultimatemember') . '</label>';
-		echo '<p class="description">Who can see content/posts in this category.</p>';
+//		echo '<p class="description">Who can see content/posts in this category.</p>';
 		echo '</div>';
 		
 		echo '<div class="form-field term-roles-wrap">';

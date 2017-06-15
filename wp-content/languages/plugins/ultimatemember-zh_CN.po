@@ -3252,7 +3252,7 @@ msgstr "WPML 集成"
 #: ../admin/core/um-admin-dashboard.php:123
 #: ../admin/core/um-admin-redux.php:43
 msgid "Ultimate Member"
-msgstr "Ultimate Member"
+msgstr "属性管理"
 
 #: ../admin/core/um-admin-actions-ajax.php:11
 #: ../admin/core/um-admin-actions-fields.php:11

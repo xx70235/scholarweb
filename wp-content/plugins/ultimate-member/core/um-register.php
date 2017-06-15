@@ -14,7 +14,7 @@ class UM_Register {
 
 	public function verify_nonce( $args ){
 		global $ultimatemember;
-        
+
 		$allow_nonce_verification = apply_filters("um_register_allow_nonce_verification", true );
 
 		if( ! $allow_nonce_verification  ){
