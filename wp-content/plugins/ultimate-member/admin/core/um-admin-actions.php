@@ -87,7 +87,7 @@
 		foreach($ultimatemember->query->get_roles() as $role_id => $role) {
 		echo '<label><input type="checkbox" name="_um_roles[]" value="' . $role_id . '" /> ' . $role . '</label>';
 		}
-		echo '<p class="description">' . __('This is applicable only if you restrict the content to logged-in users.','ultimatemember') . '</p>';
+////		echo '<p class="description">' . __('This is applicable only if you restrict the content to logged-in users.','ultimatemember') . '</p>';
 		echo '<label>' . __('Content Restriction Redirect URL','ultimatemember') . '</label>';
 		echo '<input type="text" name="_um_redirect" id="_um_redirect" value="" />';
 		echo '<p class="description">' . __('Users who cannot see content will get redirected to that URL.','ultimatemember') . '</p>';
@@ -116,9 +116,9 @@
 		echo '<td><label><input type="radio" name="_um_accessible" value="0"  ' . checked( 0, $_um_accessible, 0 ) . ' /> '. __('Content accessible to Everyone','ultimatemember') . '</label><br />
 			<label><input type="radio" name="_um_accessible" value="1" ' . checked( 1, $_um_accessible, 0 ) . ' /> ' . __('Content accessible to Logged Out Users','ultimatemember') . '</label><br />
 			<label><input type="radio" name="_um_accessible" value="2" ' . checked( 2, $_um_accessible, 0 ) . ' /> ' . __('Content accessible to Logged In Users','ultimatemember') . '</label>';
-		echo '<p class="description">Who can see content/posts in this category.</p>';
+//		echo '<p class="description">Who can see content/posts in this category.</p>';
 		echo "</td></tr>";
-		
+
 		echo "<tr class='form-field form-required term-roles-wrap'>";
 		echo "<th scope='row'><label>" .  __('Roles who can see the content','ultimatemember') . "</label></th>";
 		echo '<td>';
@@ -130,7 +130,7 @@
 			}
 		echo '<label><input type="checkbox" name="_um_roles[]" value="' . $role_id . '" ' .  $checked . ' /> ' . $role . '</label>&nbsp;&nbsp;';
 		}
-		echo '<p class="description">' . __('This is applicable only if you restrict the content to logged-in users.','ultimatemember') . '</p>';
+//		echo '<p class="description">' . __('This is applicable only if you restrict the content to logged-in users.','ultimatemember') . '</p>';
 		echo "</td></tr>";
 		echo "<tr class='form-field form-required term-roles-wrap'>";
 		echo "<th scope='row'><label>" . __('Content Restriction Redirect URL','ultimatemember') . "</label></th>";
