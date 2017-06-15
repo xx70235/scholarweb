@@ -44,7 +44,7 @@
 	function um_add_user_frontend($args){
 		global $ultimatemember;
 
-		unset( $args['user_id'] );
+        unset( $args['user_id'] );
 		
 		extract($args);
 
@@ -108,8 +108,8 @@
 		$args = array_merge($args, $creds);
 		
 		unset( $args['user_id'] );
-		
-		do_action('um_before_new_user_register', $args);
+
+        do_action('um_before_new_user_register', $args);
 
 		$user_id = wp_create_user( $user_login, $user_password, $user_email );
 
