@@ -10,7 +10,7 @@
 
 get_header(); ?>
 <div class="archive-content">
-	<?php echo do_shortcode( '[searchandfilter fields="job_title,location,keywords" submit_label="筛选" types="radio,radio,radio"  headings="职位/学位,区域,关键词"]' );?>
+	<?php echo do_shortcode( '[searchandfilter fields="first_level_discipline" submit_label="筛选" types="radio"  headings=""]' );?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 

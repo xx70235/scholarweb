@@ -44,40 +44,40 @@ echo '</a></div>';
 
 	<div class="entry-content" itemprop="text">
 		<div id="update-time">
-            <span class="update-time" ><h3>更新时间：</h3>
-                <p><?php the_field(update_time);?></p>
+            <span class="update-time" ><h4>更新时间： <?php strip_tags(the_field(update_time));?></h4>
+
             </span></div>
         <div id="location">
-            <span class="location" ><h3>工作地点：</h3>
-	           <p> <?php $terms = wp_get_post_terms( $post->ID, array( 'location') ); ?>
-	            <?php foreach ( $terms as $term ) : ?>
-                    <?php echo $term->name.'  '; ?>
-	            <?php endforeach; ?></p>
+            <span class="location" ><h4>工作地点：<?php $terms = wp_get_post_terms( $post->ID, array( 'location') ); ?>
+		            <?php foreach ( $terms as $term ) : ?>
+			            <?php echo $term->name.'  '; ?>
+		            <?php endforeach; ?></h4>
+<!--	           <p> </p>-->
             </span></div>
         <div id="job-title">
-            <span class="job-title" ><h3>职位：</h3>
-	            <p><?php $terms = wp_get_post_terms( $post->ID, array( 'job_title') ); ?>
-	            <?php foreach ( $terms as $term ) : ?>
+            <span class="job-title" ><h4>职位：<?php $terms = wp_get_post_terms( $post->ID, array( 'job_title') ); ?>
+		            <?php foreach ( $terms as $term ) : ?>
 
 			            <?php echo $term->name.'  '; ?>
-	            <?php endforeach; ?></p>
+		            <?php endforeach; ?></h4>
+<!--	            <p></p>-->
             </span></div>
         <div id="keywords">
-            <span class="keywords" ><h3>关键字：</h3>
-	          <p>  <?php $terms = wp_get_post_terms( $post->ID, array( 'keywords') ); ?>
-	            <?php foreach ( $terms as $term ) : ?>
+            <span class="keywords" ><h4>关键字： <?php $terms = wp_get_post_terms( $post->ID, array( 'keywords') ); ?>
+		            <?php foreach ( $terms as $term ) : ?>
 
-		            <?php echo $term->name.'  '; ?>
-	            <?php endforeach; ?></p>
+			            <?php echo $term->name.'  '; ?>
+		            <?php endforeach; ?></h4>
+<!--	          <p> </p>-->
             </span></div>
 
         <div id="details">
-            <span class="details" ><h3>招聘详情：</h3></span>
+            <span class="details" ><h4>招聘详情：</h4></span>
 	            <?php the_field(details);?>
             </div>
         <div id="deadline">
-            <span class="deadline" ><h3>截止时间：</h3>
-	            <p>  <?php the_field(deadline);?></p>
+            <span class="deadline" ><h4>截止时间：</h4>
+	              <?php   strip_tags(the_field(deadline));?>
             </span></div>
 	</div><!-- .entry-content -->
 	<?php

@@ -807,7 +807,20 @@ add_action( 'widgets_init', 'agencystrap_theme_slug_widgets_init' );
 /* cutom functions
 /*--------------------------------------*/
 
+function getPostViews( $postID ) {
+	$count_key = 'post_views_count';
+	$count = get_post_meta( $postID, $count_key, true );
+	if( $count=='' ) {
+		delete_post_meta( $postID, $count_key );
+		add_post_meta( $postID, $count_key, '0' );
+		return "0";
+	}
+	return $count;
+}
 
+//function getField(){
+//
+//}
 
 
 
@@ -854,7 +867,7 @@ function agencystrap_home_hero() { ?>
        </div>
     <?php } elseif (is_archive() ) { ?>
 <!--        <div class="page-hero hero-area">-->
-<!--<!--            <div class="post-thumb">-->--><?php ////the_post_thumbnail('single-page-thumb'); ?><!--<!--</div>-->-->
+
 <!--           <div class="hero-inner">-->
 <!--               <h1>-->
 <!--                --><?php //echo  wp_title('', true); ?>

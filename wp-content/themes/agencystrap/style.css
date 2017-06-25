@@ -1279,11 +1279,12 @@ ul.sub-menu li a {
   margin-bottom: 20px;
 }
 
-.entry-content  h3{
+.entry-content  h4{
 	padding-left: 10px;
 	border-left-color: #57ad68;
 	border-left-width: 3px;
 	border-left-style: solid;
+	font-weight: 300;
 }
 
 .entry-content  #details{

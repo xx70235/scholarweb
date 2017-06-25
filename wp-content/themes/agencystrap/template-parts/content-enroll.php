@@ -24,12 +24,11 @@ echo '</a></div>';
 	</header><!-- .entry-header -->
 
 	<div class="entry-content" itemprop="text">
-<?php //the_excerpt(); ?>
-        <div id="keywords">
-            <span class="keywords" >关键字：
+        <div id="entry-parameters">
+            <span class="discipline" >学科：
 	            <?php //the_excerpt();
 	            // your taxonomy name
-	            $tax = 'keywords';
+	            $tax = 'first_level_discipline';
 
 	            // get the terms of taxonomy
 	            $terms = wp_get_post_terms($post->ID, $tax, [
@@ -51,25 +50,56 @@ echo '</a></div>';
 
 	            }
 	            ?>
-            </span></div>
-<!--        <a href="--><?php //the_permalink(); ?><!-- " class="btn read-more">阅读全文</a>-->
-	</div><!-- .entry-content -->
-        <div class="entry-meta">
-        <div class="image-author">
-        <?php echo get_avatar( get_the_author_meta( 'email' ), '42' ); ?>
+            </span>
+            <span class="location" >地点：
+		        <?php //the_excerpt();
+		        // your taxonomy name
+		        $tax = 'location';
+
+		        // get the terms of taxonomy
+		        $terms = wp_get_post_terms($post->ID, $tax, [
+			        'hide_empty' => false, // do not hide empty terms
+		        ]);
+
+		        // loop through all terms
+		        foreach( $terms as $term ) {
+
+			        // if no entries attached to the term
+			        if( 0 == $term->count )
+				        // display only the term name
+				        echo  $term->name . '  ';
+
+			        // if term has more than 0 entries
+                    elseif( $term->count > 0 )
+				        // display link to the term archive
+				        echo '<a href="'. get_term_link( $term ) .'">'. $term->name.'  ' .'</a>';
+
+		        }
+		        ?>
+            </span>
+            <span class="views" >关注量：
+
+		        <?php
+		        $view =getPostViews($post->ID);
+		        echo $view.' ';
+		        ?></span>
         </div>
-        <div class="detail-author-date">
-        <span class="author-word" itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">
-<!--       <a href="--><?php //echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?><!--" rel="author">-->
-        <span class="author vcard" itemprop="name">
-        <?php echo get_the_author() ?>
-        </span>
-<!--        </a>-->
-        </span>
-        <span class="anything-devider">|</span>
-	<?php agencystrap_posted_on(); ?>
-	</div>
-	</div>
+
+	</div><!-- .entry-content -->
+<!--        <div class="entry-meta">-->
+<!--        <div class="image-author">-->
+<!--        --><?php //echo get_avatar( get_the_author_meta( 'email' ), '42' ); ?>
+<!--        </div>-->
+<!--        <div class="detail-author-date">-->
+<!--        <span class="author-word" itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author">-->
+<!--        <span class="author vcard" itemprop="name">-->
+<!--        --><?php //echo get_the_author() ?>
+<!--        </span>-->
+<!--        </span>-->
+<!--        <span class="anything-devider">|</span>-->
+<!--	--><?php //agencystrap_posted_on(); ?>
+<!--	</div>-->
+<!--	</div>-->
     </div>
     <div class="clear"></div>
 </article><!-- #post-## -->
