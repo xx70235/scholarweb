@@ -8939,7 +8939,7 @@ msgstr "插入分页标签"
 
 #: wp-login.php:718
 msgid "Register For This Site"
-msgstr "在这个站点注册"
+msgstr "欢迎注册"
 
 #: wp-login.php:816
 msgid "You have logged in successfully."
