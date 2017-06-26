@@ -146,6 +146,28 @@ function send_sms($phone) {
       return 1;
 }
 
+function verify_code($phone, $code) {
+    require_once plugin_dir_path(__FILE__) . 'config.php';
+    require_once plugin_dir_path(__FILE__) . 'lib/leancloundsms.php';
+
+
+    //实例化类:两个参数分别为申请通过后的 App Key 和 App Secret
+    $leancloundsms = new leancloundsms($id, $key);
+
+    //短信接收号码: API请求参数rec_num的值
+    $leancloundsms->sms_mobile($phone);
+
+    $leancloundsms->sms_code($code);
+
+    //发送短信: 返回boolean值 TRUE 为成功 FALSE 为失败或发生异常
+    $res = $leancloundsms->verify();
+
+    if (!$res)
+        return 0;
+    else
+        return 1;
+}
+
 /* 修改注册表单 */
 
 function ludou_show_phone_field() {
@@ -236,13 +258,10 @@ function ludou_check_phone_fields($login, $email, $errors) {
             $errors->add('code_error1', "<strong>错误</strong>：请填写短信验证码");
          }
          else {
-            $code = $wpdb->get_var($wpdb->prepare("SELECT `code` FROM `$table_name` WHERE `phone` = %s;", $phone));
-            if (empty($code)) {
-               $errors->add('code_error2', "<strong>错误</strong>：请先获取短信验证码");
-            }
-            else if ($code != $_POST['code']) {
-               $errors->add('code_error3', "<strong>错误</strong>：短信验证码不正确");
-            }
+             $verify_status = verify_code($phone, $_POST['code']);
+             if ($verify_status == 0) {
+                 $errors->add('code_error3', "<strong>错误</strong>：短信验证码不正确");
+             }
          }
       }
    }
@@ -438,15 +457,16 @@ function ludou_phone_add_menu_page() {
             $errors .= "<strong>错误</strong>：请填写短信验证码<br />";
          }
          else {
-            $code = $wpdb->get_var($wpdb->prepare("SELECT `code` FROM `$table_name` WHERE `phone` = %s;", $phone));
-            if (empty($code)) {
-               $errors .= "<strong>错误</strong>：请先获取短信验证码<br />";
-               $_POST['code'] = '';
-            }
-            else if ($code != $_POST['code']) {
-               $errors .= "<strong>错误</strong>：短信验证码不正确<br />";
-               $_POST['code'] = '';
-            }
+             $verify_status = verify_code($phone, $_POST['code']);
+//            $code = $wpdb->get_var($wpdb->prepare("SELECT `code` FROM `$table_name` WHERE `phone` = %s;", $phone));
+//            if (empty($code)) {
+//               $errors .= "<strong>错误</strong>：请先获取短信验证码<br />";
+//               $_POST['code'] = '';
+//            }
+//            else if ($code != $_POST['code']) {
+//               $errors .= "<strong>错误</strong>：短信验证码不正确<br />";
+//               $_POST['code'] = '';
+//            }
          }
       }
 
