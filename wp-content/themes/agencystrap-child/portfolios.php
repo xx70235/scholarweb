@@ -30,8 +30,8 @@ $loop = new WP_Query( $args );
           <div class="portfolio-thumb"><a href="<?php echo get_post_permalink( get_the_id() ); ?>"><?php the_post_thumbnail('portfolio-icon'); ?></a></div>
           <div class="portfolio-content">
 
-              <h3>  <a href="<?php echo get_post_permalink( get_the_id() ); ?>"><?php the_title(); ?></a></h3>
-              <?php the_excerpt(); ?>
+              <h3>  <?php the_title(); ?></a></h3>
+              <?php the_content(); ?>
               <a href="<?php echo get_post_permalink( get_the_id() ); ?>">Read More</a>
           </div>
           <div class="clr"></div>
