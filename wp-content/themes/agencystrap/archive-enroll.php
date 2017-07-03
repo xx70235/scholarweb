@@ -67,7 +67,7 @@ echo '<h3 class="section-title">学科筛选</h3>';
 ?>
 <div class="showhide">
 <a href="javascript:void(0)" id="show" style="display:block" onclick="document.getElementById('a').style.height='100%';document.getElementById('hidden').style.display='block';document.getElementById('show').style.display='none';">展开全部学科</a>
-<a href="javascript:void(0)" id="hidden" style="display:none;" onclick="document.getElementById('a').style.height='90px';document.getElementById('hidden').style.display='none';document.getElementById('show').style.display='block';">关闭全部学科</a>
+<a href="javascript:void(0)" id="hidden" style="display:none;" onclick="document.getElementById('a').style.height='90px';document.getElementById('hidden').style.display='none';document.getElementById('show').style.display='block';">收起全部学科</a>
 </div>
 <div class="normal_columns_content list" id="a" style="height:90px;width:100%;overflow-y:hidden;">
 <?php
