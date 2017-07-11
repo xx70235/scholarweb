@@ -109,16 +109,25 @@ echo '<h3 class="section-title">学科筛选</h3>';
 	echo '</a>';
 	echo '</div>';
 	echo '</div>';
-	$ahead = array(109,110,111,118,129,132);
+	$ahead = array(161,109,110,111,118,94,130,129,132);
 	$headbox= array();
 	foreach($datainfo as $pre_dk => $pre_dv)
 	{
 		if(in_array(intval($pre_dv->term_id),$ahead))
 		{
-			$headbox[] = $pre_dv;
+			$headbox[$pre_dv->term_id] = $pre_dv;
 			unset($datainfo[$pre_dk]);
 		}
 	}
+	$midlist = array();
+	foreach($ahead as $hk => $hv)
+	{
+		if(isset($headbox[$hv]))
+		{
+			$midlist[] = $headbox[$hv];
+		}
+	}
+	$headbox = $midlist;
 	$datainfo = array_values($datainfo);
 	$datainfo = array_merge($headbox,$datainfo);
 ?>
