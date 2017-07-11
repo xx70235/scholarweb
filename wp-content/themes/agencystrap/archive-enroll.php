@@ -59,6 +59,37 @@ get_header(); ?>
 	padding-left:20px;
 	margin-bottom: 15px;
 }
+.list-item.-ico .icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -11px;
+    fill: transparent;
+    stroke: #505050;
+    width: 23px;
+    height: 22px;
+}
+.icon {
+    fill: currentColor;
+}
+.icon-lantbruk {
+    width: 0.92em;
+    height: 1em;
+    fill: initial;
+}
+.icon {
+    display: inline-block;
+}
+.icon {
+    font-family: "iconfont";
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: auto;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 </style>
 <?php //var_dump($datainfo);exit;?>
 <div class='fil'>
@@ -73,18 +104,42 @@ echo '<h3 class="section-title">学科筛选</h3>';
 <?php
 	echo "<div class='normal_columns_25pers'>";
 	echo '<div class="list-item -ico">';
-	echo '<a href="http://www.tschlr.com/enroll/">全部学科</a>';
+	echo '<a href="http://www.tschlr.com/enroll/">全部学科';
+	echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.tschlr.com/wp-content/uploads/iconsets/a.png">';
+	echo '</a>';
 	echo '</div>';
 	echo '</div>';
+	$ahead = array(109,110,111,118,129,132);
+	$headbox= array();
+	foreach($datainfo as $pre_dk => $pre_dv)
+	{
+		if(in_array(intval($pre_dv->term_id),$ahead))
+		{
+			$headbox[] = $pre_dv;
+			unset($datainfo[$pre_dk]);
+		}
+	}
+	$datainfo = array_values($datainfo);
+	$datainfo = array_merge($headbox,$datainfo);
 ?>
 <?php foreach($datainfo as $dk => $dv){
 	echo "<div class='normal_columns_25pers'>";
 	echo '<div class="list-item -ico">';
-	echo '<a href="http://www.tschlr.com/enroll/first_level_discipline/'.$dv->slug.'">'.$dv->name.'</a>';
+	echo '<a href="http://www.tschlr.com/enroll/first_level_discipline/'.$dv->slug.'">'.$dv->name;
+	if(!empty($dv->icon_id))
+	{
+		echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.tschlr.com/wp-content/uploads/iconsets/'.$dv->icon_id.'.png">';
+	}
+	else
+	{
+		echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.tschlr.com/wp-content/uploads/iconsets/a.png">';
+	}
+	echo '</a>';
 	echo '</div>';
 	echo '</div>';
 }?>
 </div>
+<?php echo '<h3 class="section-title"></h3>';?>
 </div>
 	<?php //echo do_shortcode( '[searchandfilter fields="first_level_discipline" submit_label="筛选" types="radio"  headings=""]' );?>
 	<div id="primary" class="content-area">
