@@ -51,7 +51,7 @@ body {
 	}
 
 .fa {
-	font-size: 60px;
+	font-size: 20px;
 	color: #666;
 }
 

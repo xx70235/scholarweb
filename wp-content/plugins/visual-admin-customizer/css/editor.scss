@@ -1,0 +1,649 @@
+$menuBarHeight: 64px;
+$baseEditorZIndex: 10;
+
+$contextMenuShadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+$popupPanelShadow: 0 -3px 5px rgba(0, 0, 0, 0.2);
+$menuBarBorderColor: silver;
+
+$buttonHorizontalPadding: 20px;
+
+//Very limited small viewport support.
+$breakSmall: 1205px;
+$smallButtonPadding: 5px;
+@media (max-width: $breakSmall) {
+	.vac-hide-in-small-viewports {
+		display: none;
+	}
+}
+
+@import "./_success-indicator-animation.scss";
+@import "custom-code-dialog";
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+#vac-iframe-container {
+	width: 100%;
+	z-index: 2;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: $menuBarHeight;
+}
+
+#vac-editor-frame {
+	width: 100%;
+	height: 100%;
+}
+
+#vac-editor-menubar {
+	z-index: 4;
+
+	width: 100%;
+	height: $menuBarHeight;
+
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	background-color: #fafafa;
+	border-top: 1px solid $menuBarBorderColor;
+
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.16);
+
+	.vac-editor-button {
+		vertical-align: middle;
+	}
+}
+
+#vac-mode-switcher {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+
+	line-height: $menuBarHeight;
+
+	label {
+		cursor: pointer;
+		display: inline-block;
+		padding: 0 10px;
+
+		@media (max-width: $breakSmall) {
+			padding: 0 $smallButtonPadding;
+		}
+	}
+}
+
+.vac-bar-item {
+	display: inline-block;
+	float: left;
+	position: relative;
+
+	box-sizing: border-box;
+	height: $menuBarHeight;
+	line-height: $menuBarHeight;
+
+	padding: 0 $buttonHorizontalPadding;
+
+	@media (max-width: $breakSmall) {
+		padding: 0 $smallButtonPadding;
+	}
+
+	border-left: 1px solid $menuBarBorderColor;
+	border-right: 1px solid $menuBarBorderColor;
+
+	background: #f8f8f8;
+	background: linear-gradient(to bottom, #f8f8f8 0%,#f0f0f0 100%);
+}
+
+.vac-editor-button {
+	line-height: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	vertical-align: middle;
+
+	&::before {
+		font: 20px/1 dashicons;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.vac-mega-button {
+	box-sizing: border-box;
+	margin: 0;
+	cursor: pointer;
+
+	vertical-align: top;
+	height: $menuBarHeight;
+
+	//color: #555;
+
+	&:hover, &.vac-is-open {
+		background: white;
+		color: #23282d;
+	}
+
+	.vac-mega-title	{
+		display: block;
+		position: absolute;
+
+		height: 20px;
+		top: 5px;
+		line-height: 1em;
+	}
+
+	.vac-mega-subtitle {
+		line-height: $menuBarHeight;
+		vertical-align: middle;
+		display: inline-block;
+
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.vac-bar-item + .vac-bar-item {
+	border-left: none;
+}
+
+.vac-mega-button.vac-has-popup {
+	$triangleWidth: 20px;
+	position: relative;
+
+	padding-right: $buttonHorizontalPadding + $triangleWidth;
+	@media (max-width: $breakSmall) {
+		padding-right: $smallButtonPadding + $triangleWidth;
+	}
+
+	&:after {
+		display: block;
+		position: absolute;
+
+		width: $triangleWidth;
+		height: 20px;
+
+		text-align: center;
+
+		font: normal 20px/1 dashicons;
+		content: '\f142';
+		color: #72777c;
+
+		right: $buttonHorizontalPadding / 2;
+		top: ($menuBarHeight - 20px) / 2;
+
+		@media (max-width: $breakSmall) {
+			right: $smallButtonPadding / 2;
+		}
+	}
+
+	&.vac-is-open:after {
+		content: '\f140';
+	}
+}
+
+.vac-popup-panel {
+	display: none;
+	position: absolute;
+	z-index: $baseEditorZIndex + 4;
+
+	width: 200px;
+	padding: 10px;
+	overflow-x: hidden;
+	cursor: default;
+
+	background-color: white;
+	border: 1px solid $menuBarBorderColor;
+	box-shadow: $popupPanelShadow;
+
+	line-height: 1.4em;
+}
+
+.vac-popup-panel.vac-menu-container {
+	box-shadow: $popupPanelShadow;
+
+	border-bottom: 1px solid $menuBarBorderColor;
+	.vac-context-menu-item:last-of-type {
+		border-bottom-width: 0;
+	}
+}
+
+$contextMenuBorderColor: #d5d5d5;
+$contextMenuHoverTextColor: #23282d;
+$contextMenuItemPadding: 10px;
+
+.vac-menu-container {
+	position: absolute;
+	width: 210px;
+	z-index: $baseEditorZIndex + 5;
+
+	top: 0;
+	left: 0;
+	display: none;
+
+	background: white;
+	border: none;
+	box-shadow: $contextMenuShadow;
+	padding: 0;
+}
+
+.vac-menu-items {
+	margin: 0;
+	padding: 0;
+}
+
+.vac-context-menu-item {
+	list-style-type: none;
+
+	padding: $contextMenuItemPadding;
+	margin: 0;
+	cursor: pointer;
+
+	font-size: 14px;
+	line-height: 18px;
+
+	border: 1px solid $contextMenuBorderColor;
+	border-top-width: 0;
+
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+	white-space: nowrap;
+
+	&:hover {
+		background-color: #eee;
+		color: $contextMenuHoverTextColor;
+
+		&.vac-has-submenu::after {
+			color: $contextMenuHoverTextColor;
+		}
+	}
+
+	&.vac-last-group-member {
+		border-bottom-width: 3px;
+	}
+}
+
+.vac-context-menu-item:first-child {
+	border-top-width: 1px;
+}
+
+.vac-has-submenu::after {
+	position: absolute;
+	right: $contextMenuItemPadding;
+
+	font: normal 20px/1 dashicons;
+	content: '\f139';
+	color: #72777c;
+}
+
+.vac-has-labelled-items .vac-context-menu-item {
+	padding: 0;
+	label {
+		display: inline-block;
+		padding: $contextMenuItemPadding;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+	}
+}
+
+#vac-select-parent-submenu {
+	z-index: $baseEditorZIndex + 6;
+}
+
+#vac-undo::before {
+	content: '\f171';
+}
+
+#vac-redo::before {
+	content: '\f172';
+}
+
+.ui-dialog {
+	z-index: $baseEditorZIndex + 1;
+
+	background: white;
+	box-shadow: 0 3px 6px rgba(0,0,0,.3);
+
+	.ui-dialog-titlebar {
+		background: #fcfcfc;
+		border-bottom: 1px solid #ddd;
+		height: 36px;
+		line-height: 36px;
+	}
+
+	.ui-dialog-title {
+		display: block;
+
+		font-size: 18px;
+		font-weight: 600;
+
+		margin: 0;
+		padding: 0 36px 0 16px;
+	}
+
+	.ui-dialog-titlebar-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 36px;
+		height: 36px;
+
+		color: #666;
+		padding: 0;
+		text-align: center;
+		background: transparent;
+		border: none;
+
+		cursor: pointer;
+
+		.ui-button-text, .ui-icon {
+			display: none;
+		}
+
+		&:before {
+			font: 400 20px/36px dashicons;
+			vertical-align: top;
+			width: 36px;
+			height: 36px;
+			content: "\f158";
+		}
+
+		&:hover {
+			color: #00a0d2;
+		}
+	}
+
+	.ui-dialog-content {
+		padding: 8px 16px;
+	}
+
+	.ui-dialog-buttonpane {
+		padding: 8px 16px;
+		background: #fcfcfc;
+		border-top: 1px solid #ddd;
+
+		.button-primary {
+			float: right;
+		}
+	}
+}
+
+.ui-widget-overlay {
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.vac-field-label {
+	display: block;
+}
+
+#vac-element-text {
+	width: 100%;
+	height: 100px;
+}
+
+#vac-change-list {
+	display: none;
+	position: absolute;
+	z-index: $baseEditorZIndex + 4;
+
+	min-width: 520px;
+	height: 230px;
+	background-color: white;
+	border: 1px solid $menuBarBorderColor;
+
+	padding: 10px;
+
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	h3:first-child {
+		padding-top: 0;
+		margin-top: 0;
+	}
+}
+
+#vac-changes {
+	width: 100%;
+	table-layout: auto;
+	border-spacing: 0;
+
+	td {
+		padding: 5px;
+		border-bottom: 1px solid #e1e1e1;
+		color: #72777c;
+
+		white-space: nowrap;
+	}
+
+	.vac-is-applicable-change td {
+		color: #444;
+	}
+
+	tr:last-child td {
+		border-bottom-width: 0;
+	}
+
+	tr:hover {
+		background-color: #f5f5f5;
+	}
+
+	.vac-action-label {
+		width: 80px;
+	}
+
+	.vac-selector {
+		color: #72777c;
+
+		white-space: pre;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	td.vac-col-actor-filter {
+		min-width: 130px;
+	}
+
+	td.vac-col-remove-change {
+		vertical-align: baseline;
+		width: 20px;
+		padding-right: 0;
+	}
+
+	.vac-remove-change {
+		visibility: hidden;
+		display: inline-block;
+		color: #72777c;
+		cursor: pointer;
+
+		&:hover {
+			color: #555d66;
+		}
+	}
+
+	tr:hover .vac-remove-change {
+		visibility: visible;
+	}
+}
+
+#vac-actors {
+	width: 250px;
+	max-height: 500px;
+	overflow-y: auto;
+}
+
+#vac-menu-item-selected-roles {
+	border-bottom: none;
+}
+
+#vac-actor-list-container {
+	$actorPadding: $contextMenuItemPadding / 2;
+	$leftPadding: $contextMenuItemPadding + 22px;
+
+	max-height: 300px;
+	overflow-y: auto;
+
+	border: 1px solid $contextMenuBorderColor;
+	border-top-width: 0;
+	padding-bottom: $actorPadding;
+
+	li {
+		margin: 0;
+	}
+
+	label {
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: $actorPadding $actorPadding $actorPadding $leftPadding;
+	}
+
+	#vac-select-all-actors {
+		border-bottom: 1px dotted #e1e1e1;
+	}
+}
+
+.vac-full-actor-list {
+	margin: 0;
+
+	li:nth-child(2n+1) {
+		background: #f9f9f9;
+	}
+}
+
+#vac-select-page-match {
+	width: 165px;
+}
+#vac-select-actor-filter {
+	width: 200px;
+}
+
+#vac-open-code-editor::before {
+	content: '\f100';
+}
+
+#vac-frame-cover {
+	z-index: 3; //Must be above the frame z-index, but below the menu bar.
+
+	display: table;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-bottom: $menuBarHeight - 1px;
+
+	background: rgba(255, 255, 255, 0.7);
+
+	text-align: center;
+}
+
+#vac-frame-cover-inside {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.spinner {
+	float: none;
+}
+
+#vac-frame-loading-indicator {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+
+	font-size: 2em;
+	line-height: normal;
+	background: white;
+
+	padding: 20px;
+	border-radius: 5px;
+
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+
+	.spinner {
+		float: none;
+		vertical-align: baseline;
+		margin: 0 8px 0 0;
+	}
+}
+
+#vac-save-changes {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	min-width: 105px;
+
+	@media (max-width: $breakSmall) {
+		min-width: 70px;
+	}
+}
+
+#vac-save-success-indicator-container {
+	position: absolute;
+	left: 50%;
+}
+
+#vac-save-success-indicator {
+	$size: 30px;
+	$checkSize: 30px;
+	$indicatorColor: green;
+
+	position: relative;
+	top: -($size/2);
+	left: -50%;
+	display: block;
+
+	height: $size;
+	width: $size;
+	line-height: $size;
+	border-radius: $size/2;
+
+	background: white;
+	box-shadow: 0 0 5px $indicatorColor;
+
+	text-align: center;
+	.dashicons {
+		color: $indicatorColor;
+		line-height: $size;
+		vertical-align: baseline;
+
+		font-size: $checkSize;
+		width: $checkSize;
+		height: $checkSize;
+	}
+}
+
+#vac-exit-editor-container {
+	float: right;
+	border-left: 1px solid silver;
+	border-right: none;
+}
+
+#vac-exit-editor:before {
+	content: '\f158';
+}

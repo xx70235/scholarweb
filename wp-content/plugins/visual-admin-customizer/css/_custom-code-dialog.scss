@@ -1,0 +1,105 @@
+$filterMenuWidth: 210px;
+$tabBarHeight: 0; //40px seems good.
+
+#vac-custom-code-dialog {
+	position: relative;
+}
+
+#vac-cc-actor-filter {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: $filterMenuWidth;
+
+	background: #f3f3f3;
+	border-right: 1px solid #ccc;
+	overflow: auto;
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	a.vac-cc-actor-item {
+		display: block;
+
+		padding: 8px 20px;
+		margin: 0;
+		line-height: 18px;
+		font-size: 14px;
+
+		color: #0073aa;
+		text-decoration: none;
+
+		&:hover {
+			color: #0073aa;
+			background: rgba(0, 0, 0, 0.04);
+		}
+
+		&:focus, &:active {
+			outline: none;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+
+		&.vac-cc-active {
+			color: #23282d;
+			font-weight: 600;
+		}
+	}
+
+	.vac-cc-separator {
+		height: 0;
+		margin: 12px 20px;
+		padding: 0;
+		border-top: 1px solid #ddd;
+	}
+}
+
+#vac-cc-tabs {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	position: absolute;
+	left: $filterMenuWidth;
+	top: 0;
+	right: 0;
+	height: $tabBarHeight;
+
+	background: #fcfcfc;
+}
+
+#vac-cc-content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	position: absolute;
+	left: $filterMenuWidth;
+	top: $tabBarHeight;
+	bottom: 0;
+	right: 0;
+
+	background: white;
+	@if $tabBarHeight > 0 {
+		border-top: 1px solid #ddd;
+	}
+
+	.CodeMirror {
+		width: 100%;
+		height: 100%;
+	}
+}
+
