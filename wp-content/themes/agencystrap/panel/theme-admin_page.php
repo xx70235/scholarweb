@@ -73,7 +73,7 @@ input[type="submit"] {
 	font-weight: 400;
 	padding: 0.7em 1.5em 0.7em;
 	text-shadow: none;
-	color: #fff;
+	
 	cursor: pointer;
 }
 

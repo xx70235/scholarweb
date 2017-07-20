@@ -1304,7 +1304,7 @@ padding: 0px;
 margin: 0px;
 }
 .three-column-footer aside {
-width: 50%;
+width: 15%;
 float: left;
 padding: 30px;
 }
@@ -1366,7 +1366,7 @@ color:#57ad68;
   margin-left: 10px;
 }
 .three-column-footer aside:nth-child(1){
-    padding-left: 0px;
+
 }
 .three-column-footer aside:nth-child(3){
     padding-right: 0px;
