@@ -20,7 +20,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'agencystrap' ); ?></p>
+			<p><?php esc_html_e( '抱歉，没有符合您搜索条件的结果，请换其它关键词再试。', 'agencystrap' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
