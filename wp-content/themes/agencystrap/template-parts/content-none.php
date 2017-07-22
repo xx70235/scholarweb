@@ -25,7 +25,7 @@
 
 		<?php else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'agencystrap' ); ?></p>
+			<p><?php esc_html_e( '我们可能无法找到您需要的内容，或许搜索功能可以帮到您。', 'agencystrap' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
