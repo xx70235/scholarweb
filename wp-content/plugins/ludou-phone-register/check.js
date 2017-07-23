@@ -28,16 +28,16 @@ jQuery(document).ready(function ($) {
          return;
       }
 
-      var captcha_code = $("input[name=captcha_code]").val();
+      // var captcha_code = $("input[name=captcha_code]").val();
       var token = $("input[name=token]").val();
-      if (captcha_code == '' || captcha_code.length != 5) {
-         $("#captchaErr").html('<img src="' + pic_no + '" style="vertical-align:middle;" alt=""/> ' + '填写错误').slideDown();
-         $("#CAPTCHA").focus();
-         setTimeout(function () {
-            $("#captchaErr").slideUp()
-         }, 3000);
-         return;
-      }
+      // if (captcha_code == '' || captcha_code.length != 5) {
+      //    $("#captchaErr").html('<img src="' + pic_no + '" style="vertical-align:middle;" alt=""/> ' + '填写错误').slideDown();
+      //    $("#CAPTCHA").focus();
+      //    setTimeout(function () {
+      //       $("#captchaErr").slideUp()
+      //    }, 3000);
+      //    return;
+      // }
 
       var admin = 0;
       if ($("#admin_check").length)
@@ -50,27 +50,13 @@ jQuery(document).ready(function ($) {
          data: {
             action: "sendSms",
             phone: phone,
-            captcha_code: captcha_code,
+            // captcha_code: captcha_code,
             token: token,
             admin: admin
          },
          success: function (response) {
             if (response.type == "success") {
-               if (response.vHTML == '图片验证码错误') {
-                  $("#captchaErr").html('<img src="' + pic_no + '" style="vertical-align:middle;" alt="" /> 验证码错误').slideDown();
-                  $("#CAPTCHA").focus();
-                  setTimeout(function () {
-                     $("#captchaErr").slideUp()
-                  }, 3000);
-               } else if (response.vHTML == '验证码已过期，请重新输入') {
-                  document.getElementById('captcha_img').src = captcha + '?v=' + Math.random();
-                  $("#CAPTCHA").val('');
-                  $("#CAPTCHA").focus();
-                  $("#captchaErr").html('<img src="' + pic_no + '" style="vertical-align:middle;" alt="" /> 验证码已过期，请重新输入').slideDown();
-                  setTimeout(function () {
-                     $("#captchaErr").slideUp()
-                  }, 3000);
-               } else if (response.vHTML != '') {
+               if (response.vHTML != '') {
                   $("#sendSmsBtnErr").html('<img src="' + pic_no + '" style="vertical-align:middle;" alt=""/> ' + response.vHTML).slideDown();
                   $("#phone").focus();
                   setTimeout(function () {

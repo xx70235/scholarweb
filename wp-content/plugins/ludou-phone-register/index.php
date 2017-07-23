@@ -53,10 +53,10 @@ function ludou_phone_load_plugin() {
 add_action('admin_init', 'ludou_phone_load_plugin');
 
 function ludou_phone_uninstall() {
-   global $wpdb, $table_name;
-
-   $sql = "DROP TABLE IF EXISTS $table_name";
-   $wpdb->query($sql);
+//   global $wpdb, $table_name;
+//
+//   $sql = "DROP TABLE IF EXISTS $table_name";
+//   $wpdb->query($sql);
 }
 
 /**
@@ -104,6 +104,23 @@ add_filter('send_password_change_email', '__return_false');
 
 add_filter('user_contactmethods', 'ludou_add_contact_fields');
 
+// define the um_before_new_user_register callback
+/**
+ * 前台注册时 先到这里
+ * @param $args
+ */
+
+function action_um_before_new_user_register( $args ) {
+    // make action magic happen here...
+
+    echo 123;
+};
+
+// add the action
+add_action( 'um_before_new_user_register', 'action_um_before_new_user_register', 10, 1 );
+
+
+
 function ludou_add_contact_fields($contactmethods) {
    global $current_user;
 
@@ -126,6 +143,11 @@ function isPhone($phone) {
       return 1;
 }
 
+/**
+ * 给某个手机号发短信验证码
+ * @param $phone
+ * @return int
+ */
 function send_sms($phone) {
    require_once plugin_dir_path(__FILE__) . 'config.php';
    require_once plugin_dir_path(__FILE__) . 'lib/leancloundsms.php';
@@ -137,7 +159,7 @@ function send_sms($phone) {
    //短信接收号码: API请求参数rec_num的值
    $leancloundsms->sms_mobile($phone);
 
-   //发送短信: 返回boolean值 TRUE 为成功 FALSE 为失败或发生异常 
+   //发送短信: 返回boolean值 TRUE 为成功 FALSE 为失败或发生异常
    $res = $leancloundsms->send();
 
    if (!$res)
@@ -146,6 +168,12 @@ function send_sms($phone) {
       return 1;
 }
 
+/**
+ * 根据手机号 code 验证是否正确
+ * @param $phone
+ * @param $code
+ * @return int
+ */
 function verify_code($phone, $code) {
     require_once plugin_dir_path(__FILE__) . 'config.php';
     require_once plugin_dir_path(__FILE__) . 'lib/leancloundsms.php';
@@ -170,34 +198,41 @@ function verify_code($phone, $code) {
 
 /* 修改注册表单 */
 
-function ludou_show_phone_field() {
+function ludou_show_phone_field($args) {
    ?>
-   <script>
-      var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>", pic_no = "<?php echo constant("LCR_PLUGIN_URL"); ?>img/no.png", captcha = "<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php";
-   </script>
-   <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-   <script src="<?php echo constant("LCR_PLUGIN_URL"); ?>check.js"></script>
-   <p>
-      <label for="user_pwd1">密码(至少6位)<br/>
-         <input id="user_pwd1" class="input" type="password" size="25" value="" name="user_pass" />
-      </label>
-   </p>
-   <p>
-      <label for="user_pwd2">重复密码<br/>
-         <input id="user_pwd2" class="input" type="password" size="25" value="" name="user_pass2" />
-      </label>
-   </p>
-   <p>
-      <label for="CAPTCHA">图片验证码 &nbsp;<span id="captchaErr" style="color:#ff5c57;font-size: 12px;"></span> <br/>
-         <input id="CAPTCHA" style="width:150px;*float:left;" class="input" type="text" size="10" value="" name="captcha_code" autocomplete="off" />
-         看不清？<a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src = '<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;">点击更换</a>
-      </label>
-   </p>
+    <p>
+        <script>
+            var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>", pic_no = "<?php echo constant("LCR_PLUGIN_URL"); ?>img/no.png", captcha = "<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php";
+        </script>
+
+        <script src="<?php echo constant("LCR_PLUGIN_URL"); ?>check.js"></script>
+    </p>
+
+<!--   <p>-->
+<!--      <label for="user_pwd1">密码(至少6位)<br/>-->
+<!--         <input id="user_pwd1" class="input" type="password" size="25" value="" name="user_pass" />-->
+<!--      </label>-->
+<!--   </p>-->
+<!--   <p>-->
+<!--      <label for="user_pwd2">重复密码<br/>-->
+<!--         <input id="user_pwd2" class="input" type="password" size="25" value="" name="user_pass2" />-->
+<!--      </label>-->
+<!--   </p>-->
+
+    <!--<div class="um-field um-field-captcha um-field-text" data-key="captcha">
+        <p>
+            <label for="CAPTCHA">图片验证码 &nbsp;<span id="captchaErr" style="color:#ff5c57;font-size: 12px;"></span> <br/>
+                <input id="CAPTCHA" data-key="captcha" style="width:150px;*float:left;" class="input" type="text" size="10" value="" name="captcha_code" autocomplete="off" />
+                看不清？<a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src = '<?php /*echo constant("LCR_PLUGIN_URL"); */?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;">点击更换</a>
+            </label>
+        </p>
+    </div>
+
    <p>
       <label>
-         <img id="captcha_img" src="<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php" title="看不清?点击更换" alt="看不清?点击更换" onclick="document.getElementById('captcha_img').src = '<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;" />
+         <img id="captcha_img" src="<?php /*echo constant("LCR_PLUGIN_URL"); */?>captcha/captcha.php" title="看不清?点击更换" alt="看不清?点击更换" onclick="document.getElementById('captcha_img').src = '<?php /*echo constant("LCR_PLUGIN_URL"); */?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;" />
       </label>
-   </p>
+   </p>-->
    <p>
       <label for="phone">手机号 &nbsp;<span id="sendSmsBtnErr" style="color:#ff5c57;font-size: 12px;"></span> <br/>
          <input id="phone" class="input" type="text" size="15" value="<?php echo empty($_POST['phone']) ? '' : $_POST['phone']; ?>" name="phone" autocomplete="off" />
@@ -208,40 +243,24 @@ function ludou_show_phone_field() {
          <input id="code" class="input" type="text" size="4" value="<?php echo empty($_POST['code']) ? '' : $_POST['code']; ?>" name="code" />
       </label>
    </p>
-   <input type="hidden" name="token" value="<?php echo wp_create_nonce( plugin_basename(__FILE__) ); ?>">
+
+   <input type="hidden" name="token" value="<?php
+   echo wp_create_nonce( plugin_basename(__FILE__) ); ?>">
    <?php
 }
 
 /* 处理表单提交的数据 */
 
-function ludou_check_phone_fields($login, $email, $errors) {
-   global $wpdb, $table_name;
+function ludou_check_phone_fields($login) {
+    global $ultimatemember;
+    global $wpdb;
 
-   if(empty($_POST['token']) || !wp_verify_nonce( $_POST['token'], plugin_basename(__FILE__) )) 
+   if(empty($_POST['token']) || !wp_verify_nonce( $_POST['token'], plugin_basename(__FILE__) ))
       wp_die('非法请求！');
-   
-   if (strlen($_POST['user_pass']) < 6)
-      $errors->add('password_length', "<strong>错误</strong>：密码长度至少6位");
-   elseif ($_POST['user_pass'] != $_POST['user_pass2'])
-      $errors->add('password_error', "<strong>错误</strong>：两次输入的密码必须一致");
-
-   if (empty($_POST['captcha_code']) || empty($_SESSION['ludou_lcr_secretword'])) {
-      $errors->add('captcha_spam', "<strong>错误</strong>：图片验证码填写错误");
-   }
-   else {
-      $secretword = explode("-", $_SESSION['ludou_lcr_secretword']);
-
-      if (time() - $secretword[1] > 120)
-         $errors->add('captcha_spam', "<strong>错误</strong>：图片验证码已过期，请刷新页面后重新输入");
-      else if (trim(strtolower($_POST['captcha_code'])) != $secretword[0])
-         $errors->add('captcha_spam', "<strong>错误</strong>：图片验证码填写错误");
-   }
-
-   unset($_SESSION['ludou_lcr_secretword']);
 
    $phone = trim($_POST['phone']);
    if (!isPhone($phone)) {
-      $errors->add('phone_error', "<strong>错误</strong>：手机号不正确");
+       $ultimatemember->form->add_error('user_login', '手机号不正确，请确认');
       $_POST['phone'] = '';
       $_POST['code'] = '';
    }
@@ -249,18 +268,19 @@ function ludou_check_phone_fields($login, $email, $errors) {
       $phone_exist = $wpdb->get_var($wpdb->prepare("SELECT `user_id` FROM `" . $wpdb->prefix . "usermeta` WHERE `meta_key` = 'phone' AND `meta_value` = %s;", $phone));
 
       if (!empty($phone_exist)) {
-         $errors->add('phone_error', "<strong>错误</strong>：" . $_POST['phone'] . " 该手机号已在本站注册过");
+          $ultimatemember->form->add_error('user_login', '该手机号已在本站注册过');
          $_POST['phone'] = '';
          $_POST['code'] = '';
       }
       else {
          if (empty($_POST['code'])) {
-            $errors->add('code_error1', "<strong>错误</strong>：请填写短信验证码");
+             $ultimatemember->form->add_error('user_login', '请填写短信验证码');
+
          }
          else {
              $verify_status = verify_code($phone, $_POST['code']);
              if ($verify_status == 0) {
-                 $errors->add('code_error3', "<strong>错误</strong>：短信验证码不正确");
+                 $ultimatemember->form->add_error('user_login', '短信验证码不正确');
              }
          }
       }
@@ -306,9 +326,37 @@ function ludou_phone_change_translated_text($translated_text, $untranslated_text
 
 add_filter('gettext', 'ludou_phone_change_translated_text', 20, 3);
 add_action('admin_init', 'ludou_phone_remove_default_password_nag');
-add_action('register_form', 'ludou_show_phone_field');
+
+//add_action('register_form', 'ludou_show_phone_field');// 在注册页面加上 图片验证码 手机号码 获取验证码等几个input
+
+//add_action('um_before_form_is_loaded', 'ludou_show_phone_field');// 在注册页面加上 图片验证码 手机号码 获取验证码等几个input
+//add_action('um_after_form', 'ludou_show_phone_field');// 在注册页面加上 图片验证码 手机号码 获取验证码等几个input
+
+//add_action('um_before_form', 'ludou_show_phone_field');// 在注册页面加上 图片验证码 手机号码 获取验证码等几个input
+//
+//add_action('um_after_form_fields', 'ludou_show_phone_field');// 在注册页面加上 图片验证码 手机号码 获取验证码等几个input
+//
+//add_action('um_main_register_fields', 'ludou_show_phone_field');// 在注册页面加上 图片验证码 手机号码 获取验证码等几个input
+//
+add_action('um_after_register_fields', 'ludou_show_phone_field');// 在注册页面加上 图片验证码 手机号码 获取验证码等几个input
+
+
+//
+//add_action('um_before_form_is_loaded', 'ludou_show_phone_field');// 在注册页面加上 图片验证码 手机号码 获取验证码等几个input
+
+
+
+
 add_action('register_post', 'ludou_check_phone_fields', 10, 3);
+//add_action('um_before_new_user_register', 'ludou_check_phone_fields', 10, 3);
+//add_action('um_submit_form_register', 'ludou_check_phone_fields', 10, 3);
+add_action('um_submit_form_errors_hook_', 'ludou_check_phone_fields', 10, 3);
+
+
+
 add_action('user_register', 'ludou_save_phone_fields');
+
+
 
 
 // 发送手机短信验证码
@@ -327,21 +375,21 @@ function sendSms() {
    if (empty($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
       $error = '非法访问';
    }
-   
+
    if(!check_ajax_referer( plugin_basename(__FILE__), 'token', false ))
       $error = '非法访问';
-   
-   if (empty($_POST['captcha_code']) || empty($_SESSION['ludou_lcr_secretword'])) {
-      $error = '图片验证码错误';
-   }
-   else {
-      $secretword = explode("-", $_SESSION['ludou_lcr_secretword']);
 
-      if (time() - $secretword[1] > 120)
-         $error = '验证码已过期，请重新输入';
-      else if (trim(strtolower($_POST['captcha_code'])) != $secretword[0])
-         $error = '图片验证码错误';
-   }
+//   if (empty($_POST['captcha_code']) || empty($_SESSION['ludou_lcr_secretword'])) {
+//      $error = '图片验证码错误';
+//   }
+//   else {
+//      $secretword = explode("-", $_SESSION['ludou_lcr_secretword']);
+//
+//      if (time() - $secretword[1] > 120)
+//         $error = '验证码已过期，请重新输入';
+//      else if (trim(strtolower($_POST['captcha_code'])) != $secretword[0])
+//         $error = '图片验证码错误';
+//   }
 
    global $wpdb, $table_name;
 
@@ -356,7 +404,7 @@ function sendSms() {
 
    $phone = trim($_POST['phone']);
    if (!isPhone($phone)) {
-      $error = '手机号不正确';
+      $error = '手机号不正确!';
    }
    else {
       $user_id = $wpdb->get_var($wpdb->prepare("SELECT `user_id` FROM `" . $wpdb->prefix . "usermeta` WHERE `meta_key` = 'phone' AND `meta_value` = %s;", $phone));
@@ -384,7 +432,7 @@ function sendSms() {
          $db = $wpdb->insert($table_name, array('phone' => $phone, 'code' => $code, 'time' => time()), array('%s', '%s', '%d'));
       else
          $db = $wpdb->update($table_name, array('code' => $code, 'time' => time()), array('phone' => $phone), array('%s', '%d'), array('%s'));
-      
+
       if($db) {
          $send_status = send_sms($phone);
          $result['vHTML'] = ($send_status == 1) ? '' : '验证码发送失败';
@@ -414,11 +462,11 @@ function ludou_phone_add_menu_page() {
    global $current_user, $wpdb, $table_name;
 
    $old_phone = get_user_meta($current_user->ID, 'phone', true);
-   
+
    if (!empty($_POST['check'])) {
-      if(empty($_POST['token']) || !wp_verify_nonce( $_POST['token'], plugin_basename(__FILE__) )) 
+      if(empty($_POST['token']) || !wp_verify_nonce( $_POST['token'], plugin_basename(__FILE__) ))
          wp_die('非法请求！');
-      
+
       $errors = '';
 
       if (empty($_POST['captcha_code']) || empty($_SESSION['ludou_lcr_secretword'])) {
@@ -437,7 +485,7 @@ function ludou_phone_add_menu_page() {
 
       $phone = trim($_POST['phone']);
       if (!isPhone($phone)) {
-         $errors .= "<strong>错误</strong>：手机号不正确<br />";
+         $errors .= "<strong>错误</strong>：手机号不正确!!<br />";
          $_POST['phone'] = '';
          $_POST['code'] = '';
       }
@@ -510,14 +558,14 @@ function ludou_phone_add_menu_page() {
             </label>
          </p>
          <p>
-            <label for="CAPTCHA">图片验证码 &nbsp;<span id="captchaErr" style="color:#ff5c57;font-size: 12px;"></span> <br/>
+            <label for="CAPTCHA">图片验证码1111 &nbsp;<span id="captchaErr" style="color:#ff5c57;font-size: 12px;"></span> <br/>
                <input id="CAPTCHA" class="regular-text ltr" type="text" size="10" value="" name="captcha_code" autocomplete="off" />
             </label>
          </p>
          <p>
             <label>
                <img id="captcha_img" src="<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php" title="看不清?点击更换" alt="看不清?点击更换" onclick="document.getElementById('captcha_img').src = '<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;" />
-               看不清？<a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src = '<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;">点击更换</a>
+               看不清？<a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src = '<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;">点击更换11</a>
             </label>
          </p>
          <p>
