@@ -392,9 +392,9 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'ss-ee' ),
 				/* translators: 1: dashboard link. */
 				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'ss-ee' ),
-				'dismiss'                         => __( 'Dismiss this notice', 'ss-ee' ),
-				'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'ss-ee' ),
-				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'ss-ee' ),
+				'dismiss'                         => '不再提示',
+				'notice_cannot_install_activate'  => '',
+				'contact_admin'                   => '欢迎来到时代学者',
 			);
 
 			do_action( 'tgmpa_register' );
