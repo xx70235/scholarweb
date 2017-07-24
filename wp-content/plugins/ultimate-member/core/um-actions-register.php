@@ -325,17 +325,18 @@
 		?>
 
 		<div class="um-col-alt">
+            <div class="um-left"><input type="submit" value="注册" class="um-button" /></div>
 
-			<?php if ( isset($args['secondary_btn']) && $args['secondary_btn'] != 0 ) { ?>
-
-			<div class="um-left um-half"><input type="submit" value="<?php echo __( $primary_btn_word,'ultimatemember'); ?>" class="um-button" /></div>
-			<div class="um-right um-half"><a href="<?php echo $secondary_btn_url; ?>" class="um-button um-alt"><?php echo __( $secondary_btn_word,'ultimatemember'); ?></a></div>
-
-			<?php } else { ?>
-
-			<div class="um-center"><input type="submit" value="<?php echo __( $primary_btn_word,'ultimatemember'); ?>" class="um-button" /></div>
-
-			<?php } ?>
+            <!--			--><?php //if ( isset($args['secondary_btn']) && $args['secondary_btn'] != 0 ) { ?>
+<!---->
+<!--			<div class="um-left um-half"><input type="submit" value="--><?php //echo __( $primary_btn_word,'ultimatemember'); ?><!--" class="um-button" /></div>-->
+<!--			<div class="um-right um-half"><a href="--><?php //echo $secondary_btn_url; ?><!--" class="um-button um-alt">--><?php //echo __( $secondary_btn_word,'ultimatemember'); ?><!--</a></div>-->
+<!---->
+<!--			--><?php //} else { ?>
+<!---->
+<!--			<div class="um-center"><input type="submit" value="--><?php //echo __( $primary_btn_word,'ultimatemember'); ?><!--" class="um-button" /></div>-->
+<!---->
+<!--			--><?php //} ?>
 
 			<div class="um-clear"></div>
 

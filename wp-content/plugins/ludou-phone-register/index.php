@@ -350,12 +350,45 @@ add_action('um_after_register_fields', 'ludou_show_phone_field');// 在注册页
 add_action('register_post', 'ludou_check_phone_fields', 10, 3);
 //add_action('um_before_new_user_register', 'ludou_check_phone_fields', 10, 3);
 //add_action('um_submit_form_register', 'ludou_check_phone_fields', 10, 3);
-add_action('um_submit_form_errors_hook_', 'ludou_check_phone_fields', 10, 3);
+add_action('um_submit_form_errors_hook__registration', 'ludou_check_phone_fields', 10, 3);
 
 
 
 add_action('user_register', 'ludou_save_phone_fields');
 
+
+add_action('um_user_login', 'userLoginAction');
+
+
+function my_login_redirect( $redirect_to, $request, $user ) {
+    //is there a user to check?
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        //check for admins
+        if ( in_array( 'administrator', $user->roles ) ) {
+            // redirect them to the default place
+            return $redirect_to;
+        } else {
+            return home_url();
+        }
+    } else {
+        return $redirect_to;
+    }
+}
+
+add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
+
+
+function userLoginAction($args) {
+    echo 123;
+    $result = um_set_redirect_url('http://www.baidu.com');
+
+}
+
+//add_filter('login_redirect', 'new_login_redirect', 10, 3);
+//function new_login_redirect($args) {
+//
+//    return '/admin/index.php';
+//}
 
 
 
