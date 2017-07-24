@@ -5,6 +5,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <?php setPostViews(get_the_ID()); ?>
 
 	<?php
 	if ( get_the_post_thumbnail() != '' ) {
