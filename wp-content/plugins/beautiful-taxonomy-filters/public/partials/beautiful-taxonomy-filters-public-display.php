@@ -111,12 +111,35 @@ $disable_select2 = ( get_option( 'beautiful_taxonomy_filters_disable_select2' ) 
 					</div>
 					<?php do_action( 'beautiful_actions_after_select', $key, $current_post_type ); //Allow custom markup before each select ?>
 				<?php endif; ?>
+
 			<?php endforeach; ?>
-			<?php do_action( 'beautiful_actions_ending_form_inner', $current_post_type ); //allow custom markup at end of inner form ?>
-		</div>
+
+            <?php do_action( 'beautiful_actions_ending_form_inner', $current_post_type ); //allow custom markup at end of inner form ?>
+
+
+        </div>
+
+
+
+
 		<?php do_action( 'beautiful_actions_before_submit_button', $current_post_type ); //allow custom markup before submit button ?>
-		<button type="submit" class="beautiful-taxonomy-filters-button"><?php echo apply_filters( 'beautiful_filters_apply_button', __( 'Apply filter', 'beautiful-taxonomy-filters' ) ); ?></button>
-		<?php do_action( 'beautiful_actions_after_submit_button', $current_post_type ); //allow custom markup before submit button ?>
+
+
+        <button type="submit" class="beautiful-taxonomy-filters-button"><?php echo apply_filters( 'beautiful_filters_apply_button', __( 'Apply filter', 'beautiful-taxonomy-filters' ) ); ?></button>
+		<!-- 应用筛选 在这里 jerry -->
+        <br/>
+        <br/>
+        <br/>
+
+        <a href="<?php
+            echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] . '?orderby=date&order=desc';
+        ?>"> 发布时间↓ </a>
+    &nbsp; &nbsp;
+        <a href="<?php
+        echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] . '?orderby=post_views_count&order=desc';
+        ?>"> 关注量↓ </a>
+
+        <?php do_action( 'beautiful_actions_after_submit_button', $current_post_type ); //allow custom markup before submit button ?>
 		<?php if ( $show_clear_all && is_btf_filtered() ) : ?>
 			<a href="<?php echo get_post_type_archive_link( $current_post_type ); ?>" class="beautiful-taxonomy-filters-clear-all" title="<?php _e( 'Click to clear all active filters', 'beautiful-taxonomy-filters' ); ?>"><?php echo apply_filters( 'beautiful_filters_clear_button', __( 'Clear all', 'beautiful-taxonomy-filters' ) ); ?></a>
 		<?php endif; ?>

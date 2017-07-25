@@ -106,6 +106,7 @@ echo '<h3 class="section-title">学科筛选</h3>';
 <a href="javascript:void(0)" id="show" style="display:block" onclick="document.getElementById('a').style.height='100%';document.getElementById('hidden').style.display='block';document.getElementById('show').style.display='none';">展开全部学科</a>
 <a href="javascript:void(0)" id="hidden" style="display:none;" onclick="document.getElementById('a').style.height='90px';document.getElementById('hidden').style.display='none';document.getElementById('show').style.display='block';">收起全部学科</a>
 </div>
+
 <div class="normal_columns_content list" id="a" style="height:90px;width:100%;overflow-y:hidden;">
 <?php
 	echo "<div class='normal_columns_25pers'>";
@@ -154,14 +155,15 @@ echo '<h3 class="section-title">学科筛选</h3>';
 	echo '</div>';
 }?>
 </div>
+
 <?php echo '<h3 class="section-title"></h3>';?>
 </div>
+
     <?php //echo do_shortcode( '[searchandfilter fields="job_title,location,keywords" submit_label="筛选" types="radio,radio,radio" headings="职位/学位,工作地点,关键词"]' );?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
 		<?php
-        global $posts;
 
         // 在这里排序 要不就对$posts 数组进行排序？
         if (isset($orderby)) {
@@ -205,10 +207,18 @@ echo '<h3 class="section-title">学科筛选</h3>';
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */
-                global $posts;
+                 global $posts;
+
             ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+
+            while (
+
+                    have_posts() ) :
+
+
+                the_post(); ?>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.

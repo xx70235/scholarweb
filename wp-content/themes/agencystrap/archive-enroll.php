@@ -11,7 +11,11 @@
 get_header(); ?>
 <div class="archive-content">
 <?php  global $wpdb;  ?> 
-<?php $datainfo = $wpdb->get_results("select * from wp_terms where term_id in (select term_id from wp_term_taxonomy where taxonomy = 'first_level_discipline' order by term_id)");?>
+<?php
+$order = $_REQUEST["order"];
+$orderby = $_REQUEST["orderby"];
+
+$datainfo = $wpdb->get_results("select * from wp_terms where term_id in (select term_id from wp_term_taxonomy where taxonomy = 'first_level_discipline' order by term_id)");?>
 <style>
 .normal_columns_content {
     clear: both;
@@ -154,7 +158,41 @@ echo '<h3 class="section-title">学科筛选</h3>';
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
-		<?php if ( have_posts() ) : ?>
+		<?php
+
+        // 在这里排序 要不就对$posts 数组进行排序？
+        if (isset($orderby)) {
+            if ($orderby == 'deadline') {
+                $args = array(
+                    'orderby'   => 'meta_value',
+                    'meta_key' => $orderby
+                );
+            } else {
+                $args = array(
+                    'orderby'   => $orderby,
+                );
+            }
+
+            if (isset($order)) {
+                $args = array_merge($args, array('order' => $order));
+            }
+
+            $args = array_merge($args, array(
+                'meta_query'=>array(
+                    array(
+                        'key'=>'post_views_count',
+                        'type'=>'NUMERIC',
+//                        'compare'=>'>=',
+//                        'value'=>'0',
+                    )
+                ),
+            ));
+            $args = array_merge($args, $wp_query->query);
+            query_posts($args);
+        }
+
+
+        if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
