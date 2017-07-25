@@ -25,7 +25,7 @@ echo '</a></div>';
 
 	<div class="entry-content" itemprop="text">
         <div id="entry-parameters">
-            <span class="discipline" >学科：
+            <i class="fa fa-graduation-cap"></i><span class="discipline" >学科：
 	            <?php //the_excerpt();
 	            // your taxonomy name
 	            $tax = 'first_level_discipline';
@@ -51,7 +51,7 @@ echo '</a></div>';
 	            }
 	            ?>
             </span>
-            <span class="location" >地点：
+            <i class="fa fa-map-marker"></i> <span class="location" >地点：
 		        <?php //the_excerpt();
 		        // your taxonomy name
 		        $tax = 'location';
@@ -77,7 +77,7 @@ echo '</a></div>';
 		        }
 		        ?>
             </span>
-            <span class="views" >关注量：
+            <i class="fa fa-rocket" aria-hidden="true"></i> <span class="views" >关注量：
 
 		        <?php
 		        $view =getPostViews($post->ID);
