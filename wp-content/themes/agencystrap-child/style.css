@@ -183,6 +183,7 @@ strong {
 .aboutcta-right {
     width: 50%;
     float: right;
+    text-align: center;
 }
 .aboutcta-right .right-content {
     padding: 10% 15% 10% 10%;
