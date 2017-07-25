@@ -16,6 +16,19 @@ jQuery(document).ready(function ($) {
       }
    }
 
+
+   $('#mainAcceptIpt').click(function () {
+       if ($('#mainAcceptIpt').attr('checked')) {
+           $('.um-button').attr('disabled', false);
+       } else {
+           $('.um-button').attr('disabled', true);
+       }
+   });
+
+    if ($('#mainAcceptIpt').attr('checked')) {
+        // do something
+    }
+
    $('#sendSmsBtn').click(function () {
 
       var phone = $("input[name=phone]").val();
