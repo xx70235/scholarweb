@@ -666,6 +666,39 @@ if ( post_type_supports($post_type, 'editor') ) {
 do_action( 'edit_form_after_editor', $post );
 ?>
 </div><!-- /post-body-content -->
+    <div id="postbox-container-1" class="postbox-container">
+		<?php
+		do_meta_boxes($post_type, 'side', $post);
+		if ( 'page' == $post_type ) {
+			/**
+			 * Fires before meta boxes with 'side' context are output for the 'page' post type.
+			 *
+			 * The submitpage box is a meta box with 'side' context, so this hook fires just before it is output.
+			 *
+			 * @since 2.5.0
+			 *
+			 * @param WP_Post $post Post object.
+			 */
+			do_action( 'submitpage_box', $post );
+		}
+		else {
+			/**
+			 * Fires before meta boxes with 'side' context are output for all post types other than 'page'.
+			 *
+			 * The submitpost box is a meta box with 'side' context, so this hook fires just before it is output.
+			 *
+			 * @since 2.5.0
+			 *
+			 * @param WP_Post $post Post object.
+			 */
+			do_action( 'submitpost_box', $post );
+		}
+
+
+
+
+		?>
+    </div>
     <div id="postbox-container-2" class="postbox-container">
 		<?php
 
@@ -697,42 +730,8 @@ do_action( 'edit_form_after_editor', $post );
 
 		?>
     </div>
-<div id="postbox-container-1" class="postbox-container">
-<?php
-do_meta_boxes($post_type, 'side', $post);
-if ( 'page' == $post_type ) {
-	/**
-	 * Fires before meta boxes with 'side' context are output for the 'page' post type.
-	 *
-	 * The submitpage box is a meta box with 'side' context, so this hook fires just before it is output.
-	 *
-	 * @since 2.5.0
-	 *
-	 * @param WP_Post $post Post object.
-	 */
-	do_action( 'submitpage_box', $post );
-}
-else {
-	/**
-	 * Fires before meta boxes with 'side' context are output for all post types other than 'page'.
-	 *
-	 * The submitpost box is a meta box with 'side' context, so this hook fires just before it is output.
-	 *
-	 * @since 2.5.0
-	 *
-	 * @param WP_Post $post Post object.
-	 */
-	do_action( 'submitpost_box', $post );
-}
 
 
-
-
-?>
-</div>
-    <div id="postbox-container-3" class="postbox-container">
-
-    </div>
 <?php
 /**
  * Fires after all meta box sections have been output, before the closing #post-body div.
