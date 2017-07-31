@@ -41,9 +41,9 @@ class UM_Validation {
 	***/
 	function strong_pass($candidate) {
 	   $r1='/[A-Z]/';
-	   $r2='/[a-z]/';
+	   $r2='/[a-zA-Z]/';
 	   $r3='/[0-9]/';
-	   if(preg_match_all($r1,$candidate, $o)<1) return false;
+//	   if(preg_match_all($r1,$candidate, $o)<1) return false;
 	   if(preg_match_all($r2,$candidate, $o)<1) return false;
 	   if(preg_match_all($r3,$candidate, $o)<1) return false;
 	   return true;

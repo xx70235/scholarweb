@@ -4829,7 +4829,7 @@ msgstr "你的密码至 30 个字符"
 msgid ""
 "Your password must contain at least one lowercase letter, one capital letter "
 "and one number"
-msgstr "你的密码至少包含一个小写字母、一个大小字母以及一个数字"
+msgstr "你的密码至少包含一个字母和数字"
 
 #: ../core/um-actions-account.php:136
 msgid "You must enter your password"
