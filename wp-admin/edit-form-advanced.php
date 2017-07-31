@@ -227,12 +227,30 @@ if ( post_type_supports($post_type, 'revisions') && 'auto-draft' != $post->post_
 	}
 }
 
+
+        // all taxonomies
+        foreach ( get_object_taxonomies( $post ) as $tax_name ) {
+	        $taxonomy = get_taxonomy( $tax_name );
+	        if ( ! $taxonomy->show_ui || false === $taxonomy->meta_box_cb )
+		        continue;
+
+	        $label = $taxonomy->labels->name;
+
+	        if ( ! is_taxonomy_hierarchical( $tax_name ) )
+		        $tax_meta_box_id = 'tagsdiv-' . $tax_name;
+	        else
+		        $tax_meta_box_id = $tax_name . 'div';
+
+	        add_meta_box( $tax_meta_box_id, $label, $taxonomy->meta_box_cb, null, 'advanced', 'core', array( 'taxonomy' => $tax_name ) );
+        }
+
+
 if ( 'attachment' == $post_type ) {
 	wp_enqueue_script( 'image-edit' );
 	wp_enqueue_style( 'imgareaselect' );
-	add_meta_box( 'submitdiv', __('Save'), 'attachment_submit_meta_box', null, 'side', 'core' );
-	add_action( 'edit_form_after_title', 'edit_form_image_editor' );
 
+	add_action( 'edit_form_after_title', 'edit_form_image_editor' );
+	add_meta_box( 'submitdiv', __('Save'), 'attachment_submit_meta_box', null, 'side', 'core' );
 	if ( wp_attachment_is( 'audio', $post ) ) {
 		add_meta_box( 'attachment-id3', __( 'Metadata' ), 'attachment_id3_data_meta_box', null, 'normal', 'core' );
 	}
@@ -243,21 +261,7 @@ if ( 'attachment' == $post_type ) {
 if ( current_theme_supports( 'post-formats' ) && post_type_supports( $post_type, 'post-formats' ) )
 	add_meta_box( 'formatdiv', _x( 'Format', 'post format' ), 'post_format_meta_box', null, 'side', 'core' );
 
-// all taxonomies
-foreach ( get_object_taxonomies( $post ) as $tax_name ) {
-	$taxonomy = get_taxonomy( $tax_name );
-	if ( ! $taxonomy->show_ui || false === $taxonomy->meta_box_cb )
-		continue;
 
-	$label = $taxonomy->labels->name;
-
-	if ( ! is_taxonomy_hierarchical( $tax_name ) )
-		$tax_meta_box_id = 'tagsdiv-' . $tax_name;
-	else
-		$tax_meta_box_id = $tax_name . 'div';
-
-	add_meta_box( $tax_meta_box_id, $label, $taxonomy->meta_box_cb, null, 'side', 'core', array( 'taxonomy' => $tax_name ) );
-}
 
 if ( post_type_supports( $post_type, 'page-attributes' ) || count( get_page_templates( $post ) ) > 0 ) {
 	add_meta_box( 'pageparentdiv', $post_type_object->labels->attributes, 'page_attributes_meta_box', null, 'side', 'core' );
@@ -662,71 +666,72 @@ if ( post_type_supports($post_type, 'editor') ) {
 do_action( 'edit_form_after_editor', $post );
 ?>
 </div><!-- /post-body-content -->
-
-<div id="postbox-container-1" class="postbox-container">
-<?php
-
-if ( 'page' == $post_type ) {
-	/**
-	 * Fires before meta boxes with 'side' context are output for the 'page' post type.
-	 *
-	 * The submitpage box is a meta box with 'side' context, so this hook fires just before it is output.
-	 *
-	 * @since 2.5.0
-	 *
-	 * @param WP_Post $post Post object.
-	 */
-	do_action( 'submitpage_box', $post );
-}
-else {
-	/**
-	 * Fires before meta boxes with 'side' context are output for all post types other than 'page'.
-	 *
-	 * The submitpost box is a meta box with 'side' context, so this hook fires just before it is output.
-	 *
-	 * @since 2.5.0
-	 *
-	 * @param WP_Post $post Post object.
-	 */
-	do_action( 'submitpost_box', $post );
-}
-
-
-do_meta_boxes($post_type, 'side', $post);
-
-?>
-</div>
-<div id="postbox-container-2" class="postbox-container">
-<?php
-
-do_meta_boxes(null, 'normal', $post);
-
-if ( 'page' == $post_type ) {
-	/**
-	 * Fires after 'normal' context meta boxes have been output for the 'page' post type.
-	 *
-	 * @since 1.5.0
-	 *
-	 * @param WP_Post $post Post object.
-	 */
-	do_action( 'edit_page_form', $post );
-}
-else {
-	/**
-	 * Fires after 'normal' context meta boxes have been output for all post types other than 'page'.
-	 *
-	 * @since 1.5.0
-	 *
-	 * @param WP_Post $post Post object.
-	 */
-	do_action( 'edit_form_advanced', $post );
-}
+    <div id="postbox-container-1" class="postbox-container">
+		<?php
+		do_meta_boxes($post_type, 'side', $post);
+		if ( 'page' == $post_type ) {
+			/**
+			 * Fires before meta boxes with 'side' context are output for the 'page' post type.
+			 *
+			 * The submitpage box is a meta box with 'side' context, so this hook fires just before it is output.
+			 *
+			 * @since 2.5.0
+			 *
+			 * @param WP_Post $post Post object.
+			 */
+			do_action( 'submitpage_box', $post );
+		}
+		else {
+			/**
+			 * Fires before meta boxes with 'side' context are output for all post types other than 'page'.
+			 *
+			 * The submitpost box is a meta box with 'side' context, so this hook fires just before it is output.
+			 *
+			 * @since 2.5.0
+			 *
+			 * @param WP_Post $post Post object.
+			 */
+			do_action( 'submitpost_box', $post );
+		}
 
 
-do_meta_boxes(null, 'advanced', $post);
 
-?>
-</div>
+
+		?>
+    </div>
+    <div id="postbox-container-2" class="postbox-container">
+		<?php
+
+		do_meta_boxes(null, 'normal', $post);
+
+		if ( 'page' == $post_type ) {
+			/**
+			 * Fires after 'normal' context meta boxes have been output for the 'page' post type.
+			 *
+			 * @since 1.5.0
+			 *
+			 * @param WP_Post $post Post object.
+			 */
+			do_action( 'edit_page_form', $post );
+		}
+		else {
+			/**
+			 * Fires after 'normal' context meta boxes have been output for all post types other than 'page'.
+			 *
+			 * @since 1.5.0
+			 *
+			 * @param WP_Post $post Post object.
+			 */
+			do_action( 'edit_form_advanced', $post );
+		}
+
+
+		do_meta_boxes(null, 'advanced', $post);
+
+		?>
+    </div>
+
+
 <?php
 /**
  * Fires after all meta box sections have been output, before the closing #post-body div.

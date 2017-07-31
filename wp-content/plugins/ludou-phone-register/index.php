@@ -200,53 +200,58 @@ function verify_code($phone, $code) {
 
 function ludou_show_phone_field($args) {
    ?>
-    <p>
+
         <script>
             var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>", pic_no = "<?php echo constant("LCR_PLUGIN_URL"); ?>img/no.png", captcha = "<?php echo constant("LCR_PLUGIN_URL"); ?>captcha/captcha.php";
         </script>
 
         <script src="<?php echo constant("LCR_PLUGIN_URL"); ?>check.js"></script>
-    </p>
 
-<!--   <p>-->
-<!--      <label for="user_pwd1">密码(至少6位)<br/>-->
-<!--         <input id="user_pwd1" class="input" type="password" size="25" value="" name="user_pass" />-->
-<!--      </label>-->
-<!--   </p>-->
-<!--   <p>-->
-<!--      <label for="user_pwd2">重复密码<br/>-->
-<!--         <input id="user_pwd2" class="input" type="password" size="25" value="" name="user_pass2" />-->
-<!--      </label>-->
-<!--   </p>-->
 
-    <!--<div class="um-field um-field-captcha um-field-text" data-key="captcha">
-        <p>
-            <label for="CAPTCHA">图片验证码 &nbsp;<span id="captchaErr" style="color:#ff5c57;font-size: 12px;"></span> <br/>
-                <input id="CAPTCHA" data-key="captcha" style="width:150px;*float:left;" class="input" type="text" size="10" value="" name="captcha_code" autocomplete="off" />
-                看不清？<a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src = '<?php /*echo constant("LCR_PLUGIN_URL"); */?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;">点击更换</a>
-            </label>
-        </p>
+
+    <div class="um-field um-field-user_login um-field-text" data-key="user_login">
+        <div class="um-field-label">
+            <label for="phone">手机号</label>
+            <span class="um-tip um-tip-w" title="验证手机号">
+                <i class="um-icon-help-circled"></i>
+            </span>
+            <div class="um-clear">
+
+            </div>
+        </div>
+        <div class="um-field-area">
+            <input id="phone" class="um-form-field valid " type="text"  value="<?php echo empty($_POST['phone']) ? '' : $_POST['phone']; ?>" name="phone" autocomplete="off" />
+        </div>
     </div>
 
-   <p>
-      <label>
-         <img id="captcha_img" src="<?php /*echo constant("LCR_PLUGIN_URL"); */?>captcha/captcha.php" title="看不清?点击更换" alt="看不清?点击更换" onclick="document.getElementById('captcha_img').src = '<?php /*echo constant("LCR_PLUGIN_URL"); */?>captcha/captcha.php?' + Math.random();document.getElementById('CAPTCHA').focus();return false;" />
-      </label>
-   </p>-->
-   <p>
-      <label for="phone">手机号 &nbsp;<span id="sendSmsBtnErr" style="color:#ff5c57;font-size: 12px;"></span> <br/>
-         <input id="phone" class="input" type="text" size="15" value="<?php echo empty($_POST['phone']) ? '' : $_POST['phone']; ?>" name="phone" autocomplete="off" />
-      </label>
-   </p>
-   <p>
-      <label for="code">短信验证码 &nbsp;<input id="sendSmsBtn" type="button" value="获取短信验证码" class="button button-secondary" />
-         <input id="code" class="input" type="text" size="4" value="<?php echo empty($_POST['code']) ? '' : $_POST['code']; ?>" name="code" />
-      </label>
-   </p>
+    <div class="um-field um-field-user_login um-field-text" data-key="user_login">
+        <div class="um-field-label">
+            <label for="code">短信验证码</label>
+            <span class="um-tip um-tip-w" title="获取短信验证码">
+<input id="sendSmsBtn" type="button" value="获取短信验证码" class="button button-secondary" />
+</span>
+            <div class="um-clear">
 
+            </div>
+        </div>
+        <div class="um-field-area">
+            <input id="code" class="um-form-field valid " type="text" value="<?php echo empty($_POST['code']) ? '' : $_POST['code']; ?>" name="code" />
+        </div>
+    </div>
+
+<div class="um-field um-field-user_login um-field-text" data-key="user_login">
+    <div class="um-field-label">
+
+        <div class="um-clear">
+
+        </div>
+    </div>
+    <div class="um-field-area">
     <input id="mainAcceptIpt" type="checkbox" checked="checked" tabindex="-1" class=""> 我已阅读并同意
-    <a href="http://www.tschlr.com/用户协议_2017/" target="_blank" tabindex="-1">用户协议</a>
-
+    <a href="http://www.tschlr.com/用户协议_2017/" target="_blank" tabindex="-1">用户协议
+    </a>
+    </div>
+</div>
 
 
    <input type="hidden" name="token" value="<?php

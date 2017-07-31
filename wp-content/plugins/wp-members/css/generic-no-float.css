@@ -81,11 +81,14 @@ see http://rocketgeek.com/tips-and-tricks/load-a-custom-stylesheet/
 /* Login Form and Registration Form */
 #wpmem_reg, 
 #wpmem_login {
-	color: rgb(43, 43, 43);
+
 	font-family: Arial,sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
+	max-width: 450px;
+	margin-left: auto!important;
+	margin-right: auto!important;
 }
 
 #wpmem_reg label,
