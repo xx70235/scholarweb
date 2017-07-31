@@ -6,6 +6,13 @@ jQuery(function($){
         return this.optional(element) || (length == 11 && mobile.test(value));
     }, "请正确填写您的手机号码"),
 
+        jQuery.validator.addMethod("strongPassword", function(value, element) {
+            var length = value.length;
+            var strong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            return this.optional(element) || (length >8 && strong.test(value));
+        }, "密码必须包含至少一个大写字母，至少一个小写字母和数字，并且不少于8位"),
+
+
     $("#register-form").steps({
     headerTag: "h3",
     bodyTag: "section",
@@ -76,7 +83,8 @@ jQuery(function($){
             "user_login-30":"required",
             "user_password-30":{
                 required:true,
-                minlength:8
+                minlength:8,
+                strongPassword:true
             },
 
             "confirm_user_password-30": {
