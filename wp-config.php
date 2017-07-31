@@ -29,8 +29,7 @@ define('DB_USER', 'scholar');
 define('DB_PASSWORD', '!Cas15801588196');
 
 /** MySQL hostname */
-define('DB_HOST', '47.93.115.68');
-//define('DB_HOST', '47.90.125.249');
+define('DB_HOST', '127.0.0.1');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

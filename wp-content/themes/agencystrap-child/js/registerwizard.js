@@ -83,14 +83,14 @@ jQuery(function($){
             "user_login-30":"required",
             "user_password-30":{
                 required:true,
-                minlength:8,
+
                 strongPassword:true
             },
 
             "confirm_user_password-30": {
                 required:true,
-                equalTo: "#user_password-30",
-                minlength:8
+                equalTo: "#user_password-30"
+
             },
             "user_email-30":{
                 required:true,
