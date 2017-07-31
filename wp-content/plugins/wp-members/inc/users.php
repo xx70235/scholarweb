@@ -163,6 +163,7 @@ endif;
  *
  * @global int $user_id
  */
+
 function wpmem_profile_update() {
 
 	global $wpmem, $user_id;
