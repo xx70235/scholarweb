@@ -23,7 +23,7 @@
 define('DB_NAME', 'scholar');
 
 /** MySQL database username */
-define('DB_USER', 'scholar');
+define('DB_USER', 'root');
 
 /** MySQL database password */
 define('DB_PASSWORD', '!Cas15801588196');
