@@ -1648,12 +1648,12 @@ msgstr "用户名或电子邮件地址"
 #: wp-includes/link-template.php:2534
 msgctxt "previous set of posts"
 msgid "Previous"
-msgstr "上一个"
+msgstr "上一页"
 
 #: wp-includes/link-template.php:2535
 msgctxt "next set of posts"
 msgid "Next"
-msgstr "下一个"
+msgstr "下一页"
 
 #: wp-includes/media.php:3448
 msgid "Search media items..."
