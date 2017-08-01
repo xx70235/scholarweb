@@ -32,9 +32,10 @@ get_header(); ?>
 $(function(){ 
         $(document.body).on('click','.social-share-icon',function(){
                 var id = $("#post-id").val();
-                $.post("/count.php",
+                $.post("/wp-admin/admin-ajax.php",
           {
               pid:id,
+              action: 'socialCount'
           },
           function(data,status){
               if ('success'==status)

@@ -626,3 +626,56 @@ function ludou_phone_add_menu_page() {
 }
 
 add_action('admin_menu', 'ludou_phone_add_menu');
+
+
+add_action('wp_ajax_socialCount', 'socialCount');
+add_action('wp_ajax_nopriv_socialCount', 'socialCount');
+
+function socialCount() {
+    $postID = $_REQUEST['pid'];
+
+    if (!isset($postID)) {
+        exit;
+    }
+
+    $count_key = 'social_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count =='') {
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '1');
+    } else {
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+
+
+    $result['type'] = "success";
+    $result = json_encode($result);
+    echo $result;
+
+    exit();
+}
+
+//add_action('Publish_post', 'afterPublishPost');
+//
+//function afterPublishPost($post_id) {
+//    echo $post_id;
+//}
+//
+//function filter_um_submit_post_form( $post ) {
+//    // make filter magic happen here...
+//    return $post;
+//};
+//
+//// add the filter
+//add_filter( 'um_submit_post_form', 'filter_um_submit_post_form', 10, 1 );
+//
+//
+//// define the um_admin_do_action callback
+//function action_um_admin_do_action( $request_um_adm_action ) {
+//    // make action magic happen here...
+//    $request_um_adm_action;
+//};
+//
+//// add the action
+//add_action( 'um_admin_do_action', 'action_um_admin_do_action', 10, 1 );

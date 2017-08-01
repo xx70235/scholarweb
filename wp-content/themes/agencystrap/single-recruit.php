@@ -30,25 +30,26 @@ get_header(); ?>
 	<?php get_sidebar('2'); ?>
 </div>
 <script type="text/javascript">
-$(function(){ 
+    $(function(){
         $(document.body).on('click','.social-share-icon',function(){
-                var id = $("#post-id").val();
-                $.post("/count.php",
-          {
-              pid:id,
-          },
-          function(data,status){
-              if ('success'==status)
-              {
-                  
-              }
-              else
-              {
-                  
-              }
-          });
-                
+            var id = $("#post-id").val();
+            $.post("/wp-admin/admin-ajax.php",
+                {
+                    pid:id,
+                    action: 'socialCount'
+                },
+                function(data,status){
+                    if ('success'==status)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                });
+
         })
-});
+    });
 </script>
 <?php get_footer(); ?>
