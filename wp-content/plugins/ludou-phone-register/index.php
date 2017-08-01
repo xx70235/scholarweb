@@ -679,3 +679,24 @@ function socialCount() {
 //
 //// add the action
 //add_action( 'um_admin_do_action', 'action_um_admin_do_action', 10, 1 );
+
+//add_action( 'wp_publish_post', 'set_count_when_post' );
+add_action( 'save_post', 'set_count_when_post', 10, 3 );
+//add_filter( 'um_submit_post_form', 'set_count_when_post', 10, 1 );
+
+function set_count_when_post( $post_id ) {
+
+    $count_key = 'social_count';
+    $count = get_post_meta($post_id, $count_key, true);
+    if ($count =='') {
+        delete_post_meta($post_id, $count_key);
+        add_post_meta($post_id, $count_key, '0');
+    }
+
+    $count_key = 'post_views_count';
+    $count = get_post_meta($post_id, $count_key, true);
+    if ($count =='') {
+        delete_post_meta($post_id, $count_key);
+        add_post_meta($post_id, $count_key, '0');
+    }
+}

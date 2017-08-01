@@ -182,16 +182,19 @@ echo '<h3 class="section-title">学科筛选</h3>';
                 $args = array_merge($args, array('order' => $order));
             }
 
-            $args = array_merge($args, array(
-                'meta_query'=>array(
-                    array(
-                        'key'=>'post_views_count',
-                        'type'=>'NUMERIC',
+            if ($orderby == 'social_count' || $orderby == 'post_views_count') {
+                $args = array_merge($args, array(
+                    'meta_query'=>array(
+                        array(
+                            'key'=>$orderby,
+                            'type'=>'NUMERIC',
 //                        'compare'=>'>=',
 //                        'value'=>'0',
-                    )
-                ),
-            ));
+                        )
+                    ),
+                ));
+            }
+
             $args = array_merge($args, $wp_query->query);
             query_posts($args);
         }

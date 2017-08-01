@@ -134,10 +134,15 @@ $disable_select2 = ( get_option( 'beautiful_taxonomy_filters_disable_select2' ) 
         <a href="<?php
             echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] . '?orderby=date&order=desc';
         ?>"> 发布时间↓ </a>
-    &nbsp; &nbsp;
+        &nbsp; &nbsp;
         <a href="<?php
         echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] . '?orderby=post_views_count&order=desc';
         ?>"> 关注量↓ </a>
+        &nbsp; &nbsp;
+
+        <a href="<?php
+        echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] . '?orderby=social_count&order=desc';
+        ?>"> 同行推荐↓ </a>
 
         <?php do_action( 'beautiful_actions_after_submit_button', $current_post_type ); //allow custom markup before submit button ?>
 		<?php if ( $show_clear_all && is_btf_filtered() ) : ?>
