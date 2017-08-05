@@ -113,7 +113,7 @@ add_filter('user_contactmethods', 'ludou_add_contact_fields');
 function action_um_before_new_user_register( $args ) {
     // make action magic happen here...
 
-    echo 123;
+//    echo 123;
 };
 
 // add the action

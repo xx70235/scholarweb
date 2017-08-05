@@ -32,10 +32,24 @@
 		global $ultimatemember;
 
 		um_fetch_user( $user_id );
-
+        update_user_info( $user_id);
+		//TODO HERE
 		$ultimatemember->user->pending();
 		
 	}
+
+	function update_user_info($user_id){
+        update_user_meta($user_id,"institution",$_POST["institution-30"]);
+        update_user_meta($user_id,"director",$_POST["director-30"]);
+        update_user_meta($user_id,"director_phone",$_POST["director_phone-30"]);
+        update_user_meta($user_id,"director_email",$_POST["director_email-30"]);
+        update_user_meta($user_id,"publisher",$_POST["publisher-30"]);
+        update_user_meta($user_id,"publisher_phone",$_POST["publisher_phone-30"]);
+        update_user_meta($user_id,"publisher_email",$_POST["publisher_email-30"]);
+        update_user_meta($user_id,"address",$_POST["address-30"]);
+        update_user_meta($user_id,"website",$_POST["website-30"]);
+
+    }
 
 	/**
 	 * Add user to wordpress
@@ -44,9 +58,11 @@
 	function um_add_user_frontend($args){
 		global $ultimatemember;
 
+
         unset( $args['user_id'] );
 		
 		extract($args);
+
 
 
 		if ( isset( $username ) && !isset($args['user_login']) ) {
@@ -112,6 +128,7 @@
         do_action('um_before_new_user_register', $args);
 
 		$user_id = wp_create_user( $user_login, $user_password, $user_email );
+
 
 		do_action('um_after_new_user_register', $user_id, $args);
 
@@ -196,7 +213,7 @@
 		global $ultimatemember;
 		unset(  $args['user_id'] );
 		extract($args);
-        
+//        echo $args;
         $status = um_user('status');
          
 		do_action("um_post_registration_global_hook", $user_id, $args);
@@ -242,7 +259,9 @@
 					$url  = add_query_arg( 'um_role', esc_attr( $role_id ), $url );
 					$url  = add_query_arg( 'um_form_id', esc_attr( $form_id ), $url );
 
-					exit( wp_redirect( $url ) );
+//					echo "userid_".$user_id ;
+//					exit();
+                  exit(wp_redirect( $url ));
 				}
 
 			}

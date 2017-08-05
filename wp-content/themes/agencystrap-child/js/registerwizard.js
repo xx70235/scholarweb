@@ -10,7 +10,7 @@ jQuery(function($){
             var length = value.length;
             var strong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
             return this.optional(element) || (length >8 && strong.test(value));
-        }, "密码必须包含至少一个大写字母，至少一个小写字母和数字，并且不少于8位"),
+        }, "密码必须包含至少一个大写字母，至少一个小写字母和数字，并且不少于9位"),
 
 
     $("#register-form").steps({
@@ -32,6 +32,7 @@ jQuery(function($){
         if (currentIndex === 0)
         {
             return $("form[name!='form']").valid();
+            // return true;
         }
         if (currentIndex > newIndex)
         {
@@ -44,8 +45,7 @@ jQuery(function($){
     {
         if (currentIndex === 1)
         {
-            var user_login = jQuery("#user_login-30").val();
-            jQuery("#user_login").val(user_login);
+
             var email =  jQuery("#user_email-30").val();
             jQuery("#user_email").val(email);
             var password = jQuery("#user_password-30").val();
@@ -63,15 +63,46 @@ jQuery(function($){
     onFinishing: function (event, currentIndex)
     {
         $("form[name='form']").validate().settings.ignore = ":disabled,:hidden";
-        return $("form[name='form']").valid();
+        if($("form[name='form']").valid())
+        {
+            var institution = jQuery("#institution").val();
+            jQuery("#institution-30").val(institution);
+
+            var director = jQuery("#director").val();
+            jQuery("#director-30").val(director);
+
+            var director_phone = jQuery("#director_phone").val();
+            jQuery("#director_phone-30").val(director_phone);
+
+            var director_email = jQuery("#director_email").val();
+            jQuery("#director_email-30").val(director_email);
+
+            var publisher = jQuery("#publisher").val();
+            jQuery("#publisher-30").val(publisher);
+
+            var publisher_phone = jQuery("#publisher_phone").val();
+            jQuery("#publisher_phone-30").val(publisher_phone);
+
+            var publisher_email = jQuery("#publisher_email").val();
+            jQuery("#publisher_email-30").val(publisher_email);
+
+            var address = jQuery("#address").val();
+            jQuery("#address-30").val(address);
+
+            var website = jQuery("#website").val();
+            jQuery("#website-30").val(website);
+
+            return true;
+        }
+        else{
+            return false;
+        }
     },
 
     onFinished: function (event, currentIndex)
     {
 
         $("form[name!='form']").submit();
-         // alert("Submitted!");
-
 
     }
 
@@ -118,7 +149,9 @@ jQuery(function($){
             publisher_phone:{
                 required:true,
                 isMobile:true
-            }
+            },
+            address:"required",
+            website:"required"
         }
     });
 
@@ -132,6 +165,16 @@ jQuery(document).ready(function(){
     jQuery("label[for='user_login']").hide();
     jQuery("label[for='user_email']").hide();
     jQuery("label[for='password']").hide();
+
+    jQuery("div[data-key='institution']").hide();
+    jQuery("div[data-key='director']").hide();
+    jQuery("div[data-key='director_phone']").hide();
+    jQuery("div[data-key='director_email']").hide();
+    jQuery("div[data-key='publisher']").hide();
+    jQuery("div[data-key='publisher_phone']").hide();
+    jQuery("div[data-key='publisher_email']").hide();
+    jQuery("div[data-key='address']").hide();
+    jQuery("div[data-key='website']").hide();
 
     jQuery("input[type='text']").css("width","100%");
     jQuery("input[type='text']").css("height","40px");
