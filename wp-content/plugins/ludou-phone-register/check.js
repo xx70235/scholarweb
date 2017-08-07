@@ -8,9 +8,9 @@ jQuery(document).ready(function ($) {
          wait--;
          setTimeout(countdown, 1000);
       } else {
-         document.getElementById('captcha_img').src = captcha + '?v=' + Math.random();
-         $("#CAPTCHA").val('');
-         $("#CAPTCHA").focus();
+         //document.getElementById('captcha_img').src = captcha + '?v=' + Math.random();
+         //$("#CAPTCHA").val('');
+         //$("#CAPTCHA").focus();
          $('#sendSmsBtn').val('获取短信验证码').attr("disabled", false).fadeTo("slow", 1);
          wait = 60;
       }
