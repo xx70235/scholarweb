@@ -86,7 +86,7 @@ echo '</a></div>';
                 ?></span>
           <i class="fa fa-calendar-times-o" aria-hidden="true"></i>  <span class="deadline" >截止日期：
                 <?php
-                echo strip_tags(get_field(deadline));
+                echo strip_tags(get_field(deadline_time));
                 ?>
             </span>
         </div>

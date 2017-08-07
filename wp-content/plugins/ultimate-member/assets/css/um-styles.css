@@ -608,7 +608,7 @@ input[type=submit].um-button:hover {
 	display: block;
 	width: 100%;
 	line-height: 1em !important;
-	padding: 16px 20px !important;
+	padding: 10px 20px !important;
 	text-decoration: none !important;
 	text-align: center;
 	text-transform: none !important;

@@ -70,12 +70,14 @@ jQuery(document).ready(function ($) {
          success: function (response) {
             if (response.type == "success") {
                if (response.vHTML != '') {
+                  alert(response.vHTML);
                   $("#sendSmsBtnErr").html('<img src="' + pic_no + '" style="vertical-align:middle;" alt=""/> ' + response.vHTML).slideDown();
                   $("#phone").focus();
                   setTimeout(function () {
                      $("#sendSmsBtnErr").slideUp()
                   }, 3000);
                } else {
+                   // alert("there");
                   $('#sendSmsBtn').attr("disabled", true).fadeTo("slow", 0.5);
                   countdown();
                }

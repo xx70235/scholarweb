@@ -43,45 +43,46 @@ echo '</a></div>';
 	</div>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content" itemprop="text">
-<!--		<div id="update-time">-->
-<!--            <span class="update-time" >更新时间：-->
-<!--	            --><?php //the_field(update_time);?>
-<!--            </span></div>-->
-<!--        <div id="location">-->
-<!--            <span class="location" >工作地点：-->
-<!--	            --><?php //$terms = wp_get_post_terms( $post->ID, array( 'location') ); ?>
-<!--	            --><?php //foreach ( $terms as $term ) : ?>
-<!--                    --><?php //echo $term->name.'  '; ?>
-<!--	            --><?php //endforeach; ?>
-<!--            </span></div>-->
-<!--        <div id="job-title">-->
-<!--            <span class="job-title" >学位：-->
-<!--	            --><?php //$terms = wp_get_post_terms( $post->ID, array( 'job_title') ); ?>
-<!--	            --><?php //foreach ( $terms as $term ) : ?>
-<!---->
-<!--			            --><?php //echo $term->name.'  '; ?>
-<!--	            --><?php //endforeach; ?>
-<!--            </span></div>-->
-<!--        <div id="keywords">-->
-<!--            <span class="keywords" >关键字：-->
-<!--	            --><?php //$terms = wp_get_post_terms( $post->ID, array( 'keywords') ); ?>
-<!--	            --><?php //foreach ( $terms as $term ) : ?>
-<!---->
-<!--		            --><?php //echo $term->name.'  '; ?>
-<!--	            --><?php //endforeach; ?>
-<!--            </span></div>-->
-<!---->
-<!--        <div id="details">-->
-<!--            <span class="details" >招聘详情：<br />-->
-<!--	            --><?php //the_field(details);?>
-<!--            </span></div>-->
-<!--        <div id="deadline">-->
-<!--            <span class="deadline" >更新时间：-->
-<!--	            --><?php //the_field(deadline);?>
-<!--            </span></div>-->
-		<?php the_content(); ?>
-	</div><!-- .entry-content -->
+
+
+    <div class="entry-content" itemprop="text">
+        <div id="update-time">
+            <span class="update-time" ><h4>更新时间： <?php strip_tags(the_field(update_time));?></h4>
+
+            </span></div>
+        <div id="location">
+            <span class="location" ><h4>招生地点：<?php $terms = wp_get_post_terms( $post->ID, array( 'location') ); ?>
+                    <?php foreach ( $terms as $term ) : ?>
+                        <?php echo $term->name.'  '; ?>
+                    <?php endforeach; ?></h4>
+                <!--	           <p> </p>-->
+            </span></div>
+        <div id="job-title">
+            <span class="job-title" ><h4>学位：<?php $terms = wp_get_post_terms( $post->ID, array( 'job_title') ); ?>
+                    <?php foreach ( $terms as $term ) : ?>
+
+                        <?php echo $term->name.'  '; ?>
+                    <?php endforeach; ?></h4>
+                <!--	            <p></p>-->
+            </span></div>
+        <div id="keywords">
+            <span class="keywords" ><h4>关键字： <?php $terms = wp_get_post_terms( $post->ID, array( 'keywords') ); ?>
+                    <?php foreach ( $terms as $term ) : ?>
+
+                        <?php echo $term->name.'  '; ?>
+                    <?php endforeach; ?></h4>
+                <!--	          <p> </p>-->
+            </span></div>
+
+        <div id="details">
+            <span class="details" ><h4>招生详情：</h4></span>
+            <?php the_field(details);?>
+        </div>
+        <div id="deadline">
+            <span class="deadline" ><h4>截止时间：</h4>
+                <?php   strip_tags(the_field(deadline_time));?>
+            </span></div>
+    </div><!-- .entry-content -->
 	<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'agencystrap' ),

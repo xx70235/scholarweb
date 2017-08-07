@@ -831,6 +831,10 @@ aside li {
     /*border-left-style: solid;*/
 }
 
+.um-button {
+    padding: 10px 20px!important;
+}
+
 /* media query */
 
 @media only screen and (max-width: 520px){

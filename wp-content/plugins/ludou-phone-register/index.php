@@ -389,7 +389,7 @@ add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
 
 
 function userLoginAction($args) {
-    echo 123;
+//    echo 123;
     $result = um_set_redirect_url('http://www.baidu.com');
 
 }
