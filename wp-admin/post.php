@@ -289,4 +289,57 @@ default:
 	wp_redirect( admin_url('edit.php') );
 	exit();
 } // end switch
+echo "<script type='text/javascript' src='/jquery-3.2.1.min.js'></script>";
+echo "<link rel='stylesheet' href='/dist/remodal.css'/>
+<link rel='stylesheet' href='/dist/remodal-default-theme.css'/>";
+echo "<script src='/dist/remodal.min.js'></script>";
+echo "<script type='text/javascript' src='/qrcode.min.js'></script>";
+echo "
+<div data-remodal-id='modal'>
+  <button data-remodal-action='close' class='remodal-close'></button>
+  <h1>信息发布成功</h1>
+  <h2>赶紧分享到朋友圈,获取关注量加倍</h2>
+<div id='qrcode' class='remodal-confirm' style='background:#fff;width:100px; height:100px;'></div>
+  <br>
+  <button data-remodal-action='cancel' class='remodal-cancel' onclick='double();'>分享完成</button>
+  <button data-remodal-action='confirm' class='remodal-confirm' onclick='nodouble();'>稍后分享</button>
+</div>
+";
+$pviewlink = get_preview_post_link( $post );
+echo "<script>
+var qrcode = new QRCode(document.getElementById('qrcode'), {
+        width : 100,
+        height : 100
+});
+document.getElementById('publish').setAttribute('type','button');
+document.getElementById('publish').addEventListener('click',function(){
+var inst = $('[data-remodal-id=modal]').remodal();
+qrcode.makeCode('".$pviewlink."');
+inst.open();
+return false;
+});
+function double()
+{
+$.post('/wp-admin/admin-ajax.php',
+                {
+                    pid:".$post_id.",
+                    action: 'socialCount'
+                },
+                function(data,status){
+                    if ('success'==status)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                });
+document.getElementById('post').submit();
+}
+function nodouble()
+{
+document.getElementById('post').submit();
+}
+</script>";
 include( ABSPATH . 'wp-admin/admin-footer.php' );
