@@ -640,14 +640,27 @@ function socialCount() {
 
     $count_key = 'social_count';
     $count = get_post_meta($postID, $count_key, true);
-    if ($count =='') {
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '1');
-    } else {
-        $count++;
-        update_post_meta($postID, $count_key, $count);
-    }
 
+    $double = get_post_meta($postID, "social_double", true);
+
+    if ($double == '') {
+        if ($count =='') {
+            delete_post_meta($postID, $count_key);
+            add_post_meta($postID, $count_key, '1');
+        } else {
+            $count++;
+            update_post_meta($postID, $count_key, $count);
+        }
+    } else {
+        if ($count =='') {
+            delete_post_meta($postID, $count_key);
+            add_post_meta($postID, $count_key, '2');
+        } else {
+            $count++;
+            $count++;
+            update_post_meta($postID, $count_key, $count);
+        }
+    }
 
     $result['type'] = "success";
     $result = json_encode($result);
@@ -655,6 +668,30 @@ function socialCount() {
 
     exit();
 }
+
+add_action('wp_ajax_socialDouble', 'socialDouble');
+add_action('wp_ajax_nopriv_socialDouble', 'socialDouble');
+
+function socialDouble() {
+    $postID = $_REQUEST['pid'];
+
+    if (!isset($postID)) {
+        exit;
+    }
+
+    $count_key = 'social_double';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count =='') {
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '1');
+    }
+    $result['type'] = "success";
+    $result = json_encode($result);
+    echo $result;
+
+    exit();
+}
+
 
 //add_action('Publish_post', 'afterPublishPost');
 //

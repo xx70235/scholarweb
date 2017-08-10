@@ -365,7 +365,7 @@ function doublea()
 $.post('/wp-admin/admin-ajax.php',
                 {
                     pid:".$post_id.",
-                    action: 'socialCount'
+                    action: 'socialDouble'
                 },
                 function(data,status){
                     if ('success'==status)
