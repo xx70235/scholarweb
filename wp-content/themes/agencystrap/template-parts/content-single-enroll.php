@@ -80,7 +80,8 @@ echo '</a></div>';
         </div>
         <div id="deadline">
             <span class="deadline" ><h4>截止时间：</h4>
-                <?php   strip_tags(the_field(deadline_time));?>
+                <?php the_field(deadline_time);?>
+                <?php   strip_tags(the_field(deadline));?>
             </span></div>
     </div><!-- .entry-content -->
 	<?php
