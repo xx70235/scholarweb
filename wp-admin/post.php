@@ -304,6 +304,15 @@ echo "
   <button data-remodal-action='cancel' class='remodal-cancel' onclick='double();'>分享完成</button>
   <button data-remodal-action='confirm' class='remodal-confirm' onclick='nodouble();'>稍后分享</button>
 </div>
+<div data-remodal-id='modala'>
+  <button data-remodal-action='close' class='remodal-close'></button>
+  <h1>信息发布成功</h1>
+  <h2>赶紧分享到朋友圈,获取关注量加倍</h2>
+<div id='qrcodea' class='remodal-confirm' style='background:#fff;width:100px; height:100px;'></div>
+  <br>
+  <button data-remodal-action='cancel' class='remodal-cancel' onclick='doublea();'>分享完成</button>
+  <button data-remodal-action='confirm' class='remodal-confirm' onclick='nodoublea();'>稍后分享</button>
+</div>
 ";
 $pviewlink = get_preview_post_link( $post );
 echo "<script>
@@ -311,6 +320,20 @@ var qrcode = new QRCode(document.getElementById('qrcode'), {
         width : 100,
         height : 100
 });
+var qrcodea = new QRCode(document.getElementById('qrcodea'), {
+        width : 100,
+        height : 100
+});
+";
+if(strpos($_SERVER['HTTP_REFERER'],'post-new')>0||strpos($_SERVER['QUERY_STRING'],'message=6')>0)
+{
+echo "
+var insta = $('[data-remodal-id=modala]').remodal();
+qrcodea.makeCode('".$pviewlink."');
+insta.open();
+";
+}
+echo "
 document.getElementById('publish').setAttribute('type','button');
 document.getElementById('publish').addEventListener('click',function(){
 var inst = $('[data-remodal-id=modal]').remodal();
@@ -337,9 +360,30 @@ $.post('/wp-admin/admin-ajax.php',
                 });
 document.getElementById('post').submit();
 }
+function doublea()
+{
+$.post('/wp-admin/admin-ajax.php',
+                {
+                    pid:".$post_id.",
+                    action: 'socialCount'
+                },
+                function(data,status){
+                    if ('success'==status)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                });
+}
 function nodouble()
 {
 document.getElementById('post').submit();
+}
+function nodoublea()
+{
 }
 </script>";
 include( ABSPATH . 'wp-admin/admin-footer.php' );
