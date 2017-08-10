@@ -325,7 +325,7 @@ var qrcodea = new QRCode(document.getElementById('qrcodea'), {
         height : 100
 });
 ";
-if(strpos($_SERVER['HTTP_REFERER'],'post-new')>0||strpos($_SERVER['QUERY_STRING'],'message=6')>0)
+if(!empty($_SERVER['HTTP_REFERER'])&&(strpos($_SERVER['HTTP_REFERER'],'post-new')||strpos($_SERVER['QUERY_STRING'],'message=6')))
 {
 echo "
 var insta = $('[data-remodal-id=modala]').remodal();
