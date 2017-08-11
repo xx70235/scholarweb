@@ -1459,4 +1459,28 @@ function annointed_admin_bar_remove() {
 	$wp_admin_bar->remove_menu('wp-logo');
 }
 add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
+
+pll_register_string('single_content_update', '更新时间：');
+pll_register_string('single_content_location', '招生地点：');
+pll_register_string('single_content_location2', '工作地点：');
+pll_register_string('single_content_position', '学位：');
+pll_register_string('single_content_position2', '职位：');
+pll_register_string('single_content_keywords', '关键字：');
+pll_register_string('single_content_details', '招生详情：');
+pll_register_string('single_content_details2', '招聘详情：');
+pll_register_string('single_content_deadline', '截止时间：');
+pll_register_string('content_list_discipline', '学科：');
+pll_register_string('content_list_location', '地点：');
+pll_register_string('content_list_follow', '关注量：');
+pll_register_string('content_list_deadline', '截止日期：');
+pll_register_string('content_list_readmore', '阅读全文');
+
+
+
+
+
+
+
+
+
 ?>

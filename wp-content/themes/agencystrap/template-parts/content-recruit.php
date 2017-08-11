@@ -26,8 +26,8 @@ echo '</a></div>';
 	<div class="entry-content" itemprop="text">
 <?php //the_excerpt(); ?>
         <div id="entry-parameters">
-           <i class="fa fa-graduation-cap"></i> <span class="discipline" >学科：
-	            <?php //the_excerpt();
+           <i class="fa fa-graduation-cap"></i> <span class="discipline" >
+	            <?php pll_e('学科：'); //the_excerpt();
 	            // your taxonomy name
 	            $tax = 'first_level_discipline';
 
@@ -52,8 +52,8 @@ echo '</a></div>';
 	            }
 	            ?>
             </span>
-          <i class="fa fa-map-marker"></i> <span class="location" >地点：
-	            <?php //the_excerpt();
+          <i class="fa fa-map-marker"></i> <span class="location" >
+	            <?php pll_e('地点：');//the_excerpt();
 	            // your taxonomy name
 	            $tax = 'location';
 
@@ -78,14 +78,14 @@ echo '</a></div>';
 	            }
 	            ?>
             </span>
-           <i class="fa fa-rocket" aria-hidden="true"></i> <span class="views" >关注量：
+           <i class="fa fa-rocket" aria-hidden="true"></i> <span class="views" >
 
-                <?php
+                <?php pll_e('关注量：');
                 $view =getPostViews($post->ID);
                 echo $view.' ';
                 ?></span>
-          <i class="fa fa-calendar-times-o" aria-hidden="true"></i>  <span class="deadline" >截止日期：
-                <?php
+          <i class="fa fa-calendar-times-o" aria-hidden="true"></i>  <span class="deadline" >
+                <?php pll_e('截止日期：');
                 echo strip_tags(get_field(deadline_time));
                 ?>
             </span>

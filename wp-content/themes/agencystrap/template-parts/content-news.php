@@ -26,8 +26,8 @@ echo '</a></div>';
 	<div class="entry-content" itemprop="text">
 <?php //the_excerpt(); ?>
         <div class="news-keywords" id="keywords">
-            <span class="keywords" >关键字：
-	            <?php //the_excerpt();
+            <span class="keywords" >
+	            <?php pll_e('关键字：'); //the_excerpt();
 	            // your taxonomy name
 	            $tax = 'keywords';
 
@@ -52,7 +52,7 @@ echo '</a></div>';
 	            }
 	            ?>
             </span></div>
-        <a href="<?php the_permalink(); ?> " class="btn read-more">阅读全文</a>
+        <a href="<?php the_permalink(); ?> " class="btn read-more"><?php pll_e('阅读全文'); ?></a>
 	</div><!-- .entry-content -->
         <div class="entry-meta">
         <div class="image-author">

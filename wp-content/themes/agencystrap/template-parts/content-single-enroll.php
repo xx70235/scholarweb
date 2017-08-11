@@ -47,18 +47,18 @@ echo '</a></div>';
 
     <div class="entry-content" itemprop="text">
         <div id="update-time">
-            <span class="update-time" ><h4>更新时间： <?php strip_tags(the_field(update_time));?></h4>
+            <span class="update-time" ><h4><?php pll_e('更新时间：');?> <?php strip_tags(the_field(update_time));?></h4>
 
             </span></div>
         <div id="location">
-            <span class="location" ><h4>招生地点：<?php $terms = wp_get_post_terms( $post->ID, array( 'location') ); ?>
+            <span class="location" ><h4><?php pll_e('招生地点：'); $terms = wp_get_post_terms( $post->ID, array( 'location') ); ?>
                     <?php foreach ( $terms as $term ) : ?>
                         <?php echo $term->name.'  '; ?>
                     <?php endforeach; ?></h4>
                 <!--	           <p> </p>-->
             </span></div>
         <div id="job-title">
-            <span class="job-title" ><h4>学位：<?php $terms = wp_get_post_terms( $post->ID, array( 'job_title') ); ?>
+            <span class="job-title" ><h4><?php pll_e('学位：'); $terms = wp_get_post_terms( $post->ID, array( 'job_title') ); ?>
                     <?php foreach ( $terms as $term ) : ?>
 
                         <?php echo $term->name.'  '; ?>
@@ -66,7 +66,7 @@ echo '</a></div>';
                 <!--	            <p></p>-->
             </span></div>
         <div id="keywords">
-            <span class="keywords" ><h4>关键字： <?php $terms = wp_get_post_terms( $post->ID, array( 'keywords') ); ?>
+            <span class="keywords" ><h4> <?php pll_e('关键字：'); $terms = wp_get_post_terms( $post->ID, array( 'keywords') ); ?>
                     <?php foreach ( $terms as $term ) : ?>
 
                         <?php echo $term->name.'  '; ?>
@@ -75,11 +75,11 @@ echo '</a></div>';
             </span></div>
 
         <div id="details">
-            <span class="details" ><h4>招生详情：</h4></span>
-            <?php the_field(details);?>
+            <span class="details" ><h4><?php pll_e('招生详情：'); ?></h4></span>
+            <?php  the_field(details);?>
         </div>
         <div id="deadline">
-            <span class="deadline" ><h4>截止时间：</h4>
+            <span class="deadline" ><h4><?php pll_e('截止时间：'); ?></h4>
                 <?php the_field(deadline_time);?>
                 <?php   strip_tags(the_field(deadline));?>
             </span></div>
