@@ -1453,12 +1453,12 @@ add_action( 'agencystrap_theme_name', 'agencystrap_theme_details' );
 ?>
 
 <?php //移除Wordpress后台顶部左上角的W图标
-function annointed_admin_bar_remove() {
-	global $wp_admin_bar;
-	/* Remove their stuff */
-	$wp_admin_bar->remove_menu('wp-logo');
-}
-add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
+//function annointed_admin_bar_remove() {
+//	global $wp_admin_bar;
+//	/* Remove their stuff */
+//	$wp_admin_bar->remove_menu('wp-logo');
+//}
+//add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
 
 pll_register_string('single_content_update', '更新时间：');
 pll_register_string('single_content_location', '招生地点：');
@@ -1479,6 +1479,21 @@ pll_register_string('content_list_readmore', '阅读全文');
 
 
 
+//show_admin_bar(false);
+function custom_admin_bar(){
+    global $wp_admin_bar;
+    /* Remove their stuff */
+    $wp_admin_bar->remove_menu('wp-logo');
+//    $wp_admin_bar->remove_menu('my-account');
+    $wp_admin_bar->remove_menu('comments');
+    $wp_admin_bar->remove_menu('my-sites');
+    $wp_admin_bar->remove_menu('site-name');
+    $wp_admin_bar->remove_menu('new-content');
+    $wp_admin_bar->remove_menu('updates');
+
+}
+
+add_action('wp_before_admin_bar_render','custom_admin_bar');
 
 
 

@@ -88,7 +88,7 @@ strong {
 }
 #masthead-sticky-wrapper {
     height: auto !important;
-    z-index: 9999999;
+    z-index: 9999;
     position: relative;
 }
 .is-sticky #masthead {
