@@ -72,7 +72,7 @@ function update_gallery_tab($tabs) {
  * @global string $redir_tab
  */
 function the_media_upload_tabs() {
-	global $redir_tab;
+	global $redir_tab,$current_user;
 	$tabs = media_upload_tabs();
 	$default = 'type';
 
@@ -88,6 +88,25 @@ function the_media_upload_tabs() {
 		}
 
 		foreach ( $tabs as $callback => $text ) {
+
+            if($current_user->roles[0]=="publisher")
+            {
+                $class = '';
+                if ( $current == $callback )
+                    $class = " class='current'";
+
+                if($text=='媒体库')
+                {
+                    continue;
+                }
+                else{
+                $href = add_query_arg(array('tab' => $callback, 's' => false, 'paged' => false, 'post_mime_type' => false, 'm' => false));
+                $link = "<a href='" . esc_url($href) . "'$class>$text</a>";
+                echo "\t<li id='" . esc_attr("tab-$callback") . "'>$link</li>\n";
+                }
+            }
+            else{
+
 			$class = '';
 
 			if ( $current == $callback )
@@ -96,6 +115,7 @@ function the_media_upload_tabs() {
 			$href = add_query_arg(array('tab' => $callback, 's' => false, 'paged' => false, 'post_mime_type' => false, 'm' => false));
 			$link = "<a href='" . esc_url($href) . "'$class>$text</a>";
 			echo "\t<li id='" . esc_attr("tab-$callback") . "'>$link</li>\n";
+            }
 		}
 		echo "</ul>\n";
 	}

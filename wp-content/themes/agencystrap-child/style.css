@@ -315,7 +315,7 @@ section hr {
     border: 1px solid #cccccc;
     border-radius: 5px;
     padding: 30px 30px;
-    font-style: italic;
+    /*font-style: italic;*/
     background: url(images/quote.png) no-repeat  center 10px;
 }
 .testi-thumb {

@@ -1,7 +1,7 @@
 <?php
 
 function FontAwesome_icons() {
-    echo '<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"  rel="stylesheet">';
+    echo '<link href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css"  rel="stylesheet">';
 }
 
 add_action('admin_head', 'FontAwesome_icons');

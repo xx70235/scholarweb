@@ -80,8 +80,10 @@ echo '</a></div>';
             <i class="fa fa-rocket" aria-hidden="true"></i> <span class="views" >
 
 		        <?php pll_e('关注量：');
-		        $view =getPostViews($post->ID);
-		        echo $view.' ';
+                $count_key = 'social_count';
+                $count = get_post_meta($postID, $count_key, true);
+//		        $view =getPostViews($post->ID);
+		        echo $count.' ';
 		        ?></span>
             <i class="fa fa-calendar-times-o" aria-hidden="true"></i>  <span class="deadline" >
                 <?php pll_e('截止日期：');

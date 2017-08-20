@@ -386,6 +386,7 @@ class WP_List_Table {
 	 * @access public
 	 */
 	public function views() {
+        global $current_user;
 		$views = $this->get_views();
 		/**
 		 * Filters the list of available list table views.
@@ -406,9 +407,19 @@ class WP_List_Table {
 
 		echo "<ul class='subsubsub'>\n";
 		foreach ( $views as $class => $view ) {
+//		    echo $current_user->roles[0];\
+//            echo $view;
+		    if($current_user->roles[0]=="publisher")
+            {
+                if($class=='all'||$class=="publish")
+                    $views[ $class ] = "\t";
+            }
+            else{
 			$views[ $class ] = "\t<li class='$class'>$view";
+            }
 		}
-		echo implode( " |</li>\n", $views ) . "</li>\n";
+//		echo $views[$class];
+		echo implode( " </li>\n", $views ) . "</li>\n";
 		echo "</ul>";
 	}
 

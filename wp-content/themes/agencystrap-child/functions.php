@@ -1484,10 +1484,13 @@ function custom_admin_bar(){
     global $wp_admin_bar;
     /* Remove their stuff */
     $wp_admin_bar->remove_menu('wp-logo');
-//    $wp_admin_bar->remove_menu('my-account');
+
     $wp_admin_bar->remove_menu('comments');
     $wp_admin_bar->remove_menu('my-sites');
-    $wp_admin_bar->remove_menu('site-name');
+    if(!is_admin())
+    {
+        $wp_admin_bar->remove_menu('site-name');
+    }
     $wp_admin_bar->remove_menu('new-content');
     $wp_admin_bar->remove_menu('updates');
 
