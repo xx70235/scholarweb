@@ -145,10 +145,18 @@ jQuery(function($){
                 required:true,
                 isMobile:true
             },
+            publisher_email:{
+                required:true,
+                email: true
+             },
             publisher:"required",
             publisher_phone:{
                 required:true,
                 isMobile:true
+            },
+            director_email:{
+                required:true,
+                email: true
             },
             address:"required",
             website:"required"
