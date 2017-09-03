@@ -26,7 +26,7 @@ class PLL_Admin_Filters_Post extends PLL_Admin_Filters_Post_Base {
 		add_action( 'parse_query', array( $this, 'parse_query' ) );
 
 		// Adds the Languages box in the 'Edit Post' and 'Edit Page' panels
-		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 10, 2 );
+//		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 10, 2 );
 
 		// Ajax response for changing the language in the post metabox
 		add_action( 'wp_ajax_post_lang_choice', array( $this, 'post_lang_choice' ) );

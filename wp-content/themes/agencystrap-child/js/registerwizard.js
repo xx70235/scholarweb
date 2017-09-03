@@ -192,18 +192,31 @@ jQuery(document).ready(function(){
 
     jQuery("#director_phone").removeAttr("max");
     jQuery("#director_phone").removeAttr("min");
+    jQuery("#director_phone").attr("placeholder","填写招生部门/学术团队负责人联系电话");
+    jQuery("#director_email").attr("placeholder","填写招生部门/学术团队负责人邮箱，请使用学术机构后缀邮箱，不接受公共邮箱");
+    jQuery("#director_email").removeAttr("max");
+    jQuery("#director_email").removeAttr("min");
     jQuery("#publisher_phone").removeAttr("max");
     jQuery("#publisher_phone").removeAttr("min");
     jQuery("#institution").removeAttr("max");
     jQuery("#institution").removeAttr("min");
+    jQuery("#institution").attr("placeholder","例如xx大学xx实验室/博士后流动站/教授课题组");
+
     jQuery("#director").removeAttr("max");
     jQuery("#director").removeAttr("min");
+    jQuery("#director").attr("placeholder","填写招生部门/学术团队负责人真实姓名");
     jQuery("#publisher").removeAttr("max");
     jQuery("#publisher").removeAttr("min");
+    jQuery("#publisher").attr("placeholder","填写信息发布人真实姓名");
+
     jQuery("#address").removeAttr("max");
     jQuery("#address").removeAttr("min");
+    jQuery("#address").attr("placeholder","填写信息发布人联系地址");
+
     jQuery("#website").removeAttr("max");
     jQuery("#website").removeAttr("min");
+    jQuery("#website").attr("placeholder","填写机构或团队或负责人个人主页，未填写将审核不通过");
+
     jQuery(".req-text").hide();
 
 });
