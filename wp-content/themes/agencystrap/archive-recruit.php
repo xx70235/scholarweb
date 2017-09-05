@@ -111,8 +111,8 @@ echo '<h3 class="section-title">学科筛选</h3>';
 <?php
 	echo "<div class='normal_columns_25pers'>";
 	echo '<div class="list-item -ico">';
-	echo '<a href="http://www.tschlr.com/recruit/">全部学科';
-	echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.tschlr.com/wp-content/uploads/iconsets/a.png">';
+	echo '<a href="http://www.shidaixuezhe.com/recruit/">全部学科';
+	echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.shidaixuezhe.com/wp-content/uploads/iconsets/a.png">';
 	echo '</a>';
 	echo '</div>';
 	echo '</div>';
@@ -141,14 +141,14 @@ echo '<h3 class="section-title">学科筛选</h3>';
 <?php foreach($datainfo as $dk => $dv){
 	echo "<div class='normal_columns_25pers'>";
 	echo '<div class="list-item -ico">';
-	echo '<a href="http://www.tschlr.com/recruit/first_level_discipline/'.$dv->slug.'">'.$dv->name;
+	echo '<a href="http://www.shidaixuezhe.com/recruit/first_level_discipline/'.$dv->slug.'">'.$dv->name;
 	if(!empty($dv->icon_id))
 	{
-		echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.tschlr.com/wp-content/uploads/iconsets/'.$dv->icon_id.'.png">';
+		echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.shidaixuezhe.com/wp-content/uploads/iconsets/'.$dv->icon_id.'.png">';
 	}
 	else
 	{
-		echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.tschlr.com/wp-content/uploads/iconsets/a.png">';
+		echo '<img width="61" height="61" class="icon icon-lantbruk" src="http://www.shidaixuezhe.com/wp-content/uploads/iconsets/a.png">';
 	}
 	echo '</a>';
 	echo '</div>';

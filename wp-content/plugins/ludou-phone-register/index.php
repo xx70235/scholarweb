@@ -248,7 +248,7 @@ function ludou_show_phone_field($args) {
     </div>
     <div class="um-field-area">
     <input id="mainAcceptIpt" type="checkbox" checked="checked" tabindex="-1" class=""> 我已阅读并同意
-    <a href="http://www.tschlr.com/用户协议_2017/" target="_blank" tabindex="-1">用户协议
+    <a href="http://www.shidaixuezhe.com/用户协议_2017/" target="_blank" tabindex="-1">用户协议
     </a>
     </div>
 </div>

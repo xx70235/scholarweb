@@ -100,7 +100,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 		$login_header_url   = network_home_url();
 		$login_header_title = get_network()->site_name;
 	} else {
-		$login_header_url   = 'http://www.tschlr.com/';
+		$login_header_url   = 'http://www.shidaixuezhe.com/';
 		$login_header_title = '欢迎访问时代学者';
 	}
 

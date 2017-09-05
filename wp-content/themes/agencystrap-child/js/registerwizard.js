@@ -200,8 +200,8 @@ jQuery(document).ready(function(){
 
     jQuery("#director_phone").removeAttr("max");
     jQuery("#director_phone").removeAttr("min");
-    jQuery("#director_phone").attr("placeholder","填写招生部门/学术团队负责人联系电话");
-    jQuery("#director_email").attr("placeholder","填写招生部门/学术团队负责人邮箱，请使用学术机构后缀邮箱，不接受公共邮箱");
+    jQuery("#director_phone").attr("placeholder","填写招聘/招生组织负责人联系电话");
+    jQuery("#director_email").attr("placeholder","填写招聘/招生组织负责人机构内部邮箱");
     jQuery("#director_email").removeAttr("max");
     jQuery("#director_email").removeAttr("min");
     jQuery("#publisher_phone").removeAttr("max");
@@ -212,7 +212,7 @@ jQuery(document).ready(function(){
 
     jQuery("#director").removeAttr("max");
     jQuery("#director").removeAttr("min");
-    jQuery("#director").attr("placeholder","填写招生部门/学术团队负责人真实姓名");
+    jQuery("#director").attr("placeholder","填写招聘/招生组织负责人真实姓名");
     jQuery("#publisher").removeAttr("max");
     jQuery("#publisher").removeAttr("min");
     jQuery("#publisher").attr("placeholder","填写信息发布人真实姓名");
@@ -223,7 +223,7 @@ jQuery(document).ready(function(){
 
     jQuery("#website").removeAttr("max");
     jQuery("#website").removeAttr("min");
-    jQuery("#website").attr("placeholder","填写机构或团队或负责人个人主页，未填写将审核不通过");
+    jQuery("#website").attr("placeholder","填写机构/企业/团队/学术个人官方主页");
 
     jQuery(".req-text").hide();
 

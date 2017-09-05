@@ -1383,7 +1383,7 @@ function _wp_post_thumbnail_html( $thumbnail_id = null, $post = null ) {
 
 	$post               = get_post( $post );
 	$post_type_object   = get_post_type_object( $post->post_type );
-	$set_thumbnail_link = '<p class="hide-if-no-js"><a href="%s" id="set-post-thumbnail"%s class="thickbox">%s</a></p><p><a href="http://www.tschlr.com/如何快速找到高质量的校徽或机构logo/">点击这里查看如何获取高清校徽</a></p>';
+	$set_thumbnail_link = '<p class="hide-if-no-js"><a href="%s" id="set-post-thumbnail"%s class="thickbox">%s</a></p><p><a href="http://www.shidaixuezhe.com/如何快速找到高质量的校徽或机构logo/">点击这里查看如何获取高清校徽</a></p>';
 	$upload_iframe_src  = get_upload_iframe_src( 'image', $post->ID );
 
 	$content = sprintf( $set_thumbnail_link,

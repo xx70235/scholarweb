@@ -1279,7 +1279,7 @@ legend small {
 
 label,input,button,select,textarea {
     font-size: 15px;
-    font-weight: 600;
+    /*font-weight: 600;*/
     line-height: 22px;
 }
 
