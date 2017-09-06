@@ -3,5 +3,5 @@
  */
 jQuery(document).ready(function(){
 
-    jQuery("#menu-item-821-en").remove();
+    jQuery("#sidr-id-menu-item-821-en").remove();
 });
