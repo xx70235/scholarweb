@@ -3,6 +3,6 @@
  */
 jQuery(document).ready(function(){
 
-    jQuery("#sidr-id-menu-item-821-en").remove();
+    // jQuery("#sidr-id-menu-item-821-en").remove();
     jQuery("#menu-item-821-en").remove();
 });
