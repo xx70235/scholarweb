@@ -387,7 +387,7 @@ section hr {
 .three-column-footer ul li ul {
     display: none;
 }
-.three-column-footer #text-2 #text-4 {
+.three-column-footer #text-2 {
     width:50%;
     text-align:right;
 }
