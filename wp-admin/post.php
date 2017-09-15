@@ -317,10 +317,12 @@ echo "
 $pviewlink = get_preview_post_link( $post );
 echo "<script>
 var qrcode = new QRCode(document.getElementById('qrcode'), {
+correctLevel : QRCode.CorrectLevel.L,
         width : 100,
         height : 100
 });
 var qrcodea = new QRCode(document.getElementById('qrcodea'), {
+correctLevel : QRCode.CorrectLevel.L,
         width : 100,
         height : 100
 });
