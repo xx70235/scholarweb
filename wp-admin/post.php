@@ -289,7 +289,7 @@ default:
 	wp_redirect( admin_url('edit.php') );
 	exit();
 } // end switch
-echo "<script type='text/javascript' src='/jquery-3.2.1.min.js'></script>";
+//echo "<script type='text/javascript' src='/jquery-3.2.1.min.js'></script>";
 echo "<link rel='stylesheet' href='/dist/remodal.css'/>
 <link rel='stylesheet' href='/dist/remodal-default-theme.css'/>";
 echo "<script src='/dist/remodal.min.js'></script>";
@@ -325,10 +325,11 @@ var qrcodea = new QRCode(document.getElementById('qrcodea'), {
         height : 100
 });
 ";
-if(!empty($_SERVER['HTTP_REFERER'])&&(strpos($_SERVER['HTTP_REFERER'],'post-new')||strpos($_SERVER['QUERY_STRING'],'message=6')))
+//if(!empty($_SERVER['HTTP_REFERER'])&&(strpos($_SERVER['HTTP_REFERER'],'post-new')||strpos($_SERVER['QUERY_STRING'],'message=6')))
+if(!empty($_SERVER['HTTP_REFERER'])&&(strpos($_SERVER['HTTP_REFERER'],'post-new')))
 {
 echo "
-var insta = $('[data-remodal-id=modala]').remodal();
+var insta = jQuery('[data-remodal-id=modala]').remodal();
 qrcodea.makeCode('".$pviewlink."');
 insta.open();
 ";
@@ -336,14 +337,14 @@ insta.open();
 echo "
 document.getElementById('publish').setAttribute('type','button');
 document.getElementById('publish').addEventListener('click',function(){
-var inst = $('[data-remodal-id=modal]').remodal();
+var inst = jQuery('[data-remodal-id=modal]').remodal();
 qrcode.makeCode('".$pviewlink."');
 inst.open();
 return false;
 });
 function double()
 {
-$.post('/wp-admin/admin-ajax.php',
+jQuery.post('/wp-admin/admin-ajax.php',
                 {
                     pid:".$post_id.",
                     action: 'socialCount'
@@ -362,7 +363,7 @@ document.getElementById('post').submit();
 }
 function doublea()
 {
-$.post('/wp-admin/admin-ajax.php',
+jQuery.post('/wp-admin/admin-ajax.php',
                 {
                     pid:".$post_id.",
                     action: 'socialDouble'
