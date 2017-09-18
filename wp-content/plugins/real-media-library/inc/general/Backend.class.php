@@ -250,8 +250,8 @@ class Backend extends Base {
     	 * Styles
     	 */
     	
-    	wp_enqueue_style('font-awesome-fa',             'https://cdn.bootcss.com    /font-awesome/4.3.0/css/font-awesome.min.css');
-    	wp_enqueue_style('rml-font',                    plugins_url( 'assets/minifyfont/css/minifyfont.css', RML_FILE ), array(), RML_VERSION);
+    	wp_enqueue_style('font-awesome-fa',             'https://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css');
+    	//wp_enqueue_style('rml-font',                    plugins_url( 'assets/minifyfont/css/minifyfont.css', RML_FILE ), array(), RML_VERSION);
     	
     	if (!$debug) {
         	wp_enqueue_style('jquery-tooltipster',                 plugins_url( 'assets/css/jquery.tooltipster.min.css', RML_FILE ), array(), RML_VERSION);
