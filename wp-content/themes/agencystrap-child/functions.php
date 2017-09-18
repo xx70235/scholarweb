@@ -198,14 +198,13 @@ function agencystrap_theme_options ( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new WP_Customize_Pages_Control(
-			$wp_customize,
-			'headerctabtnpage',
-			array(
-				'label'    => 'Button Link Pages',
-				'settings' => 'headerctabtnpage',
-				'section' => 'agencystrap_headercta',
-			)
+
+
+            	'headerctabtnpage',
+		array(
+			'type' => 'text',
+			'label' => __('Button One Text', 'agencystrap' ),
+			'section' => 'agencystrap_headercta',
 		)
 	);
 	$wp_customize->add_setting(
@@ -856,7 +855,7 @@ function agencystrap_home_hero() { ?>
 				<?php if( get_theme_mod( 'headercta' ) == '1') { ?>
                     <div class="home-cta">
 						<?php if( get_theme_mod( 'headerctabtnone' )) { ?>
-                            <a href="<?php echo get_the_permalink(get_theme_mod('headerctabtnpage')); ?>" class="btn btn-solid"><?php echo get_theme_mod('headerctabtnone'); ?></a>
+                            <a href="<?php echo esc_url(get_theme_mod('headerctabtnpage')); ?>" class="btn btn-solid"><?php echo get_theme_mod('headerctabtnone'); ?></a>
 						<?php }?>
 						<?php if( get_theme_mod( 'headerctabtntwo' )) { ?>
                             <a href="<?php echo esc_url(get_theme_mod('headerctabtntwolink')); ?>" class="btn btn-solid"><?php echo get_theme_mod('headerctabtntwo'); ?></a>

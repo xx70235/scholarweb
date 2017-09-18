@@ -245,18 +245,6 @@ if ( post_type_supports($post_type, 'revisions') && 'auto-draft' != $post->post_
         }
 
 
-if ( 'attachment' == $post_type ) {
-	wp_enqueue_script( 'image-edit' );
-	wp_enqueue_style( 'imgareaselect' );
-
-	add_action( 'edit_form_after_title', 'edit_form_image_editor' );
-	add_meta_box( 'submitdiv', __('Save'), 'attachment_submit_meta_box', null, 'side', 'core' );
-	if ( wp_attachment_is( 'audio', $post ) ) {
-		add_meta_box( 'attachment-id3', __( 'Metadata' ), 'attachment_id3_data_meta_box', null, 'normal', 'core' );
-	}
-} else {
-	add_meta_box( 'submitdiv', __( 'Publish' ), 'post_submit_meta_box', null, 'side', 'core', $publish_callback_args );
-}
 
 if ( current_theme_supports( 'post-formats' ) && post_type_supports( $post_type, 'post-formats' ) )
 	add_meta_box( 'formatdiv', _x( 'Format', 'post format' ), 'post_format_meta_box', null, 'side', 'core' );
@@ -278,6 +266,19 @@ if ( post_type_supports($post_type, 'trackbacks') )
 
 if ( post_type_supports($post_type, 'custom-fields') )
 	add_meta_box('postcustom', __('Custom Fields'), 'post_custom_meta_box', null, 'normal', 'core');
+
+if ( 'attachment' == $post_type ) {
+	wp_enqueue_script( 'image-edit' );
+	wp_enqueue_style( 'imgareaselect' );
+
+	add_action( 'edit_form_after_title', 'edit_form_image_editor' );
+	add_meta_box( 'submitdiv', __('Save'), 'attachment_submit_meta_box', null, 'side', 'core' );
+	if ( wp_attachment_is( 'audio', $post ) ) {
+		add_meta_box( 'attachment-id3', __( 'Metadata' ), 'attachment_id3_data_meta_box', null, 'normal', 'core' );
+	}
+} else {
+	add_meta_box( 'submitdiv', __( 'Publish' ), 'post_submit_meta_box', null, 'side', 'core', $publish_callback_args );
+}
 
 /**
  * Fires in the middle of built-in meta box registration.

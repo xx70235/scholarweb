@@ -389,5 +389,6 @@ function nodoublea()
 {
 }
 </script>";
-echo "<script type='application/javascript' src='./js/editoradjust.js'/>";
+
 include( ABSPATH . 'wp-admin/admin-footer.php' );
+echo "<script type='application/javascript' src='./js/editoradjust.js'></script>";

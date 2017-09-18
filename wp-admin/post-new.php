@@ -82,6 +82,7 @@ if ( is_multisite() ) {
 // Show post form.
 $post = get_default_post_to_edit( $post_type, true );
 $post_ID = $post->ID;
-echo "<script type='application/javascript' src='./js/editoradjust.js'/>";
+
 include( ABSPATH . 'wp-admin/edit-form-advanced.php' );
 include( ABSPATH . 'wp-admin/admin-footer.php' );
+echo "<script type='application/javascript' src='./js/editoradjust.js'></script>";
