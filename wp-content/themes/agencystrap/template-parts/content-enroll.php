@@ -81,7 +81,7 @@ echo '</a></div>';
 
 		        <?php pll_e('关注量：');
                 $count_key = 'social_count';
-                $count = get_post_meta(the_ID(), $count_key, true);
+                $count = get_post_meta($post->ID, $count_key, true);
 //		        $view =getPostViews($post->ID);
 		        echo $count.' ';
 		        ?></span>
