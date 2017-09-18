@@ -29,10 +29,10 @@ get_header(); ?>
 	<?php get_sidebar('2'); ?>
 </div>
 <script type="text/javascript">
-$(function(){ 
-        $(document.body).on('click','.social-share-icon',function(){
-                var id = $("#post-id").val();
-                $.post("/wp-admin/admin-ajax.php",
+jQuery(function(){ 
+        jQuery(document.body).on('click','.social-share-icon',function(){
+                var id = jQuery("#post-id").val();
+                jQuery.post("/wp-admin/admin-ajax.php",
           {
               pid:id,
               action: 'socialCount'
