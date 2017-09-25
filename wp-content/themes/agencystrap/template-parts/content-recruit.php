@@ -82,9 +82,8 @@ echo '</a></div>';
 
                 <?php pll_e('关注量：');
                 $count_key = 'social_count';
-                $count = get_post_meta(the_ID(), $count_key, true);
-                //		        $view =getPostViews($post->ID);
-                echo $count.' ';
+                $count = get_post_meta(get_the_ID(), $count_key, true);
+                echo  1000 + intval($count).' ';
                 ?></span>
           <i class="fa fa-calendar-times-o" aria-hidden="true"></i>  <span class="deadline" >
                 <?php pll_e('截止日期：');
