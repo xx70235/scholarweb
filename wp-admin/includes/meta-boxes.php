@@ -455,9 +455,9 @@ function post_tags_meta_box( $post, $box ) {
 	</div>
 	<div class="tagchecklist"></div>
 </div>
-<?php if ( $user_can_assign_terms ) : ?>
-<p class="hide-if-no-js"><button type="button" class="button-link tagcloud-link" id="link-<?php echo $tax_name; ?>" aria-expanded="false"><?php echo $taxonomy->labels->choose_from_most_used; ?></button></p>
-<?php endif; ?>
+<?php //if ( $user_can_assign_terms ) : ?>
+<!--<p class="hide-if-no-js"><button type="button" class="button-link tagcloud-link" id="link---><?php //echo $tax_name; ?><!--" aria-expanded="false">--><?php //echo $taxonomy->labels->choose_from_most_used; ?><!--</button></p>-->
+<?php //endif; ?>
 <?php
 }
 
