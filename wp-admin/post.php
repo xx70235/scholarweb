@@ -328,7 +328,8 @@ correctLevel : QRCode.CorrectLevel.L,
 });
 ";
 //if(!empty($_SERVER['HTTP_REFERER'])&&(strpos($_SERVER['HTTP_REFERER'],'post-new')||strpos($_SERVER['QUERY_STRING'],'message=6')))
-if(!empty($_SERVER['HTTP_REFERER'])&&(strpos($_SERVER['HTTP_REFERER'],'post-new')))
+$status = get_post_status( $post_id );
+if(!empty($_SERVER['HTTP_REFERER'])&&(strpos($_SERVER['HTTP_REFERER'],'post-new'))&&'draft'!=$status)
 {
 echo "
 var insta = jQuery('[data-remodal-id=modala]').remodal();
@@ -336,6 +337,8 @@ qrcodea.makeCode('".$pviewlink."');
 insta.open();
 ";
 }
+if('draft'!=$status)
+{
 echo "
 document.getElementById('publish').setAttribute('type','button');
 document.getElementById('publish').addEventListener('click',function(){
@@ -343,13 +346,15 @@ var inst = jQuery('[data-remodal-id=modal]').remodal();
 qrcode.makeCode('".$pviewlink."');
 inst.open();
 return false;
-});
+});";
+}
+echo "
 function double()
 {
 jQuery.post('/wp-admin/admin-ajax.php',
                 {
                     pid:".$post_id.",
-                    action: 'socialCount'
+                    action: 'socialDouble'
                 },
                 function(data,status){
                     if ('success'==status)
@@ -380,6 +385,7 @@ jQuery.post('/wp-admin/admin-ajax.php',
 
                     }
                 });
+document.getElementById('post').submit();
 }
 function nodouble()
 {
@@ -387,6 +393,7 @@ document.getElementById('post').submit();
 }
 function nodoublea()
 {
+document.getElementById('post').submit();
 }
 </script>";
 
