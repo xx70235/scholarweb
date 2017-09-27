@@ -1232,10 +1232,31 @@ ul.sub-menu li a {
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
   border: 1px solid rgba(0,0,0,.09);
   border-radius: 3px;
+
 	/*height: auto;*/
+}
+.scholar-image {
+	/* margin-left: 50%; */
+	float: right;
+}
+.scholar-meta {
+	float: left;
+}
+.scholars-div {
+	float: left;
+	width: 31%;
+	margin-left: 10px;
 }
 .entry-header .entry-meta {
   margin-bottom: 14px;
+}
+
+div#institute_belong {
+	margin-bottom: 10px;
+}
+
+div#research_field {
+	margin-bottom: 10px;
 }
 .entry-content blockquote {
   border-left: 3px solid #CCC;
