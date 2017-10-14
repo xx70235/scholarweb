@@ -69,19 +69,19 @@ function the_type_thumbnail( $post = null,$size = 'post-thumbnail', $attr = ''){
 	if(!strcmp($post_type ,'recruit'))
 	{
 
-		$tmp = get_template_directory_uri()."/img/img5.png";
+		$tmp = get_template_directory_uri()."/img/img9.png";
 		$link ='<img src="'.$tmp.'" class="attachment-single-page-thumb size-single-page-thumb wp-post-image" />';
 		echo $link;
 	}
 	else if(!strcmp($post_type ,'enroll'))
 	{
-		$tmp = get_template_directory_uri()."/img/img6.png";
+		$tmp = get_template_directory_uri()."/img/img10.png";
 		$link ='<img src="'.$tmp.'" class="attachment-single-page-thumb size-single-page-thumb wp-post-image" />';
 		echo $link;
 	}
 	else if(!strcmp($post_type , 'news'))
 	{
-		$tmp = get_template_directory_uri()."/img/img3.png";
+		$tmp = get_template_directory_uri()."/img/img11.png";
 		$link ='<img src="'.$tmp.'" class="attachment-single-page-thumb size-single-page-thumb wp-post-image" />';
 		echo $link;
 	}
