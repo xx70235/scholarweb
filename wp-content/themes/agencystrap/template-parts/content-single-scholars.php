@@ -56,7 +56,6 @@ echo '</a></div>';
 		            <?php foreach ( $terms as $term ) : ?>
 			            <?php echo $term->name.'  '; ?>
 		            <?php endforeach; ?></h4>
-<!--	           <p> </p>-->
             </span></div>
         <div id="job-title">
             <span class="job-title" ><h4><?php pll_e('人才计划：');  $terms = wp_get_post_terms( $post->ID, array( 'scholar_project') ); ?>
@@ -64,11 +63,46 @@ echo '</a></div>';
 
 			            <?php echo $term->name.'  '; ?>
 		            <?php endforeach; ?></h4>
-<!--	            <p></p>-->
             </span></div>
-            <div id="details">
-                <span class="details" ><h4><?php pll_e('招聘详情：'); ?></h4></span>
-		        <?php the_field(scholar_details);?>
+            <div id="title">
+                <span class="title" ><h4><?php pll_e('职称：'); ?></h4></span>
+		        <?php the_field(title);?>
+            </div>
+            <div id="email">
+                <span class="email" ><h4><?php pll_e('邮箱：'); ?></h4></span>
+		        <?php the_field(email);?>
+            </div>
+            <div id="webpage">
+                <span class="webpage" ><h4><?php pll_e('主页：'); ?></h4></span>
+		        <?php the_field(webpage);?>
+            </div>
+            <div id="address">
+                <span class="address" ><h4><?php pll_e('通讯地址：'); ?></h4></span>
+		        <?php the_field(address);?>
+            </div>
+            <div id="intro">
+                <span class="intro" ><h4><?php pll_e('个人介绍：'); ?></h4></span>
+		        <?php the_field(intro);?>
+            </div>
+            <div id="education">
+                <span class="education" ><h4><?php pll_e('教育经历：'); ?></h4></span>
+		        <?php the_field(education);?>
+            </div>
+            <div id="work">
+                <span class="work" ><h4><?php pll_e('工作经历：'); ?></h4></span>
+		        <?php the_field(work);?>
+            </div>
+            <div id="research">
+                <span class="research" ><h4><?php pll_e('研究方向：'); ?></h4></span>
+		        <?php the_field(research);?>
+            </div>
+            <div id="honor">
+                <span class="honor" ><h4><?php pll_e('荣誉奖励：'); ?></h4></span>
+		        <?php the_field(honor);?>
+            </div>
+            <div id="paper">
+                <span class="paper" ><h4><?php pll_e('代表性论文：'); ?></h4></span>
+		        <?php the_field(paper);?>
             </div>
     </div>
         <div class="scholar-image">
