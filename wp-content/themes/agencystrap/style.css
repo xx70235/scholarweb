@@ -1235,6 +1235,11 @@ ul.sub-menu li a {
 
 	/*height: auto;*/
 }
+
+.image-container-scholars .img{
+	width:
+	border-radius:50%;
+}
 .scholar-image {
 	/* margin-left: 50%; */
 	float: right;

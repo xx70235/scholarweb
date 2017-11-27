@@ -106,6 +106,7 @@ function agencystrap_postnav(){ ?>
 }
 
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -355,5 +356,14 @@ class WP_CTA_Widget extends WP_Widget{
 		return $instance;
 	}
 
-
+	function getPostViews($postID){
+		$count_key = 'post_views_count';
+		$count = get_post_meta($postID, $count_key, true);
+		if($count==''){
+			delete_post_meta($postID, $count_key);
+			add_post_meta($postID, $count_key, '0');
+			return "0 View";
+		}
+		return $count.' Views';
+	}
 }

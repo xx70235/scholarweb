@@ -79,11 +79,12 @@ echo '</a></div>';
             </span>
             <i class="fa fa-rocket" aria-hidden="true"></i> <span class="views" >
 
-		        <?php pll_e('关注量：');
-                $count_key = 'social_count';
-                $count = get_post_meta(get_the_ID(), $count_key, true);
-                echo  1000 + intval($count).' ';
-		        ?></span>
+		      <?php pll_e('点击量：');
+		      //                $count_key = 'social_count';
+		      //                $count = get_post_meta(get_the_ID(), $count_key, true);
+		      //                 echo  1000 + intval($count).' ';
+		      echo getPostViews(get_the_ID());
+		      ?></span>
             <i class="fa fa-calendar-times-o" aria-hidden="true"></i>  <span class="deadline" >
                 <?php pll_e('截止日期：');
                 echo strip_tags(get_field(deadline_time));
